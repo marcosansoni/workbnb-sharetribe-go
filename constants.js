@@ -7,12 +7,6 @@ const PAGES = {
   NEW_LISTING: 'NewListing',
 };
 
-const CHECK_PAGES = {
-  [PAGES.HOME]: checkHome(),
-  [PAGES.LISTING_LIST]: checkListingsList(),
-  [PAGES.NEW_LISTING]: checkNewListing(),
-};
-
 // Search key used into all listings
 const TRANSACTION_TYPE = {
   HOURLY: 'disponibilita-per-ora',

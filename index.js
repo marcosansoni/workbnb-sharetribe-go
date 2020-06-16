@@ -1,3 +1,10 @@
+const CHECK_PAGES = {
+  [PAGES.HOME]: checkHome(),
+  [PAGES.LISTING_LIST]: checkListingsList(),
+  [PAGES.NEW_LISTING]: checkNewListing(),
+};
+
+
 $(document).ready(() => {
 
 
