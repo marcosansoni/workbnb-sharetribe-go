@@ -31,7 +31,7 @@ const showReservationTypeSelection = (category) => {
   let container = '<div class="col-12">';
 
   container += '<div class="col-12" style="display: flex; flex-direction: column">' +
-    '<h1 class="titolo-annuncio">Inserisci una struttura</h1>' +
+    '<h1 class="titolo-annuncio">Inserisci una strutturaaaaaaaa</h1>' +
     '<h4 style="padding-top: 32px">Categoria selezionata</h4>' +
     '<span class="medium">' + VISUALIZED_CATEGORY[getKeyByValue(CATEGORY_LISTING, Number(category))] + '</span>' +
     '<span class="caption" style="padding-top: 24px">Sarà possibile modificare la categoria una volta inserita la struttura</span>' +
