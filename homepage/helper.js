@@ -70,10 +70,10 @@ const generateFilterForLeftHomeBar = () => {
 };
 
 
-const applyGridView = () => {
+const applyGridView = (numberColumn = 3) => {
   const selectorHomeContainer = $('.home-fluid-thumbnail-grid');
   selectorHomeContainer.addClass("w-layout-grid");
-  selectorHomeContainer.addClass("grid-3-column");
+  selectorHomeContainer.addClass("grid-" + numberColumn + "-column");
   // Upper scope
   addDisplay(".home-fluid-thumbnail-grid-narrow");
   addVisibility("article");
