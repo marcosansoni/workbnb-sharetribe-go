@@ -7,6 +7,11 @@ const createDialogWithMoreFilterIntoHomePage = () => {
   let maximumUpload = undefined;
   let currentSelectedFilter = [];
 
+  const $ = jQuery.noConflict();
+  console.log($)
+  console.log(jQuery().query)
+  console.log($("#downloadInternet"))
+
 
   //Append to body
   $("body").append('<div class="overlay">\n' +
@@ -118,11 +123,6 @@ const createDialogWithMoreFilterIntoHomePage = () => {
     removeVisibility('.overlay');
   });
 
-
-  const $ = jQuery.noConflict();
-  console.log($)
-  console.log(jQuery().query)
-  console.log($("#downloadInternet"))
 
   // console.log(provaVar)
   // console.log(IonRangeSlider)
