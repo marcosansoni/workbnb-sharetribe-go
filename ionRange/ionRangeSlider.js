@@ -26,7 +26,7 @@
   // =================================================================================================================
   // Service
   // const $ = jQuery.noConflict();
-  console.log(jQuery().jquery)
+  console.log($().jquery);
 
 
   var plugin_count = 0;
