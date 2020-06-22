@@ -331,3 +331,93 @@ ul li label .icon-box .fa {
 .listing-form-title {
     margin: 0 !important;
 }
+
+*{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+/*Grid*/
+.fluid-thumbnail-grid-image-image-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.home-fluid-thumbnail-grid{
+    margin: 0 !important;
+    padding: 6px 6px 24px 6px !important;
+}
+
+.home-fluid-thumbnail-grid-author,
+.fluid-thumbnail-grid-image-overlay{
+    display: none;
+}
+
+.fluid-thumbnail-grid-image-image{
+    position: relative;
+}
+
+/*.home-fluid-thumbnail-grid-item{*/
+/*    display: flex;*/
+/*    height: 100%;*/
+/*    width: 100% !important;*/
+/*    max-width: 100%;*/
+/*    flex-direction: column;*/
+/*    justify-content: flex-start;*/
+/*    border-style: solid;*/
+/*    border-color: rgba(34, 34, 34, 0.1);*/
+/*    border-radius: 4px;*/
+/*    box-shadow: 0 2px 8px 0 rgba(34, 34, 34, 0.1);*/
+/*    transition: all 250ms ease-in-out;*/
+/*    margin: 0 !important;*/
+/*    padding: 0 !important;*/
+/*}*/
+
+/*.home-fluid-thumbnail-grid-item:hover{*/
+/*    box-shadow:0 13px 24px -4px rgba(34, 34, 34, 0.06), 0 2px 8px 0 rgba(34, 34, 34, 0.1);*/
+/*    -webkit-transform: translate(0px, -2px);*/
+/*    -ms-transform:translate(0px, -2px);*/
+/*    transform:translate(0px, -2px);*/
+/*}*/
+
+.fluid-thumbnail-grid-image-title{
+    color: #222;
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    min-height: 90px;
+}
+
+.fluid-thumbnail-grid-image-price-container{
+    position: relative;
+    padding: 4px 16px 14px;
+    color: rgba(34, 34, 34, 0.6);
+    font-size: 16px;
+    line-height: 1.6em;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: start;
+    display: flex;
+}
+
+.fluid-thumbnail-grid-image-quantity{
+    /*text-indent: -9999px;*/
+    /*height: 0px;*/
+    display: flex;
+    position: relative;
+    font-weight: 400;
+    padding-left: 26px;
+}
+
+
+.fluid-thumbnail-grid-image-quantity::after{
+    content: 'per';
+    position: absolute;
+    top: 0;
+    left:8px;
+    background-color: white;
+    font-weight: 400;
+}
