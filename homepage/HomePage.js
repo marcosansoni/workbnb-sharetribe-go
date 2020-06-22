@@ -119,7 +119,7 @@ const createDialogWithMoreFilterIntoHomePage = () => {
   });
 
   console.log($("#downloadInternet"))
-  console.log(IonRangeSlider)
+  // console.log(IonRangeSlider)
 
   $("#downloadInternet").ionRangeSlider({
     values: [10, 20, 30, 50, 100, 200, 300, 500, 1000],
