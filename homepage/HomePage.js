@@ -119,7 +119,7 @@ const createDialogWithMoreFilterIntoHomePage = () => {
   });
 
   console.log($("#downloadInternet"))
-  console.log(provaVar)
+  // console.log(provaVar)
   // console.log(IonRangeSlider)
 
   $("#downloadInternet").ionRangeSlider({
