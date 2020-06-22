@@ -25,7 +25,9 @@
 
   // =================================================================================================================
   // Service
-  // $.noConflict();
+  // const $ = jQuery.noConflict();
+  console.log(jQuery().jquery)
+
 
   var plugin_count = 0;
 
