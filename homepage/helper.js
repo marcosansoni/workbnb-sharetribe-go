@@ -85,7 +85,6 @@ const applyGridView = () => {
 const resetOriginalCssForNotHomePage = () => {
   // $(".pagination").css("visibility","visible")
   // search by location is working only on homepage
-  const selectorSearchBarHeader =;
   removeVisibility($("[class*='SearchBar__form']"));
   removeVisibility($("[class*='SearchBar__root']"));
   // $("[class*='SearchBar__form']").css("visibility","hidden")
