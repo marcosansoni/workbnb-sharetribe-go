@@ -68,3 +68,28 @@ const generateFilterForLeftHomeBar = () => {
   return '<div class="rightFilter">' + transactionDropDown + '' + categoryDropDown + '' + buttonForMoreFilter + '</div>';
 
 };
+
+
+const applyGridView = () => {
+  const selectorHomeContainer = $('.home-fluid-thumbnail-grid');
+  selectorHomeContainer.addClass("w-layout-grid");
+  selectorHomeContainer.addClass("grid-3-column");
+  // Upper scope
+  addDisplay(".home-fluid-thumbnail-grid-narrow");
+  addVisibility("article");
+  $(".home-fluid-thumbnail-grid-narrow").css("display", "block");
+  // To avoid buffering
+  $("article").css("visibility", "visible")
+};
+
+const resetOriginalCssForNotHomePage = () => {
+  // $(".pagination").css("visibility","visible")
+  // search by location is working only on homepage
+  const selectorSearchBarHeader =;
+  removeVisibility($("[class*='SearchBar__form']"));
+  removeVisibility($("[class*='SearchBar__root']"));
+  // $("[class*='SearchBar__form']").css("visibility","hidden")
+  // $("[class*='SearchBar__root']").css("visibility","hidden")
+  addVisibility("article");
+  // $("article").css("visibility","visible")
+};

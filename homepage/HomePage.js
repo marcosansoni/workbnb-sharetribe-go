@@ -202,3 +202,6 @@ const createDialogWithMoreFilterIntoHomePage = () => {
     console.log("maxPrice", maximumPrice)
   })
 };
+
+
+

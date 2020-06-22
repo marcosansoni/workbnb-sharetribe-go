@@ -48,6 +48,8 @@ $(document).ready(() => {
 
     createDialogWithMoreFilterIntoHomePage();
 
+    applyGridView();
+
     // Replace Griglia and Mappa button
     const referenceForGrid = $("[title='Griglia']").attr("href");
     const referenceForMap = $("[title='Mappa']").attr("href");
@@ -107,5 +109,7 @@ $(document).ready(() => {
       console.log("click");
       addVisibility('.overlay');
     });
+  }else{
+    resetOriginalCssForNotHomePage();
   }
 });
