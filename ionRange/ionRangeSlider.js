@@ -28,6 +28,8 @@
 
   var plugin_count = 0;
 
+  console.log("Imported")
+
   // IE8 fix
   var is_old_ie = (function () {
     var n = navigator.userAgent,
