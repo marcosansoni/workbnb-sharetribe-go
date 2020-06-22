@@ -7,10 +7,10 @@ const createDialogWithMoreFilterIntoHomePage = () => {
   let maximumUpload = undefined;
   let currentSelectedFilter = [];
 
-  const $ = jQuery.noConflict();
-  console.log($)
-  console.log(jQuery().query)
-  console.log($("#downloadInternet"))
+  // const $ = jQuery.noConflict();
+  // console.log($)
+  // console.log(jQuery().query)
+  // console.log($("#downloadInternet"))
 
 
   //Append to body
@@ -127,25 +127,25 @@ const createDialogWithMoreFilterIntoHomePage = () => {
   // console.log(provaVar)
   // console.log(IonRangeSlider)
 
-  $("#downloadInternet").ionRangeSlider({
-    values: [10, 20, 30, 50, 100, 200, 300, 500, 1000],
-    type: "range",
-    from: 0,
-    to: 2,
-    grid: true,
-    grid_snap: true,
-    onChange: (data) => {
-      // console.log(data)
-      const fromDownload = data.from_value;
-      const toDownload = data.to_value;
-      $("#minDown").html(fromDownload);
-      $("#maxDown").html(toDownload);
-    },
-    onFinish: (data) => {
-      minimumDownload = Number(data.from_value) !== 10 ? data.from_value : undefined;
-      maximumDownload = Number(data.to_value) !== 1000 ? data.to_value : undefined;
-    }
-  });
+  // $("#downloadInternet").ionRangeSlider({
+  //   values: [10, 20, 30, 50, 100, 200, 300, 500, 1000],
+  //   type: "range",
+  //   from: 0,
+  //   to: 2,
+  //   grid: true,
+  //   grid_snap: true,
+  //   onChange: (data) => {
+  //     // console.log(data)
+  //     const fromDownload = data.from_value;
+  //     const toDownload = data.to_value;
+  //     $("#minDown").html(fromDownload);
+  //     $("#maxDown").html(toDownload);
+  //   },
+  //   onFinish: (data) => {
+  //     minimumDownload = Number(data.from_value) !== 10 ? data.from_value : undefined;
+  //     maximumDownload = Number(data.to_value) !== 1000 ? data.to_value : undefined;
+  //   }
+  // });
   //
   // $("#priceSelector").ionRangeSlider({
   //   min: 0,
