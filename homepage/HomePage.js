@@ -118,7 +118,12 @@ const createDialogWithMoreFilterIntoHomePage = () => {
     removeVisibility('.overlay');
   });
 
+
+  const $ = jQuery.noConflict();
+  console.log($)
+  console.log(jQuery().query)
   console.log($("#downloadInternet"))
+
   // console.log(provaVar)
   // console.log(IonRangeSlider)
 
