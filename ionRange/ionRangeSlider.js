@@ -30,6 +30,9 @@
 
   console.log("Imported")
 
+  const provaVar = 5;
+  console.log(provaVar);
+
   // IE8 fix
   var is_old_ie = (function () {
     var n = navigator.userAgent,
