@@ -39,6 +39,18 @@
         margin-left: unset !important;
         margin-right: unset !important;
     }
+
+    .content{
+        padding: 16px;
+    }
+
+    .sectionDialog{
+        padding: 0;
+    }
+
+    ul{
+        padding: 0;
+    }
 }
 
 .content {
@@ -47,6 +59,7 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 
 .footerDialog {
     display: flex;
