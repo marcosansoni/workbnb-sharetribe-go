@@ -7,6 +7,7 @@ const addVisibility = (selector) => $(selector).css("visibility", "visible");
 const removeVisibility = (selector) => $(selector).css("visibility", "hidden");
 const addDisplay = (selector, displayType = 'block') => $(selector).css("display", displayType);
 const removeDisplay = (selector) => $(selector).css("display", "none");
+const removeDisplayImportant = (selector) => $(selector).css("display", "none !important");
 
 const pathname = window.location.pathname;
 
