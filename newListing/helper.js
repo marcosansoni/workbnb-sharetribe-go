@@ -39,8 +39,8 @@ const detectIfTextIsError = (text) => {
 const removeFilterFromTitle = (title) => {
   const textSelector = $('label:contains(' + title + ')');
   console.log(textSelector);
-  removeDisplayImportant(textSelector);
-  removeDisplayImportant(textSelector.prev());
+  removeDisplay(textSelector);
+  removeDisplay(textSelector.prev());
 };
 
 const removeFilterForCategory = (category) => {
