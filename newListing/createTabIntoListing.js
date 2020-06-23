@@ -97,7 +97,7 @@ const closeNewListing = (tab = 1) => {
       removeDisplayText('Internet Upload');
       removeDisplayText('Filtri');
       removeDisplayText('Capienza');
-      removeDisplay(".checkbox-group-container label");
+      // removeDisplay(".checkbox-group-container label");
       // Error
       hideError('Internet Download');
       hideError('Internet Upload');
