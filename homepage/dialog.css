@@ -38,6 +38,8 @@
     .cancelButton, .applyButton {
         margin-left: unset !important;
         margin-right: unset !important;
+        max-width: 148px;
+        width: auto
     }
 
     .content{
@@ -51,6 +53,11 @@
     ul{
         padding: 0;
     }
+
+    .footerDialog{
+        padding: 0 16px;
+    }
+
 }
 
 .content {
