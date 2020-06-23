@@ -46,7 +46,8 @@ $(document).ready(() => {
   if (CHECK_PAGES[PAGES.LISTING_LIST] || CHECK_PAGES[PAGES.HOME]) {
     console.log("TUTTE LE INSERZIONI");
 
-    createDialogWithMoreFilterIntoHomePage();
+    createDialogFilterHomePage();
+    // createDialogWithMoreFilterIntoHomePage();
 
     applyGridView();
 
