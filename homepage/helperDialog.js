@@ -14,7 +14,12 @@ $(".category-filter").change((e) => {
   currentCategory = e.target.name.split("category-");
 });
 
+console.log("Caricato")
+
 $(".listing-type-filter").change((e) => {
+
+  console.log("Here")
+
   // console.log(e.target.className)
   const idCurrent = e.target.id;
 
