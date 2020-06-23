@@ -1,5 +1,5 @@
 const generateFilterWithDropDown = (currentType, items, key, defaultText, idRemove,) => {
-  return '<div class="containerDropDown">' +
+  return '<div class="containerDropDown hiddenOnMobile">' +
     generateDropDownButton(currentType, defaultText, items, key) +
     '<div class="dropDown" workbnb-key="D' + key + '" tabindex="-1">' +
     generatedDropDownItem(items, currentType, key) +
