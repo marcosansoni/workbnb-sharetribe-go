@@ -107,7 +107,6 @@ $(document).ready(() => {
     });
 
     $("#moreFilter").click((e) => {
-      console.log("click");
       addVisibility('.overlay');
     });
   }else{
