@@ -44,11 +44,26 @@ const removeFilterFromTitle = (title) => {
 };
 
 const removeFilterForCategory = (category) => {
-  if (Number(category) === CATEGORY_LISTING[CATEGORY.SHARED_OFFICE]) {
+  if (Number(category) === CATEGORY_LISTING[CATEGORY.SHARED_OFFICE]
+    || Number(category) === CATEGORY_LISTING[CATEGORY.SHARED_STUDY]
+    || Number(category) === CATEGORY_LISTING[CATEGORY.OFFICE]) {
     removeFilterFromTitle('Impianto audio');
     removeFilterFromTitle('Microfono');
     removeFilterFromTitle('Proiettore');
     removeFilterFromTitle('Lavagna interattiva');
+  }
+  if (Number(category) === CATEGORY_LISTING[CATEGORY.ALL_HOUSE] ||
+    Number(category) === CATEGORY_LISTING[CATEGORY.PRIVATE_ROOM]) {
+    removeFilterFromTitle('Impianto audio');
+    removeFilterFromTitle('Microfono');
+    removeFilterFromTitle('Proiettore');
+    removeFilterFromTitle('Lavagna interattiva');
+    removeFilterFromTitle('Sala allattamento');
+    removeFilterFromTitle('Docce');
+    removeFilterFromTitle('Bar');
+    removeFilterFromTitle('Sala Ristorazione');
+    removeFilterFromTitle('Deposito');
+    removeFilterFromTitle('Postazione finestrata');
   }
 };
 
