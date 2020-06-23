@@ -1,0 +1,209 @@
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*visibility: hidden;*/
+}
+
+.dialog {
+    width: 658px;
+    min-width: 40%;
+    /*height: 868px;*/
+    /*min-height: 80%;*/
+    max-height: 80%;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+    .dialog {
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .cancelButton, .applyButton {
+        margin-left: unset !important;
+        margin-right: unset !important;
+    }
+}
+
+.content {
+    /*height: calc(100% - 121px);*/
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.footerDialog {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px 12px 16px;
+}
+
+.cancelButton {
+    /*border-radius: 6px;*/
+    /*padding: 4px;*/
+    background-color: #222222 !important;
+    color: white !important;
+    cursor: pointer;
+    padding: 12px !important;
+}
+
+.applyButton {
+    padding: 12px !important;
+    /*border-radius: 6px;*/
+    /*padding: 4px;*/
+    background-color: #3354ff !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.soft {
+    font-weight: 400;
+}
+
+.headerDialog {
+    padding: 16px;
+    /*padding: 8px;*/
+    color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #F2F2F2;
+    box-sizing: border-box;
+}
+
+#closeDialog {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#closeDialog:hover {
+    background-color: #F2F2F2;
+}
+
+.sectionDialog {
+    width: 100%;
+    border-bottom: 1px solid #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.containerResultSection {
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerResultSection p {
+    font-size: 16px;
+    font-weight: 650;
+    margin: 0;
+}
+
+.containerResultSection span {
+    margin-top: -2px;
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    /*background: #ebf5fc;*/
+    /*box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),*/
+    /*3px 3px 5px rgba(0, 0, 0, 0.1);*/
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin: 15px;
+}
+
+ul label {
+    position: relative;
+    cursor: pointer;
+}
+
+
+ul li label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+ul li label :checked ~ .icon-box {
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li label :checked ~ .icon-box-text {
+    /*box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);*/
+    background-color: #3354ff !important;
+    color: white !important;
+}
+
+ul li label :checked ~ .icon-box .fa {
+    transform: scale(0.95);
+}
+
+ul li label .icon-box {
+    width: 60px;
+    height: 60px;
+    background: #ebf5fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+ul li label .icon-box-text {
+    width: 164px !important;
+    height: 96px !important;
+    /*background: #ebf5fc;*/
+    /*background-color: w;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);*/
+    /*border-radius: 10px;*/
+}
+
+ul li label .icon-box .fa {
+    font-size: 30px;
+    /*color: #6a9bd8;*/
+}

@@ -321,8 +321,8 @@
 
     </style>
     <script>
-      $(document).ready(() => {
 
+      $(document).ready(() => {
 
         let minimumPrice = undefined;
         let maximumPrice = undefined;
@@ -331,6 +331,19 @@
         let minimumUpload = undefined;
         let maximumUpload = undefined;
         let currentSelectedFilter = [];
+
+        let currentCategory = undefined;
+        let currentListingType = undefined;
+
+        // let currentCategory = "stanza-privata";
+
+        if (currentCategory) {
+          $("#category-" + currentCategory).prop("checked", true);
+        }
+
+        if(currentListingType){
+          $("#listing-type-" + currentListingType).prop("checked", true);
+        }
 
         // console.log(IonRangeSlider)
         // console.log($("#downloadInternet"))
@@ -432,16 +445,16 @@
           const isCategory = name.includes("category");
           console.log(isCategory);
 
-          ['#category-meetingRoom', '#category-office', '#category-sharedOffice'].map(i => {
-            console.log("current ", i);
-            console.log("selected ", id);
-            if (id === i) {
-              $(i).attr('checked', true);
-            } else {
-              $(i).attr('checked', false);
-            }
-            console.log("check")
-          });
+          // ['#category-meetingRoom', '#category-office', '#category-sharedOffice'].map(i => {
+          //   console.log("current ", i);
+          //   console.log("selected ", id);
+          //   if (id === i) {
+          //     $(i).attr('checked', true);
+          //   } else {
+          //     $(i).attr('checked', false);
+          //   }
+          //   console.log("check")
+          // });
 
           // $('#category-meetingRoom').removeAttr('checked')
           // $('#category-meetingRoom').attr('checked', true);
@@ -461,6 +474,31 @@
           }
           // console.log(currentSelectedFilter);
           $("#selectedFilter").html(currentSelectedFilter.join(', '));
+        });
+
+        $(".category-filter").change((e) => {
+          // console.log(e.target.className)
+          const idCurrent = e.target.id;
+          // $(".category-filter").attr('checked', false);
+          $(".category-filter").prop('checked', false);
+          // $(this).attr('checked', true);
+          $("#" + idCurrent).prop('checked', true);
+          currentCategory = e.target.name.split("category-");
+        });
+
+        $(".listing-type-filter").change((e) => {
+          // console.log(e.target.className)
+          const idCurrent = e.target.id;
+          // $(".category-filter").attr('checked', false);
+          $(".listing-type-filter").prop('checked', false);
+          // $(this).attr('checked', true);
+          $("#" + idCurrent).prop('checked', true);
+          currentListingType = e.target.name.split("listing-type-");
+        });
+
+        $("#removeCategory").click(() => {
+          $(".category-filter").prop('checked', false);
+          currentCategory = null;
         });
 
         $(".applyButton").click(() => {
@@ -528,14 +566,16 @@
             Più filtri
         </h3>
         <div class="content">
-            <div class="sectionDialog">
-                <div style="display: flex; align-items: center">
+            <div class="sectionDialog" style="padding-bottom: 0">
+                <div style="display: flex; align-items: center; justify-content: space-between">
                     <h4 style="margin-bottom: 2px; padding-right: 16px">Categoria</h4>
+                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi categoria</h5>
                 </div>
                 <ul>
                     <li>
                         <label>
-                            <input type="checkbox" name="category-privateRoom" id="category-privateRoom">
+                            <input type="checkbox" name="category-stanza-privata" id="category-stanza-privata"
+                                   class="category-filter">
                             <div class="button secondary_black small w-inline-block icon-box-text"
                                  style="padding: 32px">
                                 Stanza Privata
@@ -544,7 +584,8 @@
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="category-allHouse" id="category-allHouse">
+                            <input type="checkbox" name="category-tutta-la-casa" id="category-tutta-la-casa"
+                                   class="category-filter">
                             <div class="button secondary_black small w-inline-block icon-box-text"
                                  style="padding: 32px">
                                 Tutta la casa
@@ -553,7 +594,8 @@
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="category-sharedStudy" id="category-sharedStudy">
+                            <input type="checkbox" name="category-tutta-la-casa" id="category-tutta-la-casa"
+                                   class="category-filter">
                             <div class="button secondary_black small w-inline-block icon-box-text"
                                  style="padding: 32px">
                                 Studio condiviso
@@ -562,7 +604,8 @@
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="category-office" id="category-office">
+                            <input type="checkbox" name="category-ufficio" id="category-ufficio"
+                                   class="category-filter">
                             <div class="button secondary_black small w-inline-block icon-box-text"
                                  style="padding: 32px">
                                 Ufficio
@@ -571,7 +614,8 @@
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="category-sharedOffice" id="category-sharedOffice">
+                            <input type="checkbox" name="category-studio-condiviso" id="category-studio-condiviso"
+                                   class="category-filter">
                             <div class="button secondary_black small w-inline-block icon-box-text"
                                  style="padding: 32px">
                                 Ufficio condiviso
@@ -580,10 +624,51 @@
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="category-meetingRoom" id="category-meetingRoom">
+                            <input type="checkbox" name="category-sala-meeting" id="category-meetingRoom"
+                                   class="category-filter">
                             <div class="button secondary_black small w-inline-block icon-box-text"
                                  style="padding: 32px">
                                 Sala Meeting
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="sectionDialog" style="padding-bottom: 0">
+                <div style="display: flex; align-items: center; justify-content: space-between">
+                    <h4 style="margin-bottom: 2px; padding-right: 16px">Tipo di prenotazione</h4>
+                </div>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="listing-type-disponibilita-per-giorno"
+                                   id="listing-type-disponibilita-per-giorno"
+                                   class="listing-type-filter">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 32px">
+                                Per giorno
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="listing-type-disponibilita-per-notte"
+                                   id="listing-type-disponibilita-per-notte"
+                                   class="listing-type-filter">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 32px">
+                                Per notte
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="listing-type-disponibilita-per-ora"
+                                   id="listing-type-disponibilita-per-ora"
+                                   class="listing-type-filter">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 32px">
+                                Per ora
                             </div>
                         </label>
                     </li>
