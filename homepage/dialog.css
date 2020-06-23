@@ -73,6 +73,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
+    border-top: 1px solid #F2F2F2;
 }
 
 .cancelButton {
