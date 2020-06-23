@@ -16,10 +16,10 @@ const openNewListing = (tab = 1) => {
       displayText('Internet Upload');
       displayText('Filtri');
       displayText('Capienza');
-      addDisplay(".checkbox-group-container label", 'inline-block');
+      // addDisplay(".checkbox-group-container label", 'inline-block');
       return;
     case 3:
-      addDisplay(".checkbox-group-container label", 'inline-block');
+      // addDisplay(".checkbox-group-container label", 'inline-block');
       displayText('Min stay');
       displayText('Min hour');
       displayText('Orario check-in');
