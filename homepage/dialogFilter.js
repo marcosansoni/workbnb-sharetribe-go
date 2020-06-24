@@ -175,10 +175,10 @@ const dialogFilterHomePage =
     '                </div>\n' +
     '                <div class="containerResultSection">\n' +
     '                    <div style="display: flex">\n' +
-    '                        <p>Prezzo minimo: </p><span id="minPrice">' + minimumPrice + '</span><span>€</span>\n' +
+    '                        <h4>Prezzo minimo: </h4><span id="minPrice">' + minimumPrice + '</span><span>€</span>\n' +
     '                    </div>\n' +
     '                    <div style="display: flex">\n' +
-    '                        <p>Prezzo massimo: </p><span id="maxPrice">' + maximumPrice + '</span><span>€</span>\n' +
+    '                        <h4>Prezzo massimo: </h4><span id="maxPrice">' + maximumPrice + '</span><span>€</span>\n' +
     '                    </div>\n' +
     '                </div>\n' +
     '            </div>' +
