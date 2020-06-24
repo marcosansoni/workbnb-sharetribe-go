@@ -258,14 +258,12 @@ const dialogFilterHomePage = '<div class="overlay">\n' +
   '        </div>\n' +
   '        <div class="footerDialog">\n' +
   '            <div\n' +
-  '                    id="moreFilter"\n' +
   '                    class="button secondary_black small w-inline-block cancelButton"\n' +
   '\n' +
   '            >\n' +
   '                Reset\n' +
   '            </div>\n' +
   '            <div\n' +
-  '                    id="moreFilter"\n' +
   '                    class="button secondary_black small w-inline-block applyButton">\n' +
   '                Applica\n' +
   '            </div>\n' +
