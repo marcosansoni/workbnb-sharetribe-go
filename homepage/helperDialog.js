@@ -9,6 +9,16 @@ const CURRENT_URL_PARAMS = () => ({
   'MAX_UPLOAD': urlParams.get(FILTER.MAX_UPLOAD) || 1000,
 });
 
+let minimumPrice = CURRENT_URL_PARAMS().MIN_PRICE;
+let maximumPrice = CURRENT_URL_PARAMS().MAX_PRICE;
+
+let minimumDown = CURRENT_URL_PARAMS().MIN_DOWNLOAD;
+let maximumDown = CURRENT_URL_PARAMS().MAX_DOWNLOAD;
+
+let minimumUp = CURRENT_URL_PARAMS().MIN_UPLOAD;
+let maximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
+
+
 const appendEventListener = () => {
 
   $(".category-filter").change((e) => {
@@ -49,10 +59,6 @@ const appendEventListener = () => {
     removeVisibility('.overlay');
   });
 
-  $(".applyButton").click(() => {
-    removeVisibility('.overlay');
-    console.log("Click on apply")
-  });
 
   // Slider price
   const sliderPrice = document.getElementById('slider-price');
@@ -72,14 +78,15 @@ const appendEventListener = () => {
   });
 
   sliderPrice.noUiSlider.on('set.one', (values) => {
-    console.log(values)
-    const minimumPrice = values[0];
-    const maximumPrice = values[1];
+    minimumPrice = values[0];
+    maximumPrice = values[1];
     $("#minPrice").html(minimumPrice);
     $("#maxPrice").html(maximumPrice);
   });
 
   $("#removePrice").click(() => {
+    minimumPrice = 0;
+    maximumPrice = 250;
     sliderPrice.noUiSlider.set([0, 250]);
     $("#minPrice").html(0);
     $("#maxPrice").html(250);
@@ -103,15 +110,15 @@ const appendEventListener = () => {
   });
 
   sliderDown.noUiSlider.on('set.one', (values) => {
-    const min = values[0];
-    const max = values[1];
+    minimumDown = values[0];
+    maximumDown = values[1];
     $("#minDown").html(min)
     $("#maxDown").html(max)
   });
 
   $("#removeDown").click(() => {
-    const min = 10;
-    const max = 1000;
+    minimumDown = 10;
+    maximumDown = 1000;
     sliderDown.noUiSlider.set([min, max]);
     $("#minDown").html(min);
     $("#maxDown").html(max);
@@ -134,18 +141,28 @@ const appendEventListener = () => {
     })
   });
   sliderUp.noUiSlider.on('set.one', (values) => {
-    const min = values[0];
-    const max = values[1];
+    minimumUp = values[0];
+    maximumUp = values[1];
     $("#minUp").html(min)
     $("#maxUp").html(max)
   });
 
   $("#removeUp").click(() => {
-    const min = 10;
-    const max = 1000;
+    minimumUp = 10;
+    maximumUp = 1000;
     sliderUp.noUiSlider.set([min, max]);
     $("#minUp").html(min);
     $("#maxUp").html(max);
   });
+
+  $(".applyButton").click(() => {
+    removeVisibility('.overlay');
+
+    console.log("Click on apply")
+    console.log(minimumPrice)
+    console.log(maximumPrice)
+  });
+
+
 }
 
