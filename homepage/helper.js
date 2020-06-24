@@ -27,7 +27,7 @@ const generateDropDownButton = (selectedId, defaultText, items, key) => {
 
 const generateRemoveItem = (selectedId, key) => {
   return selectedId !== null ? '<div class="separator"></div>' +
-    '<div class="selectDropDown" workbnb-key="I' + key + '" id="remove">Rimuovi Filtro </div>' : '';
+    '<div class="cancelButton removeSelectDropdown" workbnb-key="I' + key + '" id="remove">Rimuovi Filtro </div>' : '';
 };
 
 const generateFilterForLeftHomeBar = () => {

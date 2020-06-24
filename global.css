@@ -244,14 +244,14 @@ ul li label .icon-box .fa {
 
 .dropDown {
     position: absolute;
-    top: 64px;
+    top: 66px;
     left: 0;
-    /*display: none;*/
+    display: none;
     outline: 0 !important;
     border: 1px solid rgba(34, 34, 34, 0.1);
     box-shadow: 0 2px 4px 0 rgba(34, 34, 34, 0.06);
     width: 100%;
-    min-width: 184px;
+    min-width: 264px;
     max-width: 264px;
     z-index: 100;
     background-color: white;
@@ -259,7 +259,7 @@ ul li label .icon-box .fa {
 }
 
 .selectDropDown {
-    /*padding: 16px !important;*/
+    padding: 16px 18px !important;
     /*background-color: white;*/
     box-sizing: border-box;
     cursor: pointer;
