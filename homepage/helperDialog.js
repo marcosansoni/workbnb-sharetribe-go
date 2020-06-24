@@ -210,8 +210,7 @@ const appendEventListener = () => {
   });
 
   const parseAmenitiesForURL = () => {
-    setFilter('filter-parcheggio', 'PARCHEGGIO');
-    // setFilter('filter-parcheggio', 'PARCHEGGIO');
+    setFilter('filter-parking', 'PARCHEGGIO');
   };
 
   $(".applyButton").click(() => {
