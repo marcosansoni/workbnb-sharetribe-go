@@ -71,4 +71,7 @@ const FILTER = {
   MAX_DOWNLOAD: 'nf_max_145035',
   MIN_UPLOAD: 'nf_min_145036',
   MAX_UPLOAD: 'nf_max_145036',
+  COLAZIONE: 'checkbox_filter_option_527729',
+  PARCHEGGIO: 'checkbox_filter_option_527728',
 };
+

@@ -7,7 +7,13 @@ const CURRENT_URL_PARAMS = () => ({
   'MAX_DOWNLOAD': urlParams.get(FILTER.MAX_DOWNLOAD) || 1000,
   'MIN_UPLOAD': urlParams.get(FILTER.MIN_UPLOAD) || 10,
   'MAX_UPLOAD': urlParams.get(FILTER.MAX_UPLOAD) || 1000,
+  'COLAZIONE': urlParams.get(FILTER.COLAZIONE) || null,
+  'PARCHEGGIO': urlParams.get(FILTER.PARCHEGGIO) || null,
 });
+
+let category = CURRENT_URL_PARAMS().CATEGORY;
+
+let transaction_type = CURRENT_URL_PARAMS().TRANSACTION_TYPE;
 
 let minimumPrice = CURRENT_URL_PARAMS().MIN_PRICE;
 let maximumPrice = CURRENT_URL_PARAMS().MAX_PRICE;
@@ -18,10 +24,35 @@ let maximumDown = CURRENT_URL_PARAMS().MAX_DOWNLOAD;
 let minimumUp = CURRENT_URL_PARAMS().MIN_UPLOAD;
 let maximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
 
+//List of all amenities
+let currentSelectedFilter = [];
+
+let colazione = CURRENT_URL_PARAMS().COLAZIONE;
+
+
 console.log(minimumDown)
 console.log(maximumDown)
 console.log(minimumUp)
 console.log(maximumUp)
+
+const setFilter = (filter, type) => {
+
+  const hasToBeAdded = currentSelectedFilter.includes(filter);
+
+  const itExists = CURRENT_URL_PARAMS()[type];
+
+  const key = FILTER[type].split("checkbox_filter_option_")[1];
+
+  if (itExists && !hasToBeAdded) {
+    urlParams.delete(FILTER[type]);
+    return;
+  }
+
+  if (!itExists && hasToBeAdded) {
+    urlParams.append(FILTER[type], key)
+  }
+
+};
 
 
 const appendEventListener = () => {
@@ -160,12 +191,33 @@ const appendEventListener = () => {
     $("#maxUp").html(max);
   });
 
+  const parseAmenitiesForURL = () => {
+    setFilter('filter-parcheggio', 'PARCHEGGIO');
+    // setFilter('filter-parcheggio', 'PARCHEGGIO');
+  };
+
   $(".applyButton").click(() => {
     removeVisibility('.overlay');
 
-    console.log("Click on apply")
-    console.log(minimumPrice)
-    console.log(maximumPrice)
+    // Price
+    urlParams.delete(FILTER.MIN_PRICE);
+    urlParams.set(FILTER.MIN_PRICE, minimumPrice);
+    urlParams.delete(FILTER.MAX_PRICE);
+    urlParams.set(FILTER.MAX_PRICE, maximumPrice);
+
+    // Download
+    urlParams.delete(FILTER.MIN_DOWNLOAD);
+    urlParams.set(FILTER.MIN_DOWNLOAD, minimumDown);
+    urlParams.delete(FILTER.MAX_DOWNLOAD);
+    urlParams.set(FILTER.MAX_DOWNLOAD, maximumDown);
+
+    // Upload
+    urlParams.delete(FILTER.MIN_UPLOAD);
+    urlParams.set(FILTER.MIN_UPLOAD, minimumUp);
+    urlParams.delete(FILTER.MAX_UPLOAD);
+    urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
+
+    parseAmenitiesForURL();
   });
 
 

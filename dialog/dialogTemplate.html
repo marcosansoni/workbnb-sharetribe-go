@@ -344,24 +344,24 @@
             border-radius: 8px;
         }
 
-        .containerMinimum{
+        .containerMinimum {
             display: flex;
             align-items: center;
             padding-right: 48px;
         }
 
-        .containerMaximum{
+        .containerMaximum {
             display: flex;
             align-items: center;
             padding-left: 48px;
         }
 
         @media screen and (max-width: 500px) {
-           .containerMinimum{
-               padding-right: 24px;
-           }
+            .containerMinimum {
+                padding-right: 24px;
+            }
 
-            .containerMaximum{
+            .containerMaximum {
                 padding-left: 24px;
             }
         }
@@ -522,6 +522,7 @@
         //     maximumUpload = Number(data.to_value) !== 1000 ? data.to_value : undefined;
         //   }
         // });
+        // let currentSelectedFilter = [];
 
         $("input").change((e) => {
           // console.log("changed");
@@ -551,17 +552,20 @@
           // $("#category-meetingRoom").attr('checked', false);
           // console.log(e.target.checked)
           // console.log(e.target.name);
-
-          if (!check) {
-            currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
-          } else {
-            currentSelectedFilter = [
-              ...currentSelectedFilter,
-              name,
-            ]
+          if (name.includes("filter-")) {
+            if (!check) {
+              currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
+            } else {
+              currentSelectedFilter = [
+                ...currentSelectedFilter,
+                name,
+              ]
+            }
           }
+
+          console.log(currentSelectedFilter)
           // console.log(currentSelectedFilter);
-          $("#selectedFilter").html(currentSelectedFilter.join(', '));
+          // $("#selectedFilter").html(currentSelectedFilter.join(', '));
         });
 
         $(".category-filter").change((e) => {
@@ -838,63 +842,142 @@
                     </div>
                 </div>
             </div>
-            <div class="sectionDialog">
-                <div style="display: flex; align-items: center">
+            <div class="sectionDialog" style="padding-bottom: 0">
+                <div style="display: flex; align-items: center; justify-content: space-between">
                     <h4 style="margin-bottom: 2px; padding-right: 16px">Servizi</h4>
-                    <span class="caption">I servizi differiscono in base alla categoria selezionata</span>
+                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi servizi</h5>
                 </div>
                 <ul>
                     <li>
                         <label>
-                            <input type="checkbox" name="house">
-                            <div class="icon-box">
-                                <i class="fa fa-home" aria-hidden="true"></i>
+                            <input type="checkbox" name="filter-cancelleria" id="filter-cancelleria"
+                                   class="filter-general">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 8px">
+                                <img
+                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03d368cf9c42ced82eb32_attach.svg"
+                                        style="margin-right: 8px"
+                                />
+                                Cancelleria
                             </div>
                         </label>
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="phone">
-                            <div class="icon-box">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            <input type="checkbox" name="filter-pet-friendly" id="filter-pet-friendly"
+                                   class="filter-general">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 8px">
+                                <img
+                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02672be784a15015410bd_dog.svg"
+                                        style="margin-right: 8px"
+                                />
+                                Pet Friendly
                             </div>
                         </label>
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="plane">
-                            <div class="icon-box">
-                                <i class="fa fa-plane" aria-hidden="true"></i>
+                            <input type="checkbox" name="filter-parking" id="filter-parking"
+                                   class="filter-general">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 8px">
+                                <img
+                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02811be784a5f39541fe5_car-parking.svg"
+                                        style="margin-right: 8px"
+                                />
+                                Parcheggio
                             </div>
                         </label>
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="snow">
-                            <div class="icon-box">
-                                <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+                            <input type="checkbox" name="filter-monitor" id="filter-monitor"
+                                   class="filter-general">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 8px">
+                                <img
+                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0284190c3340d5d766889_pc-monitor.svg"
+                                        style="margin-right: 8px"
+                                />
+                                Monitor
                             </div>
                         </label>
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" name="battery">
-                            <div class="icon-box">
-                                <i class="fa fa-battery-full" aria-hidden="true"></i>
-                            </div>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="code">
-                            <div class="icon-box">
-                                <i class="fa fa-code" aria-hidden="true"></i>
+                            <input type="checkbox" name="filter-stampante" id="filter-stampante"
+                                   class="filter-general">
+                            <div class="button secondary_black small w-inline-block icon-box-text"
+                                 style="padding: 8px">
+                                <img
+                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0286dbe784a19755422d9_printer.svg"
+                                        style="margin-right: 8px"
+                                />
+                                Stampante
                             </div>
                         </label>
                     </li>
                 </ul>
-                <span class="medium">Servizi selezionati: <span class="soft" id="selectedFilter"></span></span>
+                <span class="caption" style="padding-bottom: 16px">I servizi differiscono in base alla categoria selezionata</span>
             </div>
+            <!--            <div class="sectionDialog">-->
+            <!--                <div style="display: flex; align-items: center">-->
+            <!--                    <h4 style="margin-bottom: 2px; padding-right: 16px">Servizi</h4>-->
+
+            <!--                </div>-->
+            <!--                <ul>-->
+            <!--                    <li>-->
+            <!--                        <label>-->
+            <!--                            <input type="checkbox" name="house">-->
+            <!--                            <div class="icon-box">-->
+            <!--                                <i class="fa fa-home" aria-hidden="true"></i>-->
+            <!--                            </div>-->
+            <!--                        </label>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                        <label>-->
+            <!--                            <input type="checkbox" name="phone">-->
+            <!--                            <div class="icon-box">-->
+            <!--                                <i class="fa fa-phone" aria-hidden="true"></i>-->
+            <!--                            </div>-->
+            <!--                        </label>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                        <label>-->
+            <!--                            <input type="checkbox" name="plane">-->
+            <!--                            <div class="icon-box">-->
+            <!--                                <i class="fa fa-plane" aria-hidden="true"></i>-->
+            <!--                            </div>-->
+            <!--                        </label>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                        <label>-->
+            <!--                            <input type="checkbox" name="snow">-->
+            <!--                            <div class="icon-box">-->
+            <!--                                <i class="fa fa-snowflake-o" aria-hidden="true"></i>-->
+            <!--                            </div>-->
+            <!--                        </label>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                        <label>-->
+            <!--                            <input type="checkbox" name="battery">-->
+            <!--                            <div class="icon-box">-->
+            <!--                                <i class="fa fa-battery-full" aria-hidden="true"></i>-->
+            <!--                            </div>-->
+            <!--                        </label>-->
+            <!--                    </li>-->
+            <!--                    <li>-->
+            <!--                        <label>-->
+            <!--                            <input type="checkbox" name="code">-->
+            <!--                            <div class="icon-box">-->
+            <!--                                <i class="fa fa-code" aria-hidden="true"></i>-->
+            <!--                            </div>-->
+            <!--                        </label>-->
+            <!--                    </li>-->
+            <!--                </ul>-->
+            <!--                <span class="medium">Servizi selezionati: <span class="soft" id="selectedFilter"></span></span>-->
+            <!--            </div>-->
         </div>
         <div class="footerDialog">
             <div
