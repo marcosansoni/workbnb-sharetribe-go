@@ -190,6 +190,25 @@ const appendEventListener = () => {
     $("#maxUp").html(maximumUp);
   });
 
+  $("input").change((e) => {
+
+    const name = e.target.name;
+    const check = e.target.checked;
+
+    if (name.includes("filter-")) {
+      if (!check) {
+        currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
+      } else {
+        currentSelectedFilter = [
+          ...currentSelectedFilter,
+          name,
+        ]
+      }
+    }
+
+    console.log(currentSelectedFilter)
+  });
+
   const parseAmenitiesForURL = () => {
     setFilter('filter-parcheggio', 'PARCHEGGIO');
     // setFilter('filter-parcheggio', 'PARCHEGGIO');

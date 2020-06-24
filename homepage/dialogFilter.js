@@ -221,6 +221,85 @@ const dialogFilterHomePage =
     '                </div>\n' +
     '            </div>' +
     '        </div>\n' +
+    '        <div class="sectionDialog" style="padding-bottom: 0">\n' +
+    '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
+    '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Servizi</h4>\n' +
+    '                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi servizi</h5>\n' +
+    '                </div>\n' +
+    '                <ul>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-cancelleria" id="filter-cancelleria"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03d368cf9c42ced82eb32_attach.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Cancelleria\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-pet-friendly" id="filter-pet-friendly"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02672be784a15015410bd_dog.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Pet Friendly\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-parking" id="filter-parking"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02811be784a5f39541fe5_car-parking.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Parcheggio\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-monitor" id="filter-monitor"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0284190c3340d5d766889_pc-monitor.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Monitor\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-stampante" id="filter-stampante"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0286dbe784a19755422d9_printer.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Stampante\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                </ul>\n' +
+    '                <span class="caption" style="padding-bottom: 16px">I servizi differiscono in base alla categoria selezionata</span>\n' +
+    '            </div>' +
     '        <div class="footerDialog">\n' +
     '            <div\n' +
     '                    class="button secondary_black small w-inline-block cancelButton"\n' +
