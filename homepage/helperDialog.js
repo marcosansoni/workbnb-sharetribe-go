@@ -38,10 +38,13 @@ let colazione = CURRENT_URL_PARAMS().COLAZIONE;
 const setFilter = (filter, type) => {
 
   const hasToBeAdded = currentSelectedFilter.includes(filter);
+  console.log(hasToBeAdded)
 
   const itExists = CURRENT_URL_PARAMS()[type];
+  console.log(itExists)
 
   const key = FILTER[type].split("checkbox_filter_option_")[1];
+  console.log(key)
 
   if (itExists && !hasToBeAdded) {
     urlParams.delete(FILTER[type]);
@@ -49,9 +52,8 @@ const setFilter = (filter, type) => {
   }
 
   if (!itExists && hasToBeAdded) {
-    urlParams.append(FILTER[type], key)
+    urlParams.set(FILTER[type], key)
   }
-
 };
 
 
