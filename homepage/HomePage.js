@@ -215,6 +215,9 @@ const createDialogFilterHomePage = () => {
   let currentCategory = CURRENT_URL_PARAMS().CATEGORY;
   let currentListingType = CURRENT_URL_PARAMS().TRANSACTION_TYPE;
 
+  let currentMinimumPrice = CURRENT_URL_PARAMS().MIN_PRICE;
+  let currentMaximumPrice = CURRENT_URL_PARAMS().MAX_PRICE;
+
   if (currentCategory) {
     $("#category-" + currentCategory).prop("checked", true);
   }
@@ -223,7 +226,10 @@ const createDialogFilterHomePage = () => {
     $("#listing-type-" + currentListingType).prop("checked", true);
   }
 
-  $("body").append(dialogFilterHomePage)
+  $("body").append(dialogFilterHomePage({
+    maximumPrice: currentMaximumPrice,
+    minimumPrice: currentMinimumPrice,
+  }))
 
 };
 

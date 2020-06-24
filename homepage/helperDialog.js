@@ -47,5 +47,52 @@ const appendEventListener = () => {
     removeVisibility('.overlay');
     console.log("Click on apply")
   });
+
+  const sliderPrice = document.getElementById('slider-price');
+  noUiSlider.create(sliderPrice, {
+    start: [minimumPrice, maximumPrice],
+    connect: true,
+    step: 1,
+    tooltips: true,
+    // tooltips: [false, wNumb({decimals: 1}), true],
+    orientation: 'horizontal', // 'horizontal' or 'vertical'
+    range: {
+      'min': 0,
+      'max': 250
+    },
+    format: wNumb({
+      decimals: 0
+    })
+    // start: [0, 90],
+    // step: 30,
+    // range: {
+    //   'min': 0,
+    //   'max': 210
+    // },
+    // pips: {
+    //   mode: 'steps',
+    //   density: 3,
+    //   format: wNumb({
+    //     decimals: 2,
+    //     prefix: '€'
+    //   })
+    // }
+  });
+  sliderPrice.noUiSlider.on('set.one', (values) => {
+    // console.log("triggered")
+    console.log(values)
+    minimumPrice = values[0];
+    maximumPrice = values[1];
+    $("#minPrice").html(minimumPrice)
+    $("#maxPrice").html(maximumPrice)
+  });
+
+  $("#removePrice").click(() => {
+    minimumPrice = 0;
+    maximumPrice = 250;
+    sliderPrice.noUiSlider.set([minimumPrice,maximumPrice]);
+    $("#minPrice").html(minimumPrice);
+    $("#maxPrice").html(maximumPrice);
+  });
 }
 

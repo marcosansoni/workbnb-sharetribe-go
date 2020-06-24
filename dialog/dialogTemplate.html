@@ -318,14 +318,39 @@
         /*    color: #6a9bd8;*/
         /*}*/
 
+        .container-slider {
+            padding: 64px 16px 16px 16px;
+        }
+
+        .noUi-connect {
+            background-color: #3354ff !important;
+        }
+
+        .noUi-tooltip {
+            top: -42px !important;
+            bottom: unset !important;
+            width: 58px;
+            height: 38px;
+            left: -13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Poppins, sans-serif;
+            font-size: 14px;
+            line-height: 1.4em;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: #222222;
+            border-radius: 8px;
+        }
 
     </style>
     <script>
 
       $(document).ready(() => {
 
-        let minimumPrice = undefined;
-        let maximumPrice = undefined;
+        let minimumPrice = 30;
+        let maximumPrice = 175;
         let minimumDownload = undefined;
         let maximumDownload = undefined;
         let minimumUpload = undefined;
@@ -341,7 +366,7 @@
           $("#category-" + currentCategory).prop("checked", true);
         }
 
-        if(currentListingType){
+        if (currentListingType) {
           $("#listing-type-" + currentListingType).prop("checked", true);
         }
 
@@ -369,9 +394,9 @@
         // });
 
         // <div id="test-slider"></div>
-        const slider = document.getElementById('test-slider-price');
-        noUiSlider.create(slider, {
-          start: [0, 250],
+        const sliderPrice = document.getElementById('slider-price');
+        noUiSlider.create(sliderPrice, {
+          start: [minimumPrice, maximumPrice],
           connect: true,
           step: 1,
           tooltips: true,
@@ -381,9 +406,9 @@
             'min': 0,
             'max': 250
           },
-          // format: wNumb({
-          //   decimals: 0
-          // })
+          format: wNumb({
+            decimals: 0
+          })
           // start: [0, 90],
           // step: 30,
           // range: {
@@ -398,6 +423,14 @@
           //     prefix: '€'
           //   })
           // }
+        });
+        sliderPrice.noUiSlider.on('set.one', (values) => {
+          // console.log("triggered")
+          console.log(values)
+          minimumPrice = values[0];
+          maximumPrice = values[1];
+          $("#minPrice").html(minimumPrice)
+          $("#maxPrice").html(maximumPrice)
         });
 
 
@@ -500,6 +533,15 @@
           $(".category-filter").prop('checked', false);
           currentCategory = null;
         });
+
+        $("#removePrice").click(() => {
+          minimumPrice = 0;
+          maximumPrice = 250;
+          sliderPrice.noUiSlider.set([minimumPrice,maximumPrice]);
+          $("#minPrice").html(minimumPrice);
+          $("#maxPrice").html(maximumPrice);
+        });
+
 
         $(".applyButton").click(() => {
           console.log("minDownload", minimumDownload)
@@ -675,9 +717,13 @@
                 </ul>
             </div>
             <div class="sectionDialog">
-                <h4>Prezzo</h4>
-                <!--                <input type="text" class="js-range-slider" id="priceSelector" name="my_range" value=""/>-->
-                <div id="test-slider-price"></div>
+                <div style="display: flex; align-items: center; justify-content: space-between">
+                    <h4 style="margin-bottom: 2px; padding-right: 16px">Prezzo</h4>
+                    <h5 style="cursor: pointer" id="removePrice">Reset</h5>
+                </div>
+                <div class="container-slider">
+                    <div id="slider-price"></div>
+                </div>
                 <div class="containerResultSection">
                     <div style="display: flex">
                         <p>Prezzo minimo: </p><span id="minPrice">0</span><span>€</span>

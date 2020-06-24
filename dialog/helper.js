@@ -1,4 +1,6 @@
 const CURRENT_URL_PARAMS = () => ({
   'CATEGORY': urlParams.get(URL_PARAMS.CATEGORY),
   'TRANSACTION_TYPE': urlParams.get(URL_PARAMS.TRANSACTION_TYPE),
+  'MAX_PRICE': 0,
+  'MIN_PRICE': 250,
 });
