@@ -64,7 +64,7 @@ const appendEventListener = () => {
     $(".category-filter").prop('checked', false);
     $("#" + idCurrent).attr('checked', true);
     $("#" + idCurrent).prop('checked', true);
-    currentCategory = e.target.name.split("category-");
+    currentCategory = e.target.name.split("category-")[1];
   });
 
 
@@ -80,7 +80,7 @@ const appendEventListener = () => {
 
     $("#" + idCurrent).prop('checked', true);
     $("#" + idCurrent).attr('checked', true);
-    currentListingType = e.target.name.split("listing-type-");
+    currentListingType = e.target.name.split("listing-type-")[1];
   });
 
   $("#removeCategory").click(() => {
@@ -198,8 +198,16 @@ const appendEventListener = () => {
   $(".applyButton").click(() => {
     removeVisibility('.overlay');
 
-    console.log(currentCategory)
-    console.log(currentListingType)
+    urlParams.delete(URL_PARAMS.CATEGORY);
+    urlParams.delete(URL_PARAMS.LISTING_SHAPE);
+
+    if (currentCategory) {
+      urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
+    }
+
+    if (currentListingType) {
+      urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
+    }
 
     // Price
     urlParams.delete(FILTER.MIN_PRICE);
