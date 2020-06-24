@@ -102,6 +102,8 @@ $(document).ready(() => {
       removeDisplay(dropDownSelector);
     });
 
+    selectDefaultItemFromURL();
+
     appendEventListener();
 
     $(".dropDown").focusout(() => {

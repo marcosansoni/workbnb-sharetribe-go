@@ -56,6 +56,18 @@ const setFilter = (filter, type) => {
   }
 };
 
+const selectDefaultItemFromURL = () => {
+
+  //Default category selected
+  $("#category-" + currentCategory).prop("checked", true);
+  $("#category-" + currentCategory).attr("checked", true);
+
+  //Default Listing Type
+  $("#listing-type-" + currentListingType).prop("checked", true);
+  $("#listing-type-" + currentListingType).attr("checked", true);
+
+}
+
 
 const appendEventListener = () => {
 
