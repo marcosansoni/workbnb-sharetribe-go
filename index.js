@@ -35,6 +35,7 @@ $(document).ready(() => {
     addDisplay("#selected-groups");
   }
 
+  console.log("help")
 
   $(".moreFilter").click(() => {
     console.log("click")
