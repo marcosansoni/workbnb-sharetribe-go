@@ -89,7 +89,7 @@ const dialogFilterHomePage =
     '                    </li>\n' +
     '                    <li>\n' +
     '                        <label>\n' +
-    '                            <input type="checkbox" name="category-tutta-la-casa" id="category-tutta-la-casa"\n' +
+    '                            <input type="checkbox" name="category-studio-condiviso" id="category-studio-condiviso"\n' +
     '                                   class="category-filter">\n' +
     '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
     '                                 style="padding: 32px">\n' +
