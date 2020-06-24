@@ -28,7 +28,7 @@
 }
 
 .hiddenOver767, .hiddenOverMobile{
-    display: none;
+    display: none !important;
 }
 
 
@@ -51,7 +51,7 @@
     }
 
     .hiddenOver767, .hiddenOverMobile{
-        display: flex;
+        display: flex !important;
     }
 }
 
