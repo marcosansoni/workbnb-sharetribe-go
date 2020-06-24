@@ -47,11 +47,5 @@ const appendEventListener = () => {
     removeVisibility('.overlay');
     console.log("Click on apply")
   });
-
-
-  // $("#closeDialog").click(() => {
-  //   console.log("closeDialog")
-  //   removeVisibility('.overlay');
-  // });
 }
 

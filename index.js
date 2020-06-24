@@ -75,6 +75,7 @@ $(document).ready(() => {
       const dropDownSelector = $('[workbnb-key="D' + workbnbKey + '"]');
 
       const currentDisplay = $(dropDownSelector).css("display");
+      console.log(currentDisplay)
       if (currentDisplay === 'none') {
         addDisplay(dropDownSelector);
         $(".dropDown").focus();
