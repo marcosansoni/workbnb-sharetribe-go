@@ -220,7 +220,6 @@ const dialogFilterHomePage =
     '                    </div>\n' +
     '                </div>\n' +
     '            </div>' +
-    '        <span>Altri filtri</span>\n' +
     '        </div>\n' +
     '        <div class="footerDialog">\n' +
     '            <div\n' +
