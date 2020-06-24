@@ -29,11 +29,11 @@ let currentSelectedFilter = [];
 
 let colazione = CURRENT_URL_PARAMS().COLAZIONE;
 
-
-console.log(minimumDown)
-console.log(maximumDown)
-console.log(minimumUp)
-console.log(maximumUp)
+//
+// console.log(minimumDown)
+// console.log(maximumDown)
+// console.log(minimumUp)
+// console.log(maximumUp)
 
 const setFilter = (filter, type) => {
 
@@ -67,7 +67,6 @@ const appendEventListener = () => {
     currentCategory = e.target.name.split("category-");
   });
 
-  console.log("Caricato")
 
   $(".listing-type-filter").change((e) => {
 
@@ -148,16 +147,16 @@ const appendEventListener = () => {
   sliderDown.noUiSlider.on('set.one', (values) => {
     minimumDown = values[0];
     maximumDown = values[1];
-    $("#minDown").html(min)
-    $("#maxDown").html(max)
+    $("#minDown").html(minimumDown)
+    $("#maxDown").html(maximumDown)
   });
 
   $("#removeDown").click(() => {
     minimumDown = 10;
     maximumDown = 1000;
     sliderDown.noUiSlider.set([min, max]);
-    $("#minDown").html(min);
-    $("#maxDown").html(max);
+    $("#minDown").html(minimumDown);
+    $("#maxDown").html(maximumDown);
   });
 
   //Upload
@@ -179,16 +178,16 @@ const appendEventListener = () => {
   sliderUp.noUiSlider.on('set.one', (values) => {
     minimumUp = values[0];
     maximumUp = values[1];
-    $("#minUp").html(min)
-    $("#maxUp").html(max)
+    $("#minUp").html(minimumUp);
+    $("#maxUp").html(maximumUp);
   });
 
   $("#removeUp").click(() => {
     minimumUp = 10;
     maximumUp = 1000;
     sliderUp.noUiSlider.set([min, max]);
-    $("#minUp").html(min);
-    $("#maxUp").html(max);
+    $("#minUp").html(minimumUp);
+    $("#maxUp").html(maximumUp);
   });
 
   const parseAmenitiesForURL = () => {
@@ -198,6 +197,9 @@ const appendEventListener = () => {
 
   $(".applyButton").click(() => {
     removeVisibility('.overlay');
+
+    console.log(currentCategory)
+    console.log(currentListingType)
 
     // Price
     urlParams.delete(FILTER.MIN_PRICE);
