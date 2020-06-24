@@ -1,12 +1,12 @@
 const CURRENT_URL_PARAMS = () => ({
   'CATEGORY': urlParams.get(URL_PARAMS.CATEGORY),
   'TRANSACTION_TYPE': urlParams.get(URL_PARAMS.TRANSACTION_TYPE),
-  'MAX_PRICE': 250,
-  'MIN_PRICE': 0,
-  'MIN_DOWNLOAD': 10,
-  'MAX_DOWNLOAD': 1000,
-  'MIN_UPLOAD': 10,
-  'MAX_UPLOAD': 1000,
+  'MAX_PRICE': urlParams.get(FILTER.MAX_PRICE) || 250,
+  'MIN_PRICE': urlParams.get(FILTER.MIN_PRICE) || 0,
+  'MIN_DOWNLOAD': urlParams.get(FILTER.MIN_DOWNLOAD) || 10,
+  'MAX_DOWNLOAD': urlParams.get(FILTER.MAX_DOWNLOAD) || 1000,
+  'MIN_UPLOAD': urlParams.get(FILTER.MIN_UPLOAD) || 10,
+  'MAX_UPLOAD': urlParams.get(FILTER.MAX_UPLOAD) || 1000,
 });
 
 const appendEventListener = () => {
