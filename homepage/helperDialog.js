@@ -18,6 +18,11 @@ let maximumDown = CURRENT_URL_PARAMS().MAX_DOWNLOAD;
 let minimumUp = CURRENT_URL_PARAMS().MIN_UPLOAD;
 let maximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
 
+console.log(minimumDown)
+console.log(maximumDown)
+console.log(minimumUp)
+console.log(maximumUp)
+
 
 const appendEventListener = () => {
 
