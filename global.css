@@ -59,6 +59,10 @@
     .hiddenOverMobile{
         display: flex !important;
     }
+
+    .moreFilter{
+        max-width: 265px !important;
+    }
 }
 
 
