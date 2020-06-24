@@ -74,6 +74,9 @@ $(document).ready(() => {
       const workbnbKey = $(e.target).attr("workbnb-key");
       const dropDownSelector = $('[workbnb-key="D' + workbnbKey + '"]');
 
+      console.log(workbnbKey)
+      console.log(dropDownSelector)
+
       const currentDisplay = $(dropDownSelector).css("display");
       console.log(currentDisplay)
       if (currentDisplay === 'none') {
