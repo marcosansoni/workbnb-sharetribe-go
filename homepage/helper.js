@@ -66,8 +66,8 @@ const generateFilterForLeftHomeBar = () => {
   const moreFilterSelected = true;
 
   const buttonForMoreFilter = '' +
-    '<div id="moreFilter" class="button secondary_black small w-inline-block hiddenOnMobile" style="' + (moreFilterSelected ? "border: 1px solid #222222" : "") + '">Più filtri</div>' +
-    '<div id="moreFilter" class="button secondary_black small w-inline-block hiddenOverMobile" style="' + (moreFilterSelected ? "border: 1px solid #222222" : "") + '">Filtra tra i risultati</div>';
+    '<div class="moreFilter button secondary_black small w-inline-block hiddenOnMobile" style="' + (moreFilterSelected ? "border: 1px solid #222222" : "") + '">Più filtri</div>' +
+    '<div class="moreFilter button secondary_black small w-inline-block hiddenOverMobile" style="' + (moreFilterSelected ? "border: 1px solid #222222" : "") + '">Filtra tra i risultati</div>';
 
   return '<div class="rightFilter">' + transactionDropDown + '' + categoryDropDown + '' + buttonForMoreFilter + '</div>';
 

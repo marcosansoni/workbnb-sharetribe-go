@@ -36,7 +36,7 @@ $(document).ready(() => {
   }
 
 
-  $("#moreFilter").click(() => {
+  $(".moreFilter").click(() => {
     console.log("click")
     addVisibility('.overlay');
     $("body").css("overflow", "hidden");
