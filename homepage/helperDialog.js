@@ -11,9 +11,9 @@ const CURRENT_URL_PARAMS = () => ({
   'PARCHEGGIO': urlParams.get(FILTER.PARCHEGGIO) || null,
 });
 
-let category = CURRENT_URL_PARAMS().CATEGORY;
+let currentCategory = CURRENT_URL_PARAMS().CATEGORY;
 
-let transaction_type = CURRENT_URL_PARAMS().TRANSACTION_TYPE;
+let currentListingType = CURRENT_URL_PARAMS().TRANSACTION_TYPE;
 
 let minimumPrice = CURRENT_URL_PARAMS().MIN_PRICE;
 let maximumPrice = CURRENT_URL_PARAMS().MAX_PRICE;
