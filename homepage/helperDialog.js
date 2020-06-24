@@ -75,6 +75,7 @@ const selectDefaultItemFromURL = () => {
   $("#listing-type-" + currentListingType).attr("checked", true);
 
   // Amenities List
+  console.log(parcheggio)
   setDefault(parcheggio, 'filter-parking');
 
 };
