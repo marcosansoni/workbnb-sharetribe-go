@@ -227,11 +227,11 @@ ul li label .icon-box .fa {
 /*    margin-bottom: 4px;*/
 /*}*/
 
-/*.containerFilterTopBar {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: space-between;*/
-/*}*/
+.containerFilterTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 /*.rightFilter {*/
 /*    display: flex;*/
@@ -294,7 +294,7 @@ ul li label .icon-box .fa {
 }
 
 .removeSelectDropdown{
-    /*padding: 16px !important;*/
+    padding: 16px 18px !important;
     width: fit-content;
     background-color: white !important;
     color: #222222 !important;
@@ -305,7 +305,9 @@ ul li label .icon-box .fa {
     display: flex;
     align-items: center;
     margin-top: -2px;
+    cursor: pointer;
 }
+
 
 .removeSelectDropdown:hover{
     font-weight: 625;
