@@ -68,7 +68,7 @@ const FILTER = {
   MIN_PRICE: 'price_min',
   MAX_PRICE: 'price_max',
   MIN_DOWNLOAD: 'nf_min_145035',
-  MAX_DOWNLOAD: 'nf_min_145035',
-  MIN_UPLOAD: 'nf_max_145036',
+  MAX_DOWNLOAD: 'nf_max_145035',
+  MIN_UPLOAD: 'nf_min_145036',
   MAX_UPLOAD: 'nf_max_145036',
 };
