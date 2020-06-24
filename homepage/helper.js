@@ -11,7 +11,7 @@ const generatedDropDownItem = (items, selectedId, key) => {
   let res = '';
   items.forEach(item => {
     const isSelected = item.id === selectedId;
-    res += '<div  workbnb-key="I' + key + '" class="selectDropDown ' + (isSelected ? "selectedItemDropDown" : '') + '" id=' + item.id + '>' +
+    res += '<div  workbnb-key="I' + key + '" class="button secondary_black small w-inline-block selectDropDown ' + (isSelected ? "selectedItemDropDown" : '') + '" id=' + item.id + '>' +
       item.name +
       '</div>';
   });
