@@ -27,6 +27,10 @@
     position: relative;
 }
 
+.hiddenOver767{
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
     .dialog {
         width: 100vw;
@@ -39,6 +43,14 @@
     .no_padding {
         width: calc(100% + 48px);
         margin-left: -24px;
+    }
+
+    .hiddenBelow767{
+        display: none;
+    }
+
+    .hiddenOver767{
+        display: flex;
     }
 }
 

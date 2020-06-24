@@ -61,8 +61,10 @@ $(document).ready(() => {
     const leftFilter = generateFilterForLeftHomeBar();
 
     const rightFilter = '<div class="switch">' +
-      '<a  href=' + referenceForGrid + ' class="button secondary_black small w-inline-block"><img src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eac771b4ceba51b7de8f544_grid-interface.svg" alt="Grid" class="switch-icon"><span class="hiddenOn767">Griglia</span></a>' +
-      '<a href=' + referenceForMap + ' class="button secondary_black small w-inline-block"><img src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eaab17abe49fe2613f58438_map.svg" alt="Map" class="switch-icon"><span class="hiddenOn767">Mappa</span></a>' +
+      '<a  href=' + referenceForGrid + ' class="button secondary_black small w-inline-block hiddenBelow767"><img src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eac771b4ceba51b7de8f544_grid-interface.svg" alt="Grid" class="switch-icon"><span class="hiddenOn767">Griglia</span></a>' +
+      '<a href=' + referenceForMap + ' class="button secondary_black small w-inline-block hiddenBelow767"><img src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eaab17abe49fe2613f58438_map.svg" alt="Map" class="switch-icon"><span class="hiddenOn767">Mappa</span></a>' +
+      '<a  href=' + referenceForGrid + ' class="button secondary_black small w-inline-block hiddenOver767"><img src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eac771b4ceba51b7de8f544_grid-interface.svg" alt="Grid" class="switch-icon"></a>' +
+      '<a href=' + referenceForMap + ' class="button secondary_black small w-inline-block hiddenOver767"><img src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eaab17abe49fe2613f58438_map.svg" alt="Map" class="switch-icon"></a>' +
       '</div>';
 
     $(selectorHome).html('<div class="containerFilterTopBar">' + leftFilter + '' + rightFilter + '</div>');
