@@ -1,6 +1,8 @@
 const CURRENT_URL_PARAMS = () => ({
   'CATEGORY': urlParams.get(URL_PARAMS.CATEGORY),
   'TRANSACTION_TYPE': urlParams.get(URL_PARAMS.TRANSACTION_TYPE),
+  'MAX_PRICE': 0,
+  'MIN_PRICE': 250,
 });
 
 const appendEventListener = () => {
@@ -50,7 +52,7 @@ const appendEventListener = () => {
 
   const sliderPrice = document.getElementById('slider-price');
   noUiSlider.create(sliderPrice, {
-    start: [minimumPrice, maximumPrice],
+    start: [CURRENT_URL_PARAMS().MIN_PRICE, CURRENT_URL_PARAMS().MAX_PRICE],
     connect: true,
     step: 1,
     tooltips: true,
@@ -81,18 +83,16 @@ const appendEventListener = () => {
   sliderPrice.noUiSlider.on('set.one', (values) => {
     // console.log("triggered")
     console.log(values)
-    minimumPrice = values[0];
-    maximumPrice = values[1];
+    const minimumPrice = values[0];
+    const maximumPrice = values[1];
     $("#minPrice").html(minimumPrice)
     $("#maxPrice").html(maximumPrice)
   });
 
   $("#removePrice").click(() => {
-    minimumPrice = 0;
-    maximumPrice = 250;
-    sliderPrice.noUiSlider.set([minimumPrice,maximumPrice]);
-    $("#minPrice").html(minimumPrice);
-    $("#maxPrice").html(maximumPrice);
+    sliderPrice.noUiSlider.set([0, 250]);
+    $("#minPrice").html(0);
+    $("#maxPrice").html(250);
   });
 }
 
