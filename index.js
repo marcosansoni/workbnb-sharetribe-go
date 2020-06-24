@@ -23,25 +23,12 @@ $(document).ready(() => {
       showDetailsNewListing(currentCategorySelected, currentKindReservation);
     }
 
-    // console.log("category", currentCategorySelected);
-    // console.log("kind", currentKindReservation);
-    // // console.log($(".send_button"))
-    // setTimeout(() => {
-    //   console.log($(".send_button"))
-    // }, 800);
-    // console.log("------------")
   } else {
     addDisplay(".new-listing-form");
     addDisplay("#selected-groups");
   }
 
   console.log("help")
-
-  $(".moreFilter").click(() => {
-    console.log("click")
-    addVisibility('.overlay');
-    $("body").css("overflow", "hidden");
-  });
 
 
   if (CHECK_PAGES[PAGES.LISTING_LIST] || CHECK_PAGES[PAGES.HOME]) {
@@ -121,7 +108,7 @@ $(document).ready(() => {
       removeDisplay(dropDownSelector);
     });
 
-    $("#moreFilter").click((e) => {
+    $(".moreFilter").click((e) => {
       addVisibility('.overlay');
     });
   } else {
