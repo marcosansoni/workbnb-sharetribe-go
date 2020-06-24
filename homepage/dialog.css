@@ -42,10 +42,6 @@
         width: auto
     }
 
-    .hiddenOnMobile{
-        display: none;
-    }
-
     .content{
         padding: 16px;
     }

@@ -63,6 +63,10 @@
     .moreFilter{
         max-width: 265px !important;
     }
+
+    .hiddenOnMobile{
+        display: none !important;
+    }
 }
 
 
