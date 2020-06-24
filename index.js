@@ -47,7 +47,6 @@ $(document).ready(() => {
     console.log("TUTTE LE INSERZIONI");
 
 
-
     createDialogFilterHomePage();
     // createDialogWithMoreFilterIntoHomePage();
 
@@ -70,6 +69,8 @@ $(document).ready(() => {
 
     const dropDownSelector = ".dropDown";
 
+    let isOpenDialog = {};
+
     $(".selectedDropDownText").click((e) => {
       const workbnbKey = $(e.target).attr("workbnb-key");
       const dropDownSelector = $('[workbnb-key="D' + workbnbKey + '"]');
@@ -77,14 +78,33 @@ $(document).ready(() => {
       console.log(workbnbKey)
       console.log(dropDownSelector)
 
-      const currentDisplay = $(dropDownSelector).css("display");
-      console.log(currentDisplay)
-      if (currentDisplay === 'none') {
+      // console.log(isOpenDialog && isOpenDialog[workbnbKey]);
+      console.log(isOpenDialog)
+      if (isOpenDialog && isOpenDialog[workbnbKey]) {
+        console.log("si apre")
+        removeDisplay(dropDownSelector);
+        isOpenDialog = {
+          ...isOpenDialog,
+          [workbnbKey]: false,
+        }
+      } else {
+        console.log("si chiude")
+        isOpenDialog = {
+          ...isOpenDialog,
+          [workbnbKey]: true,
+        }
         addDisplay(dropDownSelector);
         $(".dropDown").focus();
-      } else {
-        removeDisplay(dropDownSelector);
       }
+
+      const currentDisplay = $(dropDownSelector).css("display");
+      console.log(currentDisplay)
+      // if (currentDisplay === 'none') {
+      //   addDisplay(dropDownSelector);
+      //   $(".dropDown").focus();
+      // } else {
+      //   removeDisplay(dropDownSelector);
+      // }
     });
 
 
@@ -117,7 +137,7 @@ $(document).ready(() => {
     $("#moreFilter").click((e) => {
       addVisibility('.overlay');
     });
-  }else{
+  } else {
     resetOriginalCssForNotHomePage();
   }
 });
