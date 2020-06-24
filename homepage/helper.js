@@ -1,9 +1,9 @@
-const generateFilterWithDropDown = (currentType, items, key, defaultText, idRemove,) => {
+const generateFilterWithDropDown = (currentType, items, key, defaultText, hasRemove = true) => {
   return '<div class="containerDropDown hiddenOnMobile">' +
     generateDropDownButton(currentType, defaultText, items, key) +
     '<div class="dropDown" workbnb-key="D' + key + '" tabindex="-1">' +
     generatedDropDownItem(items, currentType, key) +
-    generateRemoveItem(currentType, key) +
+    hasRemove ? generateRemoveItem(currentType, key) : '' +
     '</div></div>'
 };
 
@@ -43,7 +43,7 @@ const generateFilterForLeftHomeBar = () => {
     // {id: TRANSACTION_TYPE.MONTHLY, name: VISUALIZED_TRANSACTION_TYPE[TRANSACTION_TYPE.MONTHLY]},
   ];
 
-  const transactionDropDown = generateFilterWithDropDown(currentTransactionType, itemsTransactionType, 'transaction_type', 'Tipo di Prenotazione');
+  const transactionDropDown = generateFilterWithDropDown(currentTransactionType, itemsTransactionType, 'transaction_type', 'Tipo di Prenotazione', false);
 
   // Category
   //Get the category current key
