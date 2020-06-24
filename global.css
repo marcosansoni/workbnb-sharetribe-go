@@ -266,6 +266,7 @@ ul li label .icon-box .fa {
     box-shadow: none;
     border-radius: 0;
     border: 0 !important;
+    justify-content: flex-start !important;
 }
 
 .selectDropDown:hover{
