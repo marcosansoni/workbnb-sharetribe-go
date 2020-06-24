@@ -45,11 +45,14 @@ const dialogFilterHomePage = '<div class="overlay">\n' +
   '                </g>\n' +
   '            </svg>\n' +
   '        </div>\n' +
-  '        <h3 class="headerDialog">\n' +
+  '        <h3 class="headerDialog hiddenOnMobile">\n' +
   '            Più filtri\n' +
   '        </h3>\n' +
+  '        <h3 class="headerDialog hiddenOverMobile">\n' +
+  '            Filtra tra i risultati\n' +
+  '        </h3>\n' +
   '        <div class="content">\n' +
-  '            <div class="sectionDialog" style="padding-bottom: 0">\n' +
+  '            <div class="sectionDialog hiddenOverMobile" style="padding-bottom: 0">\n' +
   '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
   '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Categoria</h4>\n' +
   '                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi categoria</h5>\n' +
@@ -117,7 +120,7 @@ const dialogFilterHomePage = '<div class="overlay">\n' +
   '                    </li>\n' +
   '                </ul>\n' +
   '            </div>\n' +
-  '            <div class="sectionDialog" style="padding-bottom: 0">\n' +
+  '            <div class="sectionDialog hiddenOverMobile" style="padding-bottom: 0">\n' +
   '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
   '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Tipo di prenotazione</h4>\n' +
   '                </div>\n' +
@@ -251,6 +254,7 @@ const dialogFilterHomePage = '<div class="overlay">\n' +
   // '                    </div>\n' +
   // '                </div>\n' +
   // '            </div>\n' +
+  '        <span>Altri filtri</span>\n' +
   '        </div>\n' +
   '        <div class="footerDialog">\n' +
   '            <div\n' +
