@@ -223,7 +223,7 @@ const appendEventListener = () => {
 
     console.log(urlParams.toString())
 
-    window.location.href = ROOT + "?" + urlParams.toString();
+    // window.location.href = ROOT + "?" + urlParams.toString();
   });
 
 
