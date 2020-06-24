@@ -75,36 +75,20 @@ $(document).ready(() => {
       const workbnbKey = $(e.target).attr("workbnb-key");
       const dropDownSelector = $('[workbnb-key="D' + workbnbKey + '"]');
 
-      console.log(workbnbKey)
-      console.log(dropDownSelector)
-
-      // console.log(isOpenDialog && isOpenDialog[workbnbKey]);
-      console.log(isOpenDialog)
       if (isOpenDialog && isOpenDialog[workbnbKey]) {
-        console.log("si apre")
         removeDisplay(dropDownSelector);
         isOpenDialog = {
           ...isOpenDialog,
           [workbnbKey]: false,
         }
       } else {
-        console.log("si chiude")
         isOpenDialog = {
           ...isOpenDialog,
           [workbnbKey]: true,
-        }
+        };
         addDisplay(dropDownSelector);
         $(".dropDown").focus();
       }
-
-      const currentDisplay = $(dropDownSelector).css("display");
-      console.log(currentDisplay)
-      // if (currentDisplay === 'none') {
-      //   addDisplay(dropDownSelector);
-      //   $(".dropDown").focus();
-      // } else {
-      //   removeDisplay(dropDownSelector);
-      // }
     });
 
 
