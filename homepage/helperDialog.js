@@ -3,6 +3,10 @@ const CURRENT_URL_PARAMS = () => ({
   'TRANSACTION_TYPE': urlParams.get(URL_PARAMS.TRANSACTION_TYPE),
   'MAX_PRICE': 250,
   'MIN_PRICE': 0,
+  'MIN_DOWNLOAD': 10,
+  'MAX_DOWNLOAD': 1000,
+  'MIN_UPLOAD': 10,
+  'MAX_UPLOAD': 1000,
 });
 
 const appendEventListener = () => {
@@ -50,6 +54,7 @@ const appendEventListener = () => {
     console.log("Click on apply")
   });
 
+  // Slider price
   const sliderPrice = document.getElementById('slider-price');
   noUiSlider.create(sliderPrice, {
     start: [CURRENT_URL_PARAMS().MIN_PRICE, CURRENT_URL_PARAMS().MAX_PRICE],
@@ -78,6 +83,69 @@ const appendEventListener = () => {
     sliderPrice.noUiSlider.set([0, 250]);
     $("#minPrice").html(0);
     $("#maxPrice").html(250);
+  });
+
+  //Slider download
+  const sliderDown = document.getElementById('slider-down');
+  noUiSlider.create(sliderDown, {
+    start: [CURRENT_URL_PARAMS().MIN_DOWNLOAD, CURRENT_URL_PARAMS().MAX_DOWNLOAD],
+    connect: true,
+    step: 1,
+    tooltips: true,
+    orientation: 'horizontal', // 'horizontal' or 'vertical'
+    range: {
+      'min': 10,
+      'max': 1000,
+    },
+    format: wNumb({
+      decimals: 0
+    })
+  });
+
+  sliderDown.noUiSlider.on('set.one', (values) => {
+    const min = values[0];
+    const max = values[1];
+    $("#minDown").html(min)
+    $("#maxDown").html(max)
+  });
+
+  $("#removeDown").click(() => {
+    const min = 10;
+    const max = 1000;
+    sliderDown.noUiSlider.set([min, max]);
+    $("#minDown").html(min);
+    $("#maxDown").html(max);
+  });
+
+  //Upload
+  const sliderUp = document.getElementById('slider-up');
+  noUiSlider.create(sliderUp, {
+    start: [CURRENT_URL_PARAMS().MIN_UPLOAD, CURRENT_URL_PARAMS().MAX_UPLOAD],
+    connect: true,
+    step: 1,
+    tooltips: true,
+    orientation: 'horizontal', // 'horizontal' or 'vertical'
+    range: {
+      'min': 10,
+      'max': 1000
+    },
+    format: wNumb({
+      decimals: 0
+    })
+  });
+  sliderUp.noUiSlider.on('set.one', (values) => {
+    const min = 10;
+    const max = 1000;
+    $("#minUp").html(min)
+    $("#maxUp").html(max)
+  });
+
+  $("#removeUp").click(() => {
+    const min = 10;
+    const max = 1000;
+    sliderUp.noUiSlider.set([min, max]);
+    $("#minUp").html(min);
+    $("#maxUp").html(max);
   });
 }
 

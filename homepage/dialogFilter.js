@@ -2,6 +2,10 @@ const dialogFilterHomePage =
   ({
      minimumPrice = 0,
      maximumPrice = 250,
+     minimumDown = 10,
+     maximumDown = 1000,
+     minimumUp = 10,
+     maximumUp = 1000,
    }) => (
     '<div class="overlay">\n' +
     '    <div class="dialog">\n' +
@@ -165,7 +169,7 @@ const dialogFilterHomePage =
     '                    </li>\n' +
     '                </ul>\n' +
     '            </div>\n ' +
-    '            <div class="sectionDialog">\n' +
+    '             <div class="sectionDialog">\n' +
     '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
     '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Prezzo</h4>\n' +
     '                    <h5 style="cursor: pointer" id="removePrice">Reset</h5>\n' +
@@ -174,11 +178,45 @@ const dialogFilterHomePage =
     '                    <div id="slider-price"></div>\n' +
     '                </div>\n' +
     '                <div class="containerResultSection">\n' +
-    '                    <div style="display: flex">\n' +
-    '                        <h4>Prezzo minimo: </h4><span id="minPrice">' + minimumPrice + '</span><span>€</span>\n' +
+    '                    <div class="containerMinimum">\n' +
+    '                        <h5>Prezzo minimo: </h5><span id="minPrice">' + minimumPrice + '</span><span>€</span>\n' +
     '                    </div>\n' +
-    '                    <div style="display: flex">\n' +
-    '                        <h4>Prezzo massimo: </h4><span id="maxPrice">' + maximumPrice + '</span><span>€</span>\n' +
+    '                    <div class="containerMaximum">\n' +
+    '                        <h5>Prezzo massimo: </h5><span id="maxPrice">' + maximumPrice + '</span><span>€</span>\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '            <div class="sectionDialog">\n' +
+    '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
+    '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Internet Download (Mbps)</h4>\n' +
+    '                    <h5 style="cursor: pointer" id="removeDown">Reset</h5>\n' +
+    '                </div>\n' +
+    '                <div class="container-slider">\n' +
+    '                    <div id="slider-down"></div>\n' +
+    '                </div>\n' +
+    '                <div class="containerResultSection">\n' +
+    '                    <div class="containerMinimum">\n' +
+    '                        <h5>Download minimo: </h5><span id="minDown">' + minimumDown + '</span><span>Mbps</span>\n' +
+    '                    </div>\n' +
+    '                    <div class="containerMaximum">\n' +
+    '                        <h5>Download massimo: </h5><span id="maxDown">' + maximumDown + '</span><span>Mbps</span>\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '            <div class="sectionDialog">\n' +
+    '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
+    '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Internet Upload (Mbps)</h4>\n' +
+    '                    <h5 style="cursor: pointer" id="removeUp">Reset</h5>\n' +
+    '                </div>\n' +
+    '                <div class="container-slider">\n' +
+    '                    <div id="slider-up"></div>\n' +
+    '                </div>\n' +
+    '                <div class="containerResultSection">\n' +
+    '                    <div class="containerMinimum">\n' +
+    '                        <h5>Upload minimo: </h5><span id="minUp">' + minimumUp + '</span><span>Mbps</span>\n' +
+    '                    </div>\n' +
+    '                    <div class="containerMaximum">\n' +
+    '                        <h5>Upload massimo: </h5><span id="maxUp">' + maximumUp + '</span><span>Mbps</span>\n' +
     '                    </div>\n' +
     '                </div>\n' +
     '            </div>' +

@@ -218,6 +218,13 @@ const createDialogFilterHomePage = () => {
   let currentMinimumPrice = CURRENT_URL_PARAMS().MIN_PRICE;
   let currentMaximumPrice = CURRENT_URL_PARAMS().MAX_PRICE;
 
+  let currentMinimumDown = CURRENT_URL_PARAMS().MIN_DOWNLOAD;
+  let currentMaximumDown = CURRENT_URL_PARAMS().MAX_DOWNLOAD;
+
+  let currentMinimumUp = CURRENT_URL_PARAMS().MIN_UPLOAD;
+  let currentMaximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
+
+
   if (currentCategory) {
     $("#category-" + currentCategory).prop("checked", true);
   }
@@ -229,6 +236,10 @@ const createDialogFilterHomePage = () => {
   $("body").append(dialogFilterHomePage({
     maximumPrice: currentMaximumPrice,
     minimumPrice: currentMinimumPrice,
+    minimumUp: currentMinimumUp,
+    maximumUp: currentMaximumUp,
+    minimumDown: currentMinimumDown,
+    maximumDown: currentMaximumDown,
   }))
 
 };

@@ -151,8 +151,8 @@
 .containerResultSection span {
     margin-top: -2px;
     margin-left: 6px;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 ul {
@@ -253,4 +253,27 @@ ul li label .icon-box .fa {
     letter-spacing: 0.2px;
     color: #222222;
     border-radius: 8px;
+}
+
+
+.containerMinimum{
+    display: flex;
+    align-items: center;
+    padding-right: 48px;
+}
+
+.containerMaximum{
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+}
+
+@media screen and (max-width: 500px) {
+    .containerMinimum{
+        padding-right: 24px;
+    }
+
+    .containerMaximum{
+        padding-left: 24px;
+    }
 }
