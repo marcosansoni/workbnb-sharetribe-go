@@ -134,8 +134,8 @@ const appendEventListener = () => {
     })
   });
   sliderUp.noUiSlider.on('set.one', (values) => {
-    const min = 10;
-    const max = 1000;
+    const min = values[0];
+    const max = values[1];
     $("#minUp").html(min)
     $("#maxUp").html(max)
   });
