@@ -1,8 +1,8 @@
 const CURRENT_URL_PARAMS = () => ({
   'CATEGORY': urlParams.get(URL_PARAMS.CATEGORY),
   'TRANSACTION_TYPE': urlParams.get(URL_PARAMS.TRANSACTION_TYPE),
-  'MAX_PRICE': 0,
-  'MIN_PRICE': 250,
+  'MAX_PRICE': 250,
+  'MIN_PRICE': 0,
 });
 
 const appendEventListener = () => {
@@ -56,7 +56,6 @@ const appendEventListener = () => {
     connect: true,
     step: 1,
     tooltips: true,
-    // tooltips: [false, wNumb({decimals: 1}), true],
     orientation: 'horizontal', // 'horizontal' or 'vertical'
     range: {
       'min': 0,
@@ -65,28 +64,14 @@ const appendEventListener = () => {
     format: wNumb({
       decimals: 0
     })
-    // start: [0, 90],
-    // step: 30,
-    // range: {
-    //   'min': 0,
-    //   'max': 210
-    // },
-    // pips: {
-    //   mode: 'steps',
-    //   density: 3,
-    //   format: wNumb({
-    //     decimals: 2,
-    //     prefix: '€'
-    //   })
-    // }
   });
+
   sliderPrice.noUiSlider.on('set.one', (values) => {
-    // console.log("triggered")
     console.log(values)
     const minimumPrice = values[0];
     const maximumPrice = values[1];
-    $("#minPrice").html(minimumPrice)
-    $("#maxPrice").html(maximumPrice)
+    $("#minPrice").html(minimumPrice);
+    $("#maxPrice").html(maximumPrice);
   });
 
   $("#removePrice").click(() => {
