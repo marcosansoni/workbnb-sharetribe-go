@@ -28,6 +28,7 @@ let maximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
 let currentSelectedFilter = [];
 
 let colazione = CURRENT_URL_PARAMS().COLAZIONE;
+let parcheggio = CURRENT_URL_PARAMS().PARCHEGGIO;
 
 //
 // console.log(minimumDown)
@@ -56,6 +57,13 @@ const setFilter = (filter, type) => {
   }
 };
 
+const setDefault = (urlParams, id) => {
+  if (parcheggio) {
+    $("#filter-parking").prop("checked", true);
+    $("#filter-parking").attr("checked", true);
+  }
+}
+
 const selectDefaultItemFromURL = () => {
 
   //Default category selected
@@ -66,7 +74,10 @@ const selectDefaultItemFromURL = () => {
   $("#listing-type-" + currentListingType).prop("checked", true);
   $("#listing-type-" + currentListingType).attr("checked", true);
 
-}
+  // Amenities List
+  setDefault(parcheggio, 'filter-parking');
+
+};
 
 
 const appendEventListener = () => {
