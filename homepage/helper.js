@@ -3,7 +3,7 @@ const generateFilterWithDropDown = (currentType, items, key, defaultText, hasRem
     generateDropDownButton(currentType, defaultText, items, key) +
     '<div class="dropDown" workbnb-key="D' + key + '" tabindex="-1">' +
     generatedDropDownItem(items, currentType, key) +
-    hasRemove ? generateRemoveItem(currentType, key) : '' +
+    generateRemoveItem(currentType, key, hasRemove)  +
     '</div></div>'
 };
 
@@ -25,7 +25,10 @@ const generateDropDownButton = (selectedId, defaultText, items, key) => {
     'class="selectedDropDownText button secondary_black small w-inline-block" style="' + (isSelected ? "border: 1px solid #222222" : "") + '"> ' + textToShow + ' </div>';
 };
 
-const generateRemoveItem = (selectedId, key) => {
+const generateRemoveItem = (selectedId, key, hasRemove) => {
+  if(!hasRemove){
+    return '';
+  }
   return selectedId !== null ? '<div class="separator"></div>' +
     '<div class="selectDropDown removeSelectDropdown" workbnb-key="I' + key + '" id="remove">Rimuovi Filtro </div>' : '';
 };
