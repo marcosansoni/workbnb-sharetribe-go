@@ -220,8 +220,7 @@ const dialogFilterHomePage =
     '                    </div>\n' +
     '                </div>\n' +
     '            </div>' +
-    '        </div>\n' +
-    '        <div class="sectionDialog" style="padding-bottom: 0">\n' +
+    '<div class="sectionDialog" style="padding-bottom: 0">\n' +
     '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
     '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Servizi</h4>\n' +
     '                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi servizi</h5>\n' +
@@ -300,6 +299,7 @@ const dialogFilterHomePage =
     '                </ul>\n' +
     '                <span class="caption" style="padding-bottom: 16px">I servizi differiscono in base alla categoria selezionata</span>\n' +
     '            </div>' +
+    '        </div>\n' +
     '        <div class="footerDialog">\n' +
     '            <div\n' +
     '                    class="button secondary_black small w-inline-block cancelButton"\n' +
