@@ -220,6 +220,10 @@ const appendEventListener = () => {
     urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
 
     parseAmenitiesForURL();
+
+    console.log(urlParams.toString())
+
+    window.location.href = ROOT + "?" + urlParams.toString();
   });
 
 
