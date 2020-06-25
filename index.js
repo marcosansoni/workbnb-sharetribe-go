@@ -113,6 +113,7 @@ $(document).ready(() => {
     $(".moreFilter").click((e) => {
       console.log("temp")
       addVisibility('.overlay');
+      $("body").css("overflow","hidden");
     });
   } else {
     resetOriginalCssForNotHomePage();

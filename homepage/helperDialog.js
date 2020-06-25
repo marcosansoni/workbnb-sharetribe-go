@@ -196,6 +196,7 @@ const appendEventListener = () => {
   $("#closeDialog").click(() => {
     console.log("closeDialog")
     removeVisibility('.overlay');
+    $("body").css("overflow","auto");
   });
 
 
@@ -368,6 +369,7 @@ const appendEventListener = () => {
 
   $(".cancelButton").click(() => {
     removeVisibility('.overlay');
+    $("body").css("overflow","auto");
     //servizi
     $(".filter-general").attr('checked', false);
     currentSelectedFilter = [];
@@ -396,6 +398,7 @@ const appendEventListener = () => {
 
   $(".applyButton").click(() => {
     removeVisibility('.overlay');
+    $("body").css("overflow","auto");
 
     urlParams.delete(URL_PARAMS.CATEGORY);
     urlParams.delete(URL_PARAMS.LISTING_SHAPE);
@@ -410,7 +413,7 @@ const appendEventListener = () => {
 
     generateURL();
 
-    console.log(urlParams.toString())
+    console.log(urlParams.toString());
 
     window.location.href = ROOT + "?" + urlParams.toString();
   });
