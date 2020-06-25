@@ -139,6 +139,6 @@ $(document).ready(() => {
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
-    "  </footer>")
-});
+    "  </footer>");
+  
 });
