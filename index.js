@@ -118,4 +118,27 @@ $(document).ready(() => {
   } else {
     resetOriginalCssForNotHomePage();
   }
+
+  //Everywhere footer
+  $("#sidewinder-wrapper").append("<footer id=\"footer\" class=\"footer\">\n" +
+    "    <div class=\"container w-container\">\n" +
+    "      <div class=\"footer-flex-container\">\n" +
+    "        <div class=\"footer-links-wrapper\">\n" +
+    "          <div>\n" +
+    "            <h2 class=\"footer-heading\">Assistenza</h2>\n" +
+    "            <ul class=\"w-list-unstyled\">\n" +
+    "              <li><a href=\"mailto:ciao@workbnb.io?subject=Ciao%20workbnb%20%F0%9F%91%8B\" class=\"footer-link\">Contattaci</a><a href=\"https://workbnb.io/lungo-termine\" class=\"footer-link\" target=\"_blank\">Lungo termine</a></li>\n" +
+    "            </ul><a href=\"https://workbnb.io/host\" target=\"_blank\" class=\"footer-link\">Diventa un host</a></div>\n" +
+    "        </div><a href=\"https://workbnb.io\" target=\"_blank\" aria-current=\"page\" class=\"footer-logo-link w-inline-block w--current\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5e9c32ab88adf76b8cb60de9_H_Logotype_White.svg\" alt=\"\" class=\"image\"></a></div>\n" +
+    "      <div class=\"footer-last-wrapper\">\n" +
+    "        <div class=\"w-layout-grid grid-socials\"><a href=\"https://www.facebook.com/workbnb\" class=\"footer-social-icon w-inline-block\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5ea6ac58c07d782051424641_logo-facebook_white.svg\" alt=\"\"></a><a id=\"w-node-8ee847943669-47943648\" href=\"https://www.instagram.com/workbnb.io/\" class=\"footer-social-icon w-inline-block\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5ea6ac588ad6b679c09f652c_logo-instagram_white.svg\" alt=\"\"></a><a id=\"w-node-8ee84794366b-47943648\" href=\"https://www.linkedin.com/company/workbnb-io\" class=\"footer-social-icon w-inline-block\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5ea6ac58d3a80f969bd1682e_logo-linkedin_white.svg\" alt=\"\"></a></div>\n" +
+    "        <div class=\"spacing_24\"></div>\n" +
+    "        <div class=\"privacy-wrapper\">\n" +
+    "          <div class=\"diritti-text\">© 2020 workbnb</div>\n" +
+    "          <div class=\"iubenda-wrapper\"><a href=\"#\" class=\"iubenda-link\">Privacy</a><a href=\"#\" class=\"iubenda-link\">Termini</a><a href=\"#\" class=\"iubenda-link\">Cookies</a></div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </footer>")
+});
 });
