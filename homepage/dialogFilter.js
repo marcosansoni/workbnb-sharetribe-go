@@ -226,7 +226,7 @@ const dialogFilterHomePage =
     '                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi servizi</h5>\n' +
     '                </div>\n' +
     '                <ul>\n' +
-    '                    <li>\n' +
+    '<li>\n' +
     '                        <label>\n' +
     '                            <input type="checkbox" name="filter-cancelleria" id="filter-cancelleria"\n' +
     '                                   class="filter-general">\n' +
@@ -296,6 +296,371 @@ const dialogFilterHomePage =
     '                            </div>\n' +
     '                        </label>\n' +
     '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-self-check-in" id="filter-self-check-in"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028916c4e21085c38eea0_lock-orientation.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Self Check-in\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-zona-relax" id="filter-zona-relax"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028c03485d1184acb1d1b_armchair.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Zona Relax\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-sedia-ergonomica" id="filter-sedia-ergonomica"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028f53d071410f534ea19_chair.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Sedia Ergonomica\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-igienizzazione" id="filter-igienizzazione"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0291095c521e0c94e6741_spray-2.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Igienizzazione Professionale\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-bevande" id="filter-bevande"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029c41030ea7701d72846_tea.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Bevande Calde\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-colazione" id="filter-colazione"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029ec0a8b57fe90df8402_croissant.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Colazione\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-minibar" id="filter-minibar"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02a5690c334389a7679a5_bottle.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Minibar\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-bici" id="filter-bici"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03df23485d193adcbcf17_bike.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Deposito Bici\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-spazio-esterno" id="filter-spazio-esterno"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03e4dbe784a9b0354ba5e_park.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Spazio Esterno\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-cucina" id="filter-cucina"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03ec690c33422d17753dc_pan.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Cucina\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-aria" id="filter-aria"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/aria_condizionata.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Aria Condizionata\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-riscaldamento" id="filter-riscaldamento"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/riscaldamento.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Riscaldamento\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-piscina" id="filter-piscina"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/piscina.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Piscina\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-bar" id="filter-bar"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/bar.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Bar\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-fitness" id="filter-fitness"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/centro_fitness.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Centro Fitness\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-honesty" id="filter-honesty"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/honesty_bar.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Honesty Bar\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '                    <li>\n' +
+    '                        <label>\n' +
+    '                            <input type="checkbox" name="filter-elettrici" id="filter-elettrici"\n' +
+    '                                   class="filter-general">\n' +
+    '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    '                                 style="padding: 8px">\n' +
+    '                                <img\n' +
+    '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/ricarica_auto_elettriche.svg"\n' +
+    '                                        style="margin-right: 8px"\n' +
+    '                                />\n' +
+    '                                Colonnine di Ricarica\n' +
+    '                            </div>\n' +
+    '                        </label>\n' +
+    '                    </li>\n' +
+    '<!--                    Da qui iniziano i filtri custom per categoria-->\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-docce" id="filter-docce"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/doccia.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Doccia\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-ristorazione" id="filter-ristorazione"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/sala_ristorazione.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Sala Ristorazione\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-deposito" id="filter-deposito"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/deposito.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Deposito\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-finestrata" id="filter-finestrata"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/Finestra.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Postazione Finestrata\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-audio" id="filter-audio"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/impianto_audio.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Impianto Audio\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-lavagna" id="filter-lavagna"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/lavagna.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Lavagna Interattiva\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-microfono" id="filter-microfono"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/microfono.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Microfono\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-proiettore" id="filter-proiettore"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/proiettore.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Proiettore\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>\n' +
+    // '                    <li>\n' +
+    // '                        <label>\n' +
+    // '                            <input type="checkbox" name="filter-allattamento" id="filter-allattamento"\n' +
+    // '                                   class="filter-general">\n' +
+    // '                            <div class="button secondary_black small w-inline-block icon-box-text"\n' +
+    // '                                 style="padding: 8px">\n' +
+    // '                                <img\n' +
+    // '                                        src="https://marcosansoni.github.io/workbnb-sharetribe-go/assets/sala_allattamento.svg"\n' +
+    // '                                        style="margin-right: 8px"\n' +
+    // '                                />\n' +
+    // '                                Sala Allattamento\n' +
+    // '                            </div>\n' +
+    // '                        </label>\n' +
+    // '                    </li>' +
     '                </ul>\n' +
     '                <span class="caption" style="padding-bottom: 16px">I servizi differiscono in base alla categoria selezionata</span>\n' +
     '            </div>' +

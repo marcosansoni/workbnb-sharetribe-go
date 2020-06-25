@@ -9,6 +9,37 @@ const CURRENT_URL_PARAMS = () => ({
   'MAX_UPLOAD': urlParams.get(FILTER.MAX_UPLOAD) || 1000,
   'COLAZIONE': urlParams.get(FILTER.COLAZIONE) || null,
   'PARCHEGGIO': urlParams.get(FILTER.PARCHEGGIO) || null,
+  'CANCELLERIA': urlParams.get(FILTER.CANCELLERIA) || null,
+  'PARCHEGGIO': urlParams.get(FILTER.PARCHEGGIO) || null,
+  'PET_FRIENDLY': urlParams.get(FILTER.PET_FRIENDLY) || null,
+  'MONITOR': urlParams.get(FILTER.MONITOR) || null,
+  'STAMPANTE': urlParams.get(FILTER.STAMPANTE) || null,
+  'SELF': urlParams.get(FILTER.SELF) || null,
+  'ZONA_RELAX': urlParams.get(FILTER.ZONA_RELAX) || null,
+  'SEDIA_ERGONOMICA': urlParams.get(FILTER.SEDIA_ERGONOMICA) || null,
+  'IGIENIZZAZIONE': urlParams.get(FILTER.IGIENIZZAZIONE) || null,
+  'BEVANDE': urlParams.get(FILTER.BEVANDE) || null,
+  'MINIBAR': urlParams.get(FILTER.MINIBAR) || null,
+  'BICI': urlParams.get(FILTER.BICI) || null,
+  'SPAZIO_ESTERNO': urlParams.get(FILTER.SPAZIO_ESTERNO) || null,
+  'CUCINA': urlParams.get(FILTER.CUCINA) || null,
+  'ARIA': urlParams.get(FILTER.ARIA) || null,
+  'RISCALDAMENTO': urlParams.get(FILTER.RISCALDAMENTO) || null,
+  'PISCINA': urlParams.get(FILTER.PISCINA) || null,
+  'BAR': urlParams.get(FILTER.BAR) || null,
+  'FITNESS': urlParams.get(FILTER.FITNESS) || null,
+  'HONESTY_BAR': urlParams.get(FILTER.HONESTY_BAR) || null,
+  'RICARICA': urlParams.get(FILTER.RICARICA) || null,
+  'DOCCIA': urlParams.get(FILTER.DOCCIA) || null,
+  'RISTORAZIONE': urlParams.get(FILTER.RISTORAZIONE) || null,
+  'DEPOSITO': urlParams.get(FILTER.DEPOSITO) || null,
+  'POSTAZIONE_FINESTRATA': urlParams.get(FILTER.POSTAZIONE_FINESTRATA) || null,
+  'IMPIANTO': urlParams.get(FILTER.IMPIANTO) || null,
+  'LAVAGNA': urlParams.get(FILTER.LAVAGNA) || null,
+  'MICROFONO': urlParams.get(FILTER.MICROFONO) || null,
+  'PROIETTORE': urlParams.get(FILTER.PROIETTORE) || null,
+  'ALLATTAMENTO': urlParams.get(FILTER.ALLATTAMENTO) || null,
+
 });
 
 let currentCategory = CURRENT_URL_PARAMS().CATEGORY;
@@ -29,12 +60,37 @@ let currentSelectedFilter = [];
 
 let colazione = CURRENT_URL_PARAMS().COLAZIONE;
 let parcheggio = CURRENT_URL_PARAMS().PARCHEGGIO;
+let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
+let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
+let monitor = CURRENT_URL_PARAMS().MONITOR;
+let stampante = CURRENT_URL_PARAMS().STAMPANTE;
+let self = CURRENT_URL_PARAMS().SELF;
+let zona_relax = CURRENT_URL_PARAMS().ZONA_RELAX;
+let sedia = CURRENT_URL_PARAMS().SEDIA_ERGONOMICA;
+let igienizzazione = CURRENT_URL_PARAMS().IGIENIZZAZIONE;
+let bevande = CURRENT_URL_PARAMS().BEVANDE;
+let minibar = CURRENT_URL_PARAMS().MINIBAR;
+let bici = CURRENT_URL_PARAMS().BICI;
+let spazio_esterno = CURRENT_URL_PARAMS().SPAZIO_ESTERNO;
+let cucina = CURRENT_URL_PARAMS().CUCINA;
+let aria = CURRENT_URL_PARAMS().ARIA;
+let riscaldamento = CURRENT_URL_PARAMS().RISCALDAMENTO;
+let piscina = CURRENT_URL_PARAMS().PISCINA;
+let bar = CURRENT_URL_PARAMS().BAR;
+let fitness = CURRENT_URL_PARAMS().FITNESS;
+let honesty = CURRENT_URL_PARAMS().HONESTY_BAR;
+let ricarica = CURRENT_URL_PARAMS().RICARICA;
+let doccia = CURRENT_URL_PARAMS().DOCCIA;
+let ristorazione = CURRENT_URL_PARAMS().RISTORAZIONE;
+let deposito = CURRENT_URL_PARAMS().DEPOSITO;
+let postazione = CURRENT_URL_PARAMS().POSTAZIONE_FINESTRATA;
+let impianto = CURRENT_URL_PARAMS().IMPIANTO;
+let lavagna = CURRENT_URL_PARAMS().LAVAGNA;
+let microfono = CURRENT_URL_PARAMS().MICROFONO;
+let proiettore = CURRENT_URL_PARAMS().PROIETTORE;
+let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
 
-//
-// console.log(minimumDown)
-// console.log(maximumDown)
-// console.log(minimumUp)
-// console.log(maximumUp)
+
 
 const setFilter = (filter, type) => {
 
@@ -57,10 +113,14 @@ const setFilter = (filter, type) => {
   }
 };
 
-const setDefault = (urlParams, id) => {
-  if (parcheggio) {
-    $("#filter-parking").prop("checked", true);
-    $("#filter-parking").attr("checked", true);
+const setDefault = (value, id) => {
+  if (value) {
+    $("#" + id).prop("checked", true);
+    $("#" + id).attr("checked", true);
+    currentSelectedFilter = [
+      ...currentSelectedFilter,
+      id,
+    ];
   }
 }
 
@@ -75,7 +135,6 @@ const selectDefaultItemFromURL = () => {
   $("#listing-type-" + currentListingType).attr("checked", true);
 
   // Amenities List
-  console.log(parcheggio)
   setDefault(parcheggio, 'filter-parking');
 
 };
