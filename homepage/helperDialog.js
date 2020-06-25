@@ -91,7 +91,6 @@ let proiettore = CURRENT_URL_PARAMS().PROIETTORE;
 let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
 
 
-
 const setFilter = (filter, type) => {
 
   const hasToBeAdded = currentSelectedFilter.includes(filter);
@@ -136,26 +135,26 @@ const selectDefaultItemFromURL = () => {
 
   // Amenities List
   setDefault(parcheggio, 'filter-parking');
-  setDefault(cancelleria,'filter-cancelleria');
-  setDefault(pet,'filter-pet-friendly');
-  setDefault(stampante,'filter-stampante');
-  setDefault(self,'filter-self-check-in');
-  setDefault(zona_relax,'filter-zona-relax');
-  setDefault(sedia,'filter-sedia-ergonomica');
-  setDefault(igienizzazione,'filter-igienizzazione');
-  setDefault(bevande,'filter-bevande');
-  setDefault(colazione,'filter-colazione');
-  setDefault(minibar,'filter-minibar');
-  setDefault(bici,'filter-bici');
-  setDefault(spazio_esterno,'filter-spazio-esterno');
-  setDefault(cucina,'filter-cucina');
-  setDefault(aria,'filter-aria');
-  setDefault(riscaldamento,'filter-riscaldamento');
-  setDefault(piscina,'filter-piscina');
-  setDefault(bar,'filter-bar');
-  setDefault(fitness,'filter-fitness');
-  setDefault(honesty,'filter-honesty');
-  setDefault(ricarica,'filter-elettrici');
+  setDefault(cancelleria, 'filter-cancelleria');
+  setDefault(pet, 'filter-pet-friendly');
+  setDefault(stampante, 'filter-stampante');
+  setDefault(self, 'filter-self-check-in');
+  setDefault(zona_relax, 'filter-zona-relax');
+  setDefault(sedia, 'filter-sedia-ergonomica');
+  setDefault(igienizzazione, 'filter-igienizzazione');
+  setDefault(bevande, 'filter-bevande');
+  setDefault(colazione, 'filter-colazione');
+  setDefault(minibar, 'filter-minibar');
+  setDefault(bici, 'filter-bici');
+  setDefault(spazio_esterno, 'filter-spazio-esterno');
+  setDefault(cucina, 'filter-cucina');
+  setDefault(aria, 'filter-aria');
+  setDefault(riscaldamento, 'filter-riscaldamento');
+  setDefault(piscina, 'filter-piscina');
+  setDefault(bar, 'filter-bar');
+  setDefault(fitness, 'filter-fitness');
+  setDefault(honesty, 'filter-honesty');
+  setDefault(ricarica, 'filter-elettrici');
 
 };
 
@@ -296,10 +295,11 @@ const appendEventListener = () => {
   });
 
   $("#removeServizi").click(() => {
+    console.log("removed servizi")
     $(".filter-general").attr('checked', false);
     currentSelectedFilter = [];
   });
-  
+
 
   $("input").change((e) => {
 
