@@ -344,20 +344,7 @@ const appendEventListener = () => {
     setFilter('filter-elettrici', 'RICARICA');
   };
 
-  $(".applyButton").click(() => {
-    removeVisibility('.overlay');
-
-    urlParams.delete(URL_PARAMS.CATEGORY);
-    urlParams.delete(URL_PARAMS.LISTING_SHAPE);
-
-    if (currentCategory) {
-      urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
-    }
-
-    if (currentListingType) {
-      urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
-    }
-
+  const generateURL = () => {
     // Price
     urlParams.delete(FILTER.MIN_PRICE);
     urlParams.set(FILTER.MIN_PRICE, minimumPrice);
@@ -377,10 +364,55 @@ const appendEventListener = () => {
     urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
 
     parseAmenitiesForURL();
+  }
+
+  $(".cancelButton").click(() => {
+    removeVisibility('.overlay');
+    //servizi
+    $(".filter-general").attr('checked', false);
+    currentSelectedFilter = [];
+    // Upload
+    minimumUp = 10;
+    maximumUp = 1000;
+    sliderUp.noUiSlider.set([min, max]);
+    $("#minUp").html(minimumUp);
+    $("#maxUp").html(maximumUp);
+    // Download
+    minimumDown = 10;
+    maximumDown = 1000;
+    sliderDown.noUiSlider.set([min, max]);
+    $("#minDown").html(minimumDown);
+    $("#maxDown").html(maximumDown);
+    //Price
+    minimumPrice = 0;
+    maximumPrice = 250;
+    sliderPrice.noUiSlider.set([0, 250]);
+    $("#minPrice").html(0);
+    $("#maxPrice").html(250);
+
+    generateURL();
+    window.location.href = ROOT + "?" + urlParams.toString();
+  })
+
+  $(".applyButton").click(() => {
+    removeVisibility('.overlay');
+
+    urlParams.delete(URL_PARAMS.CATEGORY);
+    urlParams.delete(URL_PARAMS.LISTING_SHAPE);
+
+    if (currentCategory) {
+      urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
+    }
+
+    if (currentListingType) {
+      urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
+    }
+
+    generateURL();
 
     console.log(urlParams.toString())
 
-    // window.location.href = ROOT + "?" + urlParams.toString();
+    window.location.href = ROOT + "?" + urlParams.toString();
   });
 
 
