@@ -223,7 +223,7 @@ const dialogFilterHomePage =
     '<div class="sectionDialog" style="padding-bottom: 0">\n' +
     '                <div style="display: flex; align-items: center; justify-content: space-between">\n' +
     '                    <h4 style="margin-bottom: 2px; padding-right: 16px">Servizi</h4>\n' +
-    '                    <h5 style="cursor: pointer" id="removeCategory">Rimuovi servizi</h5>\n' +
+    '                    <h5 style="cursor: pointer" id="removeServizi">Rimuovi servizi</h5>\n' +
     '                </div>\n' +
     '                <ul>\n' +
     '<li>\n' +

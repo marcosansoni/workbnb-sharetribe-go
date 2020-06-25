@@ -295,6 +295,12 @@ const appendEventListener = () => {
     $("#maxUp").html(maximumUp);
   });
 
+  $("#removeServizi").click(() => {
+    $(".filter-general").attr('checked', false);
+    currentSelectedFilter = [];
+  });
+  
+
   $("input").change((e) => {
 
     const name = e.target.name;
