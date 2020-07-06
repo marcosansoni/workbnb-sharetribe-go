@@ -60,39 +60,39 @@ let maximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
 //List of all amenities
 let currentSelectedFilter = [];
 
-let colazione = CURRENT_URL_PARAMS().COLAZIONE;
-let parcheggio = CURRENT_URL_PARAMS().PARCHEGGIO;
-let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
-let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
-let monitor = CURRENT_URL_PARAMS().MONITOR;
-let stampante = CURRENT_URL_PARAMS().STAMPANTE;
-let self = CURRENT_URL_PARAMS().SELF;
-let zona_relax = CURRENT_URL_PARAMS().ZONA_RELAX;
-let sedia = CURRENT_URL_PARAMS().SEDIA_ERGONOMICA;
-let igienizzazione = CURRENT_URL_PARAMS().IGIENIZZAZIONE;
-let bevande = CURRENT_URL_PARAMS().BEVANDE;
-let minibar = CURRENT_URL_PARAMS().MINIBAR;
-let bici = CURRENT_URL_PARAMS().BICI;
-let spazio_esterno = CURRENT_URL_PARAMS().SPAZIO_ESTERNO;
-let cucina = CURRENT_URL_PARAMS().CUCINA;
-let aria = CURRENT_URL_PARAMS().ARIA;
-let riscaldamento = CURRENT_URL_PARAMS().RISCALDAMENTO;
-let piscina = CURRENT_URL_PARAMS().PISCINA;
-let bar = CURRENT_URL_PARAMS().BAR;
-let fitness = CURRENT_URL_PARAMS().FITNESS;
-let honesty = CURRENT_URL_PARAMS().HONESTY_BAR;
-let ricarica = CURRENT_URL_PARAMS().RICARICA;
-let doccia = CURRENT_URL_PARAMS().DOCCIA;
-let ristorazione = CURRENT_URL_PARAMS().RISTORAZIONE;
-let deposito = CURRENT_URL_PARAMS().DEPOSITO;
-let postazione = CURRENT_URL_PARAMS().POSTAZIONE_FINESTRATA;
-let impianto = CURRENT_URL_PARAMS().IMPIANTO;
-let lavagna = CURRENT_URL_PARAMS().LAVAGNA;
-let microfono = CURRENT_URL_PARAMS().MICROFONO;
-let proiettore = CURRENT_URL_PARAMS().PROIETTORE;
-let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
+// let colazione = CURRENT_URL_PARAMS().COLAZIONE;
+// let parcheggio = CURRENT_URL_PARAMS().PARCHEGGIO;
+// let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
+// let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
+// let monitor = CURRENT_URL_PARAMS().MONITOR;
+// let stampante = CURRENT_URL_PARAMS().STAMPANTE;
+// let self = CURRENT_URL_PARAMS().SELF;
+// let zona_relax = CURRENT_URL_PARAMS().ZONA_RELAX;
+// let sedia = CURRENT_URL_PARAMS().SEDIA_ERGONOMICA;
+// let igienizzazione = CURRENT_URL_PARAMS().IGIENIZZAZIONE;
+// let bevande = CURRENT_URL_PARAMS().BEVANDE;
+// let minibar = CURRENT_URL_PARAMS().MINIBAR;
+// let bici = CURRENT_URL_PARAMS().BICI;
+// let spazio_esterno = CURRENT_URL_PARAMS().SPAZIO_ESTERNO;
+// let cucina = CURRENT_URL_PARAMS().CUCINA;
+// let aria = CURRENT_URL_PARAMS().ARIA;
+// let riscaldamento = CURRENT_URL_PARAMS().RISCALDAMENTO;
+// let piscina = CURRENT_URL_PARAMS().PISCINA;
+// let bar = CURRENT_URL_PARAMS().BAR;
+// let fitness = CURRENT_URL_PARAMS().FITNESS;
+// let honesty = CURRENT_URL_PARAMS().HONESTY_BAR;
+// let ricarica = CURRENT_URL_PARAMS().RICARICA;
+// let doccia = CURRENT_URL_PARAMS().DOCCIA;
+// let ristorazione = CURRENT_URL_PARAMS().RISTORAZIONE;
+// let deposito = CURRENT_URL_PARAMS().DEPOSITO;
+// let postazione = CURRENT_URL_PARAMS().POSTAZIONE_FINESTRATA;
+// let impianto = CURRENT_URL_PARAMS().IMPIANTO;
+// let lavagna = CURRENT_URL_PARAMS().LAVAGNA;
+// let microfono = CURRENT_URL_PARAMS().MICROFONO;
+// let proiettore = CURRENT_URL_PARAMS().PROIETTORE;
+// let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
 
-console.log(allattamento)
+console.log(maximumUp)
 //
 //
 // const setFilter = (filter, type) => {
