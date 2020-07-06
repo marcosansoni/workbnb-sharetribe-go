@@ -66,8 +66,8 @@ let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
 let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
 let monitor = CURRENT_URL_PARAMS().MONITOR;
 let stampante = CURRENT_URL_PARAMS().STAMPANTE;
-let self = CURRENT_URL_PARAMS().SELF;
-let zona = CURRENT_URL_PARAMS().ZONA_RELAX;
+// let self = CURRENT_URL_PARAMS().SELF;
+// let zona = CURRENT_URL_PARAMS().ZONA_RELAX;
 // let sedia = CURRENT_URL_PARAMS().SEDIA_ERGONOMICA;
 // let igienizzazione = CURRENT_URL_PARAMS().IGIENIZZAZIONE;
 // let bevande = CURRENT_URL_PARAMS().BEVANDE;
@@ -94,7 +94,7 @@ let zona = CURRENT_URL_PARAMS().ZONA_RELAX;
 
 console.log(maximumUp)
 console.log(colazione)
-console.log(zona)
+console.log(stampante)
 
 
 const setFilter = (filter, type) => {
@@ -127,7 +127,7 @@ const setDefault = (value, id) => {
       id,
     ];
   }
-}
+};
 
 const selectDefaultItemFromURL = () => {
 
