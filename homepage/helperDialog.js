@@ -208,218 +208,218 @@ const generateURL = () => {
   parseAmenitiesForURL();
 };
 
-const appendEventListener = () => {
-
-  $(".category-filter").change((e) => {
-    // console.log(e.target.className)
-    const idCurrent = e.target.id;
-    $(".category-filter").attr('checked', false);
-    $(".category-filter").prop('checked', false);
-    $("#" + idCurrent).attr('checked', true);
-    $("#" + idCurrent).prop('checked', true);
-    currentCategory = e.target.name.split("category-")[1];
-  });
-
-
-  $(".listing-type-filter").change((e) => {
-
-    console.log("Here")
-
-    // console.log(e.target.className)
-    const idCurrent = e.target.id;
-
-    $(".listing-type-filter").prop('checked', false);
-    $(".listing-type-filter").attr('checked', false);
-
-    $("#" + idCurrent).prop('checked', true);
-    $("#" + idCurrent).attr('checked', true);
-    currentListingType = e.target.name.split("listing-type-")[1];
-  });
-
-  $("#removeCategory").click(() => {
-    $(".category-filter").prop('checked', false);
-    $(".category-filter").attr('checked', false);
-    currentCategory = null;
-  });
-
-  $("#closeDialog").click(() => {
-    console.log("closeDialog")
-    removeVisibility('.overlay');
-    $("body").css("overflow", "auto");
-  });
-
-
-  // Slider price
-  const sliderPrice = document.getElementById('slider-price');
-  noUiSlider.create(sliderPrice, {
-    start: [CURRENT_URL_PARAMS().MIN_PRICE, CURRENT_URL_PARAMS().MAX_PRICE],
-    connect: true,
-    step: 1,
-    tooltips: true,
-    orientation: 'horizontal', // 'horizontal' or 'vertical'
-    range: {
-      'min': 0,
-      'max': 250
-    },
-    format: wNumb({
-      decimals: 0
-    })
-  });
-
-  sliderPrice.noUiSlider.on('set.one', (values) => {
-    minimumPrice = values[0];
-    maximumPrice = values[1];
-    $("#minPrice").html(minimumPrice);
-    $("#maxPrice").html(maximumPrice);
-  });
-
-  $("#removePrice").click(() => {
-    minimumPrice = 0;
-    maximumPrice = 250;
-    sliderPrice.noUiSlider.set([0, 250]);
-    $("#minPrice").html(0);
-    $("#maxPrice").html(250);
-  });
-
-  //Slider download
-  const sliderDown = document.getElementById('slider-down');
-  noUiSlider.create(sliderDown, {
-    start: [CURRENT_URL_PARAMS().MIN_DOWNLOAD, CURRENT_URL_PARAMS().MAX_DOWNLOAD],
-    connect: true,
-    step: 1,
-    tooltips: true,
-    orientation: 'horizontal', // 'horizontal' or 'vertical'
-    range: {
-      'min': 10,
-      'max': 1000,
-    },
-    format: wNumb({
-      decimals: 0
-    })
-  });
-
-  sliderDown.noUiSlider.on('set.one', (values) => {
-    minimumDown = values[0];
-    maximumDown = values[1];
-    $("#minDown").html(minimumDown)
-    $("#maxDown").html(maximumDown)
-  });
-
-  $("#removeDown").click(() => {
-    minimumDown = 10;
-    maximumDown = 1000;
-    sliderDown.noUiSlider.set([min, max]);
-    $("#minDown").html(minimumDown);
-    $("#maxDown").html(maximumDown);
-  });
-
-  //Upload
-  const sliderUp = document.getElementById('slider-up');
-  noUiSlider.create(sliderUp, {
-    start: [CURRENT_URL_PARAMS().MIN_UPLOAD, CURRENT_URL_PARAMS().MAX_UPLOAD],
-    connect: true,
-    step: 1,
-    tooltips: true,
-    orientation: 'horizontal', // 'horizontal' or 'vertical'
-    range: {
-      'min': 10,
-      'max': 1000
-    },
-    format: wNumb({
-      decimals: 0
-    })
-  });
-  sliderUp.noUiSlider.on('set.one', (values) => {
-    minimumUp = values[0];
-    maximumUp = values[1];
-    $("#minUp").html(minimumUp);
-    $("#maxUp").html(maximumUp);
-  });
-
-  $("#removeUp").click(() => {
-    minimumUp = 10;
-    maximumUp = 1000;
-    sliderUp.noUiSlider.set([min, max]);
-    $("#minUp").html(minimumUp);
-    $("#maxUp").html(maximumUp);
-  });
-
-  $("#removeServizi").click(() => {
-    console.log("removed servizi")
-    $(".filter-general").attr('checked', false);
-    currentSelectedFilter = [];
-  });
-
-
-  $("input").change((e) => {
-
-    const name = e.target.name;
-    const check = e.target.checked;
-
-    if (name.includes("filter-")) {
-      if (!check) {
-        currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
-      } else {
-        currentSelectedFilter = [
-          ...currentSelectedFilter,
-          name,
-        ]
-      }
-    }
-
-    console.log(currentSelectedFilter)
-  });
-
-
-  $(".cancelButton").click(() => {
-    removeVisibility('.overlay');
-    $("body").css("overflow", "auto");
-    //servizi
-    $(".filter-general").attr('checked', false);
-    currentSelectedFilter = [];
-    // Upload
-    minimumUp = 10;
-    maximumUp = 1000;
-    sliderUp.noUiSlider.set([min, max]);
-    $("#minUp").html(minimumUp);
-    $("#maxUp").html(maximumUp);
-    // Download
-    minimumDown = 10;
-    maximumDown = 1000;
-    sliderDown.noUiSlider.set([min, max]);
-    $("#minDown").html(minimumDown);
-    $("#maxDown").html(maximumDown);
-    //Price
-    minimumPrice = 0;
-    maximumPrice = 250;
-    sliderPrice.noUiSlider.set([0, 250]);
-    $("#minPrice").html(0);
-    $("#maxPrice").html(250);
-
-    generateURL();
-    window.location.href = ROOT + "?" + urlParams.toString();
-  })
-
-  $(".applyButton").click(() => {
-    removeVisibility('.overlay');
-    $("body").css("overflow", "auto");
-
-    urlParams.delete(URL_PARAMS.CATEGORY);
-    urlParams.delete(URL_PARAMS.LISTING_SHAPE);
-
-    if (currentCategory) {
-      urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
-    }
-
-    if (currentListingType) {
-      urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
-    }
-
-    generateURL();
-
-    console.log(urlParams.toString());
-
-    window.location.href = ROOT + "?" + urlParams.toString();
-  });
-}
+// const appendEventListener = () => {
+//
+//   $(".category-filter").change((e) => {
+//     // console.log(e.target.className)
+//     const idCurrent = e.target.id;
+//     $(".category-filter").attr('checked', false);
+//     $(".category-filter").prop('checked', false);
+//     $("#" + idCurrent).attr('checked', true);
+//     $("#" + idCurrent).prop('checked', true);
+//     currentCategory = e.target.name.split("category-")[1];
+//   });
+//
+//
+//   $(".listing-type-filter").change((e) => {
+//
+//     console.log("Here")
+//
+//     // console.log(e.target.className)
+//     const idCurrent = e.target.id;
+//
+//     $(".listing-type-filter").prop('checked', false);
+//     $(".listing-type-filter").attr('checked', false);
+//
+//     $("#" + idCurrent).prop('checked', true);
+//     $("#" + idCurrent).attr('checked', true);
+//     currentListingType = e.target.name.split("listing-type-")[1];
+//   });
+//
+//   $("#removeCategory").click(() => {
+//     $(".category-filter").prop('checked', false);
+//     $(".category-filter").attr('checked', false);
+//     currentCategory = null;
+//   });
+//
+//   $("#closeDialog").click(() => {
+//     console.log("closeDialog")
+//     removeVisibility('.overlay');
+//     $("body").css("overflow", "auto");
+//   });
+//
+//
+//   // Slider price
+//   const sliderPrice = document.getElementById('slider-price');
+//   noUiSlider.create(sliderPrice, {
+//     start: [CURRENT_URL_PARAMS().MIN_PRICE, CURRENT_URL_PARAMS().MAX_PRICE],
+//     connect: true,
+//     step: 1,
+//     tooltips: true,
+//     orientation: 'horizontal', // 'horizontal' or 'vertical'
+//     range: {
+//       'min': 0,
+//       'max': 250
+//     },
+//     format: wNumb({
+//       decimals: 0
+//     })
+//   });
+//
+//   sliderPrice.noUiSlider.on('set.one', (values) => {
+//     minimumPrice = values[0];
+//     maximumPrice = values[1];
+//     $("#minPrice").html(minimumPrice);
+//     $("#maxPrice").html(maximumPrice);
+//   });
+//
+//   $("#removePrice").click(() => {
+//     minimumPrice = 0;
+//     maximumPrice = 250;
+//     sliderPrice.noUiSlider.set([0, 250]);
+//     $("#minPrice").html(0);
+//     $("#maxPrice").html(250);
+//   });
+//
+//   //Slider download
+//   const sliderDown = document.getElementById('slider-down');
+//   noUiSlider.create(sliderDown, {
+//     start: [CURRENT_URL_PARAMS().MIN_DOWNLOAD, CURRENT_URL_PARAMS().MAX_DOWNLOAD],
+//     connect: true,
+//     step: 1,
+//     tooltips: true,
+//     orientation: 'horizontal', // 'horizontal' or 'vertical'
+//     range: {
+//       'min': 10,
+//       'max': 1000,
+//     },
+//     format: wNumb({
+//       decimals: 0
+//     })
+//   });
+//
+//   sliderDown.noUiSlider.on('set.one', (values) => {
+//     minimumDown = values[0];
+//     maximumDown = values[1];
+//     $("#minDown").html(minimumDown)
+//     $("#maxDown").html(maximumDown)
+//   });
+//
+//   $("#removeDown").click(() => {
+//     minimumDown = 10;
+//     maximumDown = 1000;
+//     sliderDown.noUiSlider.set([min, max]);
+//     $("#minDown").html(minimumDown);
+//     $("#maxDown").html(maximumDown);
+//   });
+//
+//   //Upload
+//   const sliderUp = document.getElementById('slider-up');
+//   noUiSlider.create(sliderUp, {
+//     start: [CURRENT_URL_PARAMS().MIN_UPLOAD, CURRENT_URL_PARAMS().MAX_UPLOAD],
+//     connect: true,
+//     step: 1,
+//     tooltips: true,
+//     orientation: 'horizontal', // 'horizontal' or 'vertical'
+//     range: {
+//       'min': 10,
+//       'max': 1000
+//     },
+//     format: wNumb({
+//       decimals: 0
+//     })
+//   });
+//   sliderUp.noUiSlider.on('set.one', (values) => {
+//     minimumUp = values[0];
+//     maximumUp = values[1];
+//     $("#minUp").html(minimumUp);
+//     $("#maxUp").html(maximumUp);
+//   });
+//
+//   $("#removeUp").click(() => {
+//     minimumUp = 10;
+//     maximumUp = 1000;
+//     sliderUp.noUiSlider.set([min, max]);
+//     $("#minUp").html(minimumUp);
+//     $("#maxUp").html(maximumUp);
+//   });
+//
+//   $("#removeServizi").click(() => {
+//     console.log("removed servizi")
+//     $(".filter-general").attr('checked', false);
+//     currentSelectedFilter = [];
+//   });
+//
+//
+//   $("input").change((e) => {
+//
+//     const name = e.target.name;
+//     const check = e.target.checked;
+//
+//     if (name.includes("filter-")) {
+//       if (!check) {
+//         currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
+//       } else {
+//         currentSelectedFilter = [
+//           ...currentSelectedFilter,
+//           name,
+//         ]
+//       }
+//     }
+//
+//     console.log(currentSelectedFilter)
+//   });
+//
+//
+//   $(".cancelButton").click(() => {
+//     removeVisibility('.overlay');
+//     $("body").css("overflow", "auto");
+//     //servizi
+//     $(".filter-general").attr('checked', false);
+//     currentSelectedFilter = [];
+//     // Upload
+//     minimumUp = 10;
+//     maximumUp = 1000;
+//     sliderUp.noUiSlider.set([min, max]);
+//     $("#minUp").html(minimumUp);
+//     $("#maxUp").html(maximumUp);
+//     // Download
+//     minimumDown = 10;
+//     maximumDown = 1000;
+//     sliderDown.noUiSlider.set([min, max]);
+//     $("#minDown").html(minimumDown);
+//     $("#maxDown").html(maximumDown);
+//     //Price
+//     minimumPrice = 0;
+//     maximumPrice = 250;
+//     sliderPrice.noUiSlider.set([0, 250]);
+//     $("#minPrice").html(0);
+//     $("#maxPrice").html(250);
+//
+//     generateURL();
+//     window.location.href = ROOT + "?" + urlParams.toString();
+//   })
+//
+//   $(".applyButton").click(() => {
+//     removeVisibility('.overlay');
+//     $("body").css("overflow", "auto");
+//
+//     urlParams.delete(URL_PARAMS.CATEGORY);
+//     urlParams.delete(URL_PARAMS.LISTING_SHAPE);
+//
+//     if (currentCategory) {
+//       urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
+//     }
+//
+//     if (currentListingType) {
+//       urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
+//     }
+//
+//     generateURL();
+//
+//     console.log(urlParams.toString());
+//
+//     window.location.href = ROOT + "?" + urlParams.toString();
+//   });
+// }
 
