@@ -126,12 +126,12 @@ const setDefault = (value, id) => {
 const selectDefaultItemFromURL = () => {
 
   //Default category selected
-  $("#category-" + currentCategory).prop("checked", true);
-  $("#category-" + currentCategory).attr("checked", true);
+  // $("#category-" + currentCategory).prop("checked", true);
+  // $("#category-" + currentCategory).attr("checked", true);
 
   //Default Listing Type
-  $("#listing-type-" + currentListingType).prop("checked", true);
-  $("#listing-type-" + currentListingType).attr("checked", true);
+  // $("#listing-type-" + currentListingType).prop("checked", true);
+  // $("#listing-type-" + currentListingType).attr("checked", true);
 
   // Amenities List
   setDefault(parcheggio, 'filter-parking');
@@ -321,6 +321,52 @@ const appendEventListener = () => {
     console.log(currentSelectedFilter)
   });
 
+  const parseAmenitiesForURL = () => {
+    setFilter('filter-parking', 'PARCHEGGIO');
+    setFilter('filter-cancelleria', 'CANCELLERIA');
+    setFilter('filter-pet-friendly', 'PET_FRIENDLY');
+    setFilter('filter-stampante', 'STAMPANTE');
+    setFilter('filter-self-check-in', 'SELF');
+    setFilter('filter-zona-relax', 'ZONA_RELAX');
+    setFilter('filter-sedia-ergonomica', 'SEDIA_ERGONOMICA');
+    setFilter('filter-igienizzazione', 'IGIENIZZAZIONE');
+    setFilter('filter-bevande', 'BEVANDE');
+    setFilter('filter-colazione', 'COLAZIONE');
+    setFilter('filter-minibar', 'MINIBAR');
+    setFilter('filter-bici', 'BICI');
+    setFilter('filter-spazio-esterno', 'SPAZIO_ESTERNO');
+    setFilter('filter-cucina', 'CUCINA');
+    setFilter('filter-aria', 'ARIA');
+    setFilter('filter-riscaldamento', 'RISCALDAMENTO');
+    setFilter('filter-piscina', 'PISCINA');
+    setFilter('filter-bar', 'BAR');
+    setFilter('filter-fitness', 'FITNESS');
+    setFilter('filter-honesty', 'HONESTY_BAR');
+    setFilter('filter-elettrici', 'RICARICA');
+  };
+
+  const generateURL = () => {
+    // Price
+    urlParams.delete(FILTER.MIN_PRICE);
+    urlParams.set(FILTER.MIN_PRICE, minimumPrice);
+    urlParams.delete(FILTER.MAX_PRICE);
+    urlParams.set(FILTER.MAX_PRICE, maximumPrice);
+
+    // Download
+    urlParams.delete(FILTER.MIN_DOWNLOAD);
+    urlParams.set(FILTER.MIN_DOWNLOAD, minimumDown);
+    urlParams.delete(FILTER.MAX_DOWNLOAD);
+    urlParams.set(FILTER.MAX_DOWNLOAD, maximumDown);
+
+    // Upload
+    urlParams.delete(FILTER.MIN_UPLOAD);
+    urlParams.set(FILTER.MIN_UPLOAD, minimumUp);
+    urlParams.delete(FILTER.MAX_UPLOAD);
+    urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
+
+    parseAmenitiesForURL();
+  };
+
   $(".cancelButton").click(() => {
     removeVisibility('.overlay');
     $("body").css("overflow","auto");
@@ -371,54 +417,6 @@ const appendEventListener = () => {
 
     window.location.href = ROOT + "?" + urlParams.toString();
   });
-
-  const parseAmenitiesForURL = () => {
-    setFilter('filter-parking', 'PARCHEGGIO');
-    setFilter('filter-cancelleria', 'CANCELLERIA');
-    setFilter('filter-pet-friendly', 'PET_FRIENDLY');
-    setFilter('filter-stampante', 'STAMPANTE');
-    setFilter('filter-self-check-in', 'SELF');
-    setFilter('filter-zona-relax', 'ZONA_RELAX');
-    setFilter('filter-sedia-ergonomica', 'SEDIA_ERGONOMICA');
-    setFilter('filter-igienizzazione', 'IGIENIZZAZIONE');
-    setFilter('filter-bevande', 'BEVANDE');
-    setFilter('filter-colazione', 'COLAZIONE');
-    setFilter('filter-minibar', 'MINIBAR');
-    setFilter('filter-bici', 'BICI');
-    setFilter('filter-spazio-esterno', 'SPAZIO_ESTERNO');
-    setFilter('filter-cucina', 'CUCINA');
-    setFilter('filter-aria', 'ARIA');
-    setFilter('filter-riscaldamento', 'RISCALDAMENTO');
-    setFilter('filter-piscina', 'PISCINA');
-    setFilter('filter-bar', 'BAR');
-    setFilter('filter-fitness', 'FITNESS');
-    setFilter('filter-honesty', 'HONESTY_BAR');
-    setFilter('filter-elettrici', 'RICARICA');
-  };
-
-  const generateURL = () => {
-    // Price
-    urlParams.delete(FILTER.MIN_PRICE);
-    urlParams.set(FILTER.MIN_PRICE, minimumPrice);
-    urlParams.delete(FILTER.MAX_PRICE);
-    urlParams.set(FILTER.MAX_PRICE, maximumPrice);
-
-    // Download
-    urlParams.delete(FILTER.MIN_DOWNLOAD);
-    urlParams.set(FILTER.MIN_DOWNLOAD, minimumDown);
-    urlParams.delete(FILTER.MAX_DOWNLOAD);
-    urlParams.set(FILTER.MAX_DOWNLOAD, maximumDown);
-
-    // Upload
-    urlParams.delete(FILTER.MIN_UPLOAD);
-    urlParams.set(FILTER.MIN_UPLOAD, minimumUp);
-    urlParams.delete(FILTER.MAX_UPLOAD);
-    urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
-
-    parseAmenitiesForURL();
-  };
-
-
 
 }
 
