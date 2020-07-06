@@ -66,7 +66,7 @@ let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
 let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
 let monitor = CURRENT_URL_PARAMS().MONITOR;
 let stampante = CURRENT_URL_PARAMS().STAMPANTE;
-// let self = CURRENT_URL_PARAMS().SELF;
+let self = CURRENT_URL_PARAMS().SELF;
 // let zona = CURRENT_URL_PARAMS().ZONA_RELAX;
 // let sedia = CURRENT_URL_PARAMS().SEDIA_ERGONOMICA;
 // let igienizzazione = CURRENT_URL_PARAMS().IGIENIZZAZIONE;
@@ -94,7 +94,7 @@ let stampante = CURRENT_URL_PARAMS().STAMPANTE;
 
 console.log(maximumUp)
 console.log(colazione)
-console.log(stampante)
+console.log(self)
 
 
 const setFilter = (filter, type) => {
