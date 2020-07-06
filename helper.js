@@ -1,6 +1,8 @@
 const getKeyByValue = (object, value) =>
   Object.keys(object).find(key => object[key] === value);
 
+const isNumber = (value) => !isNaN(value);
+
 
 //Add and remove visibility and display
 const addVisibility = (selector) => $(selector).css("visibility", "visible");
