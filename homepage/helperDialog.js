@@ -65,9 +65,9 @@ let parcheggio = CURRENT_URL_PARAMS().PARCHEGGIO;
 let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
 let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
 let monitor = CURRENT_URL_PARAMS().MONITOR;
-// let stampante = CURRENT_URL_PARAMS().STAMPANTE;
-// let self = CURRENT_URL_PARAMS().SELF;
-// let zona_relax = CURRENT_URL_PARAMS().ZONA_RELAX;
+let stampante = CURRENT_URL_PARAMS().STAMPANTE;
+let self = CURRENT_URL_PARAMS().SELF;
+let zona = CURRENT_URL_PARAMS().ZONA_RELAX;
 // let sedia = CURRENT_URL_PARAMS().SEDIA_ERGONOMICA;
 // let igienizzazione = CURRENT_URL_PARAMS().IGIENIZZAZIONE;
 // let bevande = CURRENT_URL_PARAMS().BEVANDE;
@@ -94,7 +94,7 @@ let monitor = CURRENT_URL_PARAMS().MONITOR;
 
 console.log(maximumUp)
 console.log(colazione)
-console.log(monitor)
+console.log(zona)
 
 
 const setFilter = (filter, type) => {
@@ -145,7 +145,7 @@ const selectDefaultItemFromURL = () => {
   setDefault(pet, 'filter-pet-friendly');
   setDefault(stampante, 'filter-stampante');
   setDefault(self, 'filter-self-check-in');
-  setDefault(zona_relax, 'filter-zona-relax');
+  setDefault(zona, 'filter-zona-relax');
   setDefault(sedia, 'filter-sedia-ergonomica');
   setDefault(igienizzazione, 'filter-igienizzazione');
   setDefault(bevande, 'filter-bevande');
