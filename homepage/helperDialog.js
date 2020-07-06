@@ -94,7 +94,7 @@ let bici = CURRENT_URL_PARAMS().BICI;
 
 console.log(maximumUp)
 console.log(colazione)
-// console.log(sedia)
+console.log(sedia)
 
 
 const setFilter = (filter, type) => {
