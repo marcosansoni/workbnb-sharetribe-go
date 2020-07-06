@@ -60,7 +60,7 @@ let maximumUp = CURRENT_URL_PARAMS().MAX_UPLOAD;
 //List of all amenities
 let currentSelectedFilter = [];
 
-// let colazione = CURRENT_URL_PARAMS().COLAZIONE;
+let colazione = CURRENT_URL_PARAMS().COLAZIONE;
 // let parcheggio = CURRENT_URL_PARAMS().PARCHEGGIO;
 // let cancelleria = CURRENT_URL_PARAMS().CANCELLERIA;
 // let pet = CURRENT_URL_PARAMS().PET_FRIENDLY;
@@ -93,6 +93,7 @@ let currentSelectedFilter = [];
 // let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
 
 console.log(maximumUp)
+console.log(colazione)
 //
 //
 // const setFilter = (filter, type) => {
