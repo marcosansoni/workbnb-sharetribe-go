@@ -42,6 +42,7 @@ const CURRENT_URL_PARAMS = () => ({
 });
 
 console.log(CURRENT_URL_PARAMS)
+console.log(CURRENT_URL_PARAMS().CATEGORY)
 //
 // let currentCategory = CURRENT_URL_PARAMS().CATEGORY;
 //
