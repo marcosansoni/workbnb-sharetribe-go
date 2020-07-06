@@ -32,6 +32,14 @@ const checkNewListing = () => {
   return splitPath && splitPath.length >= 3 && splitPath[2] === 'listings' && splitPath[3] === 'new';
 };
 
+const isLogged = $(".AvatarDropdown").length > 0;
+
+const checkListingDetails = () => {
+  return splitPath[splitPath.length - 1].length > 0
+    && isNumber(splitPath[splitPath.length - 1].charAt(0))
+    && splitPath[splitPath.length - 2] === 'listings'
+};
+
 
 const displayText = (title, nextNumber = 1, displayType) => {
   let textSelector = $('label:contains(' + title + ')');

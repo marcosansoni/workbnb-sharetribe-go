@@ -2,6 +2,7 @@ const CHECK_PAGES = {
   [PAGES.HOME]: checkHome(),
   [PAGES.LISTING_LIST]: checkListingsList(),
   [PAGES.NEW_LISTING]: checkNewListing(),
+  [PAGES.LISTING_DETAILS]: checkListingDetails(),
 };
 
 
@@ -119,6 +120,12 @@ $(document).ready(() => {
     resetOriginalCssForNotHomePage();
   }
 
+  if(CHECK_PAGES[PAGES.LISTING_DETAILS]){
+
+    parsePageListingDetails();
+
+  }
+
   //Everywhere footer
   $("#sidewinder-wrapper").append("<footer id=\"footer\" class=\"footer\">\n" +
     "    <div class=\"container w-container\">\n" +
@@ -140,5 +147,5 @@ $(document).ready(() => {
     "      </div>\n" +
     "    </div>\n" +
     "  </footer>");
-  
+
 });
