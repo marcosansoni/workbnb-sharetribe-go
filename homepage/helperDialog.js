@@ -302,24 +302,24 @@ const appendEventListener = () => {
   });
 
 
-  $("input").change((e) => {
-
-    const name = e.target.name;
-    const check = e.target.checked;
-
-    if (name.includes("filter-")) {
-      if (!check) {
-        currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
-      } else {
-        currentSelectedFilter = [
-          ...currentSelectedFilter,
-          name,
-        ]
-      }
-    }
-
-    console.log(currentSelectedFilter)
-  });
+  // $("input").change((e) => {
+  //
+  //   const name = e.target.name;
+  //   const check = e.target.checked;
+  //
+  //   if (name.includes("filter-")) {
+  //     if (!check) {
+  //       currentSelectedFilter = currentSelectedFilter.filter(i => i !== name);
+  //     } else {
+  //       currentSelectedFilter = [
+  //         ...currentSelectedFilter,
+  //         name,
+  //       ]
+  //     }
+  //   }
+  //
+  //   console.log(currentSelectedFilter)
+  // });
 
   const parseAmenitiesForURL = () => {
     setFilter('filter-parking', 'PARCHEGGIO');
@@ -365,59 +365,58 @@ const appendEventListener = () => {
     urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
 
     parseAmenitiesForURL();
-  }
+  };
 
-  $(".cancelButton").click(() => {
-    removeVisibility('.overlay');
-    $("body").css("overflow","auto");
-    //servizi
-    $(".filter-general").attr('checked', false);
-    currentSelectedFilter = [];
-    // Upload
-    minimumUp = 10;
-    maximumUp = 1000;
-    sliderUp.noUiSlider.set([min, max]);
-    $("#minUp").html(minimumUp);
-    $("#maxUp").html(maximumUp);
-    // Download
-    minimumDown = 10;
-    maximumDown = 1000;
-    sliderDown.noUiSlider.set([min, max]);
-    $("#minDown").html(minimumDown);
-    $("#maxDown").html(maximumDown);
-    //Price
-    minimumPrice = 0;
-    maximumPrice = 250;
-    sliderPrice.noUiSlider.set([0, 250]);
-    $("#minPrice").html(0);
-    $("#maxPrice").html(250);
-
-    generateURL();
-    window.location.href = ROOT + "?" + urlParams.toString();
-  })
-
-  $(".applyButton").click(() => {
-    removeVisibility('.overlay');
-    $("body").css("overflow","auto");
-
-    urlParams.delete(URL_PARAMS.CATEGORY);
-    urlParams.delete(URL_PARAMS.LISTING_SHAPE);
-
-    if (currentCategory) {
-      urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
-    }
-
-    if (currentListingType) {
-      urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
-    }
-
-    generateURL();
-
-    console.log(urlParams.toString());
-
-    window.location.href = ROOT + "?" + urlParams.toString();
-  });
-
-
+  // $(".cancelButton").click(() => {
+  //   removeVisibility('.overlay');
+  //   $("body").css("overflow","auto");
+  //   //servizi
+  //   $(".filter-general").attr('checked', false);
+  //   currentSelectedFilter = [];
+  //   // Upload
+  //   minimumUp = 10;
+  //   maximumUp = 1000;
+  //   sliderUp.noUiSlider.set([min, max]);
+  //   $("#minUp").html(minimumUp);
+  //   $("#maxUp").html(maximumUp);
+  //   // Download
+  //   minimumDown = 10;
+  //   maximumDown = 1000;
+  //   sliderDown.noUiSlider.set([min, max]);
+  //   $("#minDown").html(minimumDown);
+  //   $("#maxDown").html(maximumDown);
+  //   //Price
+  //   minimumPrice = 0;
+  //   maximumPrice = 250;
+  //   sliderPrice.noUiSlider.set([0, 250]);
+  //   $("#minPrice").html(0);
+  //   $("#maxPrice").html(250);
+  //
+  //   generateURL();
+  //   window.location.href = ROOT + "?" + urlParams.toString();
+  // })
+  //
+  // $(".applyButton").click(() => {
+  //   removeVisibility('.overlay');
+  //   $("body").css("overflow","auto");
+  //
+  //   urlParams.delete(URL_PARAMS.CATEGORY);
+  //   urlParams.delete(URL_PARAMS.LISTING_SHAPE);
+  //
+  //   if (currentCategory) {
+  //     urlParams.set(URL_PARAMS.CATEGORY, currentCategory);
+  //   }
+  //
+  //   if (currentListingType) {
+  //     urlParams.set(URL_PARAMS.LISTING_SHAPE, currentListingType);
+  //   }
+  //
+  //   generateURL();
+  //
+  //   console.log(urlParams.toString());
+  //
+  //   window.location.href = ROOT + "?" + urlParams.toString();
+  // });
+  //
 }
 

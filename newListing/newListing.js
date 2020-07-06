@@ -238,5 +238,5 @@ const showDetailsNewListing = (category, reservation) => {
   setTimeout(() => {
     onFormCompletedLoading(category, reservation);
     addDisplay(".new-listing-form")
-  }, 2000);
+  }, 800);
 };
