@@ -140,6 +140,8 @@ const onFormCompletedLoading = (category, reservation) => {
     }
   };
 
+  console.log("addd")
+
   // Show first tab details
   // firstTabIntoNewListing(category, reservation);
   tabIntoNewListing({
@@ -236,5 +238,5 @@ const showDetailsNewListing = (category, reservation) => {
   setTimeout(() => {
     onFormCompletedLoading(category, reservation);
     addDisplay(".new-listing-form")
-  }, 800);
+  }, 2000);
 };
