@@ -42,6 +42,8 @@ const CURRENT_URL_PARAMS = () => ({
 
 });
 
+console.log(CURRENT_URL_PARAMS)
+
 let currentCategory = CURRENT_URL_PARAMS().CATEGORY;
 
 let currentListingType = CURRENT_URL_PARAMS().TRANSACTION_TYPE;
@@ -90,6 +92,8 @@ let microfono = CURRENT_URL_PARAMS().MICROFONO;
 let proiettore = CURRENT_URL_PARAMS().PROIETTORE;
 let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
 
+console.log(allattamento)
+
 
 const setFilter = (filter, type) => {
 
@@ -126,12 +130,12 @@ const setDefault = (value, id) => {
 const selectDefaultItemFromURL = () => {
 
   //Default category selected
-  // $("#category-" + currentCategory).prop("checked", true);
-  // $("#category-" + currentCategory).attr("checked", true);
+  $("#category-" + currentCategory).prop("checked", true);
+  $("#category-" + currentCategory).attr("checked", true);
 
   //Default Listing Type
-  // $("#listing-type-" + currentListingType).prop("checked", true);
-  // $("#listing-type-" + currentListingType).attr("checked", true);
+  $("#listing-type-" + currentListingType).prop("checked", true);
+  $("#listing-type-" + currentListingType).attr("checked", true);
 
   // Amenities List
   setDefault(parcheggio, 'filter-parking');
@@ -158,6 +162,51 @@ const selectDefaultItemFromURL = () => {
 
 };
 
+const parseAmenitiesForURL = () => {
+  setFilter('filter-parking', 'PARCHEGGIO');
+  setFilter('filter-cancelleria', 'CANCELLERIA');
+  setFilter('filter-pet-friendly', 'PET_FRIENDLY');
+  setFilter('filter-stampante', 'STAMPANTE');
+  setFilter('filter-self-check-in', 'SELF');
+  setFilter('filter-zona-relax', 'ZONA_RELAX');
+  setFilter('filter-sedia-ergonomica', 'SEDIA_ERGONOMICA');
+  setFilter('filter-igienizzazione', 'IGIENIZZAZIONE');
+  setFilter('filter-bevande', 'BEVANDE');
+  setFilter('filter-colazione', 'COLAZIONE');
+  setFilter('filter-minibar', 'MINIBAR');
+  setFilter('filter-bici', 'BICI');
+  setFilter('filter-spazio-esterno', 'SPAZIO_ESTERNO');
+  setFilter('filter-cucina', 'CUCINA');
+  setFilter('filter-aria', 'ARIA');
+  setFilter('filter-riscaldamento', 'RISCALDAMENTO');
+  setFilter('filter-piscina', 'PISCINA');
+  setFilter('filter-bar', 'BAR');
+  setFilter('filter-fitness', 'FITNESS');
+  setFilter('filter-honesty', 'HONESTY_BAR');
+  setFilter('filter-elettrici', 'RICARICA');
+};
+
+const generateURL = () => {
+  // Price
+  urlParams.delete(FILTER.MIN_PRICE);
+  urlParams.set(FILTER.MIN_PRICE, minimumPrice);
+  urlParams.delete(FILTER.MAX_PRICE);
+  urlParams.set(FILTER.MAX_PRICE, maximumPrice);
+
+  // Download
+  urlParams.delete(FILTER.MIN_DOWNLOAD);
+  urlParams.set(FILTER.MIN_DOWNLOAD, minimumDown);
+  urlParams.delete(FILTER.MAX_DOWNLOAD);
+  urlParams.set(FILTER.MAX_DOWNLOAD, maximumDown);
+
+  // Upload
+  urlParams.delete(FILTER.MIN_UPLOAD);
+  urlParams.set(FILTER.MIN_UPLOAD, minimumUp);
+  urlParams.delete(FILTER.MAX_UPLOAD);
+  urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
+
+  parseAmenitiesForURL();
+};
 
 const appendEventListener = () => {
 
@@ -196,7 +245,7 @@ const appendEventListener = () => {
   $("#closeDialog").click(() => {
     console.log("closeDialog")
     removeVisibility('.overlay');
-    $("body").css("overflow","auto");
+    $("body").css("overflow", "auto");
   });
 
 
@@ -321,55 +370,10 @@ const appendEventListener = () => {
     console.log(currentSelectedFilter)
   });
 
-  const parseAmenitiesForURL = () => {
-    setFilter('filter-parking', 'PARCHEGGIO');
-    setFilter('filter-cancelleria', 'CANCELLERIA');
-    setFilter('filter-pet-friendly', 'PET_FRIENDLY');
-    setFilter('filter-stampante', 'STAMPANTE');
-    setFilter('filter-self-check-in', 'SELF');
-    setFilter('filter-zona-relax', 'ZONA_RELAX');
-    setFilter('filter-sedia-ergonomica', 'SEDIA_ERGONOMICA');
-    setFilter('filter-igienizzazione', 'IGIENIZZAZIONE');
-    setFilter('filter-bevande', 'BEVANDE');
-    setFilter('filter-colazione', 'COLAZIONE');
-    setFilter('filter-minibar', 'MINIBAR');
-    setFilter('filter-bici', 'BICI');
-    setFilter('filter-spazio-esterno', 'SPAZIO_ESTERNO');
-    setFilter('filter-cucina', 'CUCINA');
-    setFilter('filter-aria', 'ARIA');
-    setFilter('filter-riscaldamento', 'RISCALDAMENTO');
-    setFilter('filter-piscina', 'PISCINA');
-    setFilter('filter-bar', 'BAR');
-    setFilter('filter-fitness', 'FITNESS');
-    setFilter('filter-honesty', 'HONESTY_BAR');
-    setFilter('filter-elettrici', 'RICARICA');
-  };
-
-  const generateURL = () => {
-    // Price
-    urlParams.delete(FILTER.MIN_PRICE);
-    urlParams.set(FILTER.MIN_PRICE, minimumPrice);
-    urlParams.delete(FILTER.MAX_PRICE);
-    urlParams.set(FILTER.MAX_PRICE, maximumPrice);
-
-    // Download
-    urlParams.delete(FILTER.MIN_DOWNLOAD);
-    urlParams.set(FILTER.MIN_DOWNLOAD, minimumDown);
-    urlParams.delete(FILTER.MAX_DOWNLOAD);
-    urlParams.set(FILTER.MAX_DOWNLOAD, maximumDown);
-
-    // Upload
-    urlParams.delete(FILTER.MIN_UPLOAD);
-    urlParams.set(FILTER.MIN_UPLOAD, minimumUp);
-    urlParams.delete(FILTER.MAX_UPLOAD);
-    urlParams.set(FILTER.MAX_UPLOAD, maximumUp);
-
-    parseAmenitiesForURL();
-  };
 
   $(".cancelButton").click(() => {
     removeVisibility('.overlay');
-    $("body").css("overflow","auto");
+    $("body").css("overflow", "auto");
     //servizi
     $(".filter-general").attr('checked', false);
     currentSelectedFilter = [];
@@ -398,7 +402,7 @@ const appendEventListener = () => {
 
   $(".applyButton").click(() => {
     removeVisibility('.overlay');
-    $("body").css("overflow","auto");
+    $("body").css("overflow", "auto");
 
     urlParams.delete(URL_PARAMS.CATEGORY);
     urlParams.delete(URL_PARAMS.LISTING_SHAPE);
@@ -417,6 +421,5 @@ const appendEventListener = () => {
 
     window.location.href = ROOT + "?" + urlParams.toString();
   });
-
 }
 
