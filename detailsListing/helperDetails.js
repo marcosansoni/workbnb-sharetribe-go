@@ -1,4 +1,4 @@
-const title = $(".listing-title");
+// const title = $(".listing-title");
 
 const description = $(".listing-description-content");
 const containerListings = $(".listing-details-container");
