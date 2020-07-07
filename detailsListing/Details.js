@@ -20,9 +20,18 @@ const parsePageListingDetails = (category, reser) => {
   // const nameHost = $(".listing-author-name-link").html();
 
   const title = $(".listing-title");
-  // console.log(title)
-  // console.log($(".listing-title"))
-  // console.log($("#listing-title"))
+
+  const description = $(".listing-description-content");
+  const containerListings = $(".listing-details-container");
+
+//Dati host
+  const linkProfile = $(".listing-author-avatar a").attr("href");
+  const imageProfile = $(".listing-author-avatar img").attr("src");
+  const nameHost = $(".listing-author-name-link").html();
+
+
+//Images
+  const images = $("img.listing-image");
 
   //Set the title and the image of the host
   if(isLogged){
