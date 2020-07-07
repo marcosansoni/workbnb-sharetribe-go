@@ -29,7 +29,7 @@ const parsePageListingDetails = (category, reser) => {
   const imageProfile = $(".listing-author-avatar img").attr("src");
   const nameHost = $(".listing-author-name-link").html();
 
-
+//
 //Images
   const images = $("img.listing-image");
 
