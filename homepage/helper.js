@@ -86,7 +86,9 @@ const applyGridView = (numberColumn = 3) => {
   $(contentGridSelector).css("display", "block");
   console.log("-------")
 
+  $(contentGridSelector).parent().addClass("col-12").removeClass("col-9");
   console.log($(contentGridSelector).parent());
+
   // console.log($(".visible-tablet"))
   // To avoid buffering
   $("article").css("visibility", "visible")

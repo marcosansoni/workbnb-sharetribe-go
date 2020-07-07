@@ -33,7 +33,7 @@
 }
 
 .visible-tablet{
-    display: none;
+    display: none !important;
 }
 
 .hiddenOver767, .hiddenOverMobile{
