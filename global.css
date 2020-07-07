@@ -27,6 +27,11 @@
     position: relative;
 }
 
+#sidewinder-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
 .hiddenOver767, .hiddenOverMobile{
     display: none !important;
 }

@@ -92,10 +92,6 @@ let microfono = CURRENT_URL_PARAMS().MICROFONO;
 let proiettore = CURRENT_URL_PARAMS().PROIETTORE;
 let allattamento = CURRENT_URL_PARAMS().ALLATTAMENTO;
 
-console.log(maximumUp)
-console.log(colazione)
-console.log(selfcheckin)
-
 
 const setFilter = (filter, type) => {
 
