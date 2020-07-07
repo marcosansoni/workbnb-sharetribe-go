@@ -1,5 +1,7 @@
 const parsePageListingDetails = (category, reser) => {
 
+  console.log("dettaglio annuncio")
+
   // Click on the map
   $("#static-map").click();
 
@@ -28,7 +30,7 @@ const parsePageListingDetails = (category, reser) => {
 
   }
 
-
+  // console.log("")
 
 
   $.each(images,(index,value)=> {
@@ -411,81 +413,81 @@ const parsePageListingDetails = (category, reser) => {
 
   // Fix proper class name
 
-  $(".wrapper .row").addClass("ad-page-wrapper")
-  $(".col-8").addClass("ad-content-wrapper");
-  $(".col-8").removeClass("col-8");
-
-  $(".col-4").addClass("adpage_card-wrapper");
-  $(".col-4").removeClass("col-4");
-
-  //Remove second divider
-  const divider_price = $(".row-with-divider");
-  if(divider_price && divider_price.length === 2){
-    $(divider_price[1]).css("display","none")
-  }
-
-  //Removed stripe payment card
-  $("#listing-message-links .ad-page-wrapper").css("display","none")
-
-  //clean unused div into price
-  const ad_page = $(".adpage_card-wrapper .ad-page-wrapper").css("display","none");
-
-
-  const priceAppartamento = $(".listing-price-amount") && $(".listing-price-amount").length > 0 && $(".listing-price-amount")[0].innerText && $(".listing-price-amount")[0].innerText.trim();
-
-  //Cambio lo stile dentro il button
-  $("#booking-dates button").html("<a class=\"button-prenota w-button\" style='width: 100% !important;'>Prenota</a>")
-
-
-  //Text input style
-  $(".input-daterange").addClass("date-wrapper");
-  $("#booking-dates input").addClass("date-form-field-important");
-
-  //Rimuovo il da e il per sopra il box delle date
-  $("#booking-dates label").css("display","none")
-
-  let prependToTitle = "<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>";
-
-  if($(".input-daterange").length > 0){
-    prependToTitle += "<div class=\"titleDate\">Date</div>";
-  }
-
-
-  // $(".adpage_card-wrapper").prepend("<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>" +
-  //   "<div class=\"titleDate\">Date</div>")
-
-  $(".adpage_card-wrapper").prepend(prependToTitle)
-
-
-
-  //Wrappo il contenuto della card prezzo per essere mostrata solo da desktop
-  $('.adpage_card-wrapper').children().wrapAll("<div class='desktop_price'></div>");
-
-  //Add text showed on mobile
-  $('.adpage_card-wrapper').append("<div class='mobile_footer_price'>" +
-    "<h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>" +
-    "<a id=\"prenotaButton\" class=\"button-prenota w-button\">Prenota</a>" +
-    "</div>");
-
-
-  $("#prenotaButton").click(()=>{
-    console.log("Prenota Button clicked");
-    $(".desktop_price").css("display","block")
-    $("body").css("overflow","hidden")
-    $(".mobile_footer_price").css("display","none")
-    $("#closeDialog").css("display","block");
-    $(".ad-content-wrapper").addClass("removeOnMobile")
-  })
-
-
-  $("#closeDialog").click(()=>{
-    console.log("Prenota Button clicked");
-    $(".desktop_price").css("display","none")
-    $("body").css("overflow","auto")
-    $(".mobile_footer_price").css("display","flex")
-    $("#closeDialog").css("display","none")
-    $(".ad-content-wrapper").removeClass("removeOnMobile")
-  })
+  // $(".wrapper .row").addClass("ad-page-wrapper")
+  // $(".col-8").addClass("ad-content-wrapper");
+  // $(".col-8").removeClass("col-8");
+  //
+  // $(".col-4").addClass("adpage_card-wrapper");
+  // $(".col-4").removeClass("col-4");
+  //
+  // //Remove second divider
+  // const divider_price = $(".row-with-divider");
+  // if(divider_price && divider_price.length === 2){
+  //   $(divider_price[1]).css("display","none")
+  // }
+  //
+  // //Removed stripe payment card
+  // $("#listing-message-links .ad-page-wrapper").css("display","none")
+  //
+  // //clean unused div into price
+  // const ad_page = $(".adpage_card-wrapper .ad-page-wrapper").css("display","none");
+  //
+  //
+  // const priceAppartamento = $(".listing-price-amount") && $(".listing-price-amount").length > 0 && $(".listing-price-amount")[0].innerText && $(".listing-price-amount")[0].innerText.trim();
+  //
+  // //Cambio lo stile dentro il button
+  // $("#booking-dates button").html("<a class=\"button-prenota w-button\" style='width: 100% !important;'>Prenota</a>")
+  //
+  //
+  // //Text input style
+  // $(".input-daterange").addClass("date-wrapper");
+  // $("#booking-dates input").addClass("date-form-field-important");
+  //
+  // //Rimuovo il da e il per sopra il box delle date
+  // $("#booking-dates label").css("display","none")
+  //
+  // let prependToTitle = "<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>";
+  //
+  // if($(".input-daterange").length > 0){
+  //   prependToTitle += "<div class=\"titleDate\">Date</div>";
+  // }
+  //
+  //
+  // // $(".adpage_card-wrapper").prepend("<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>" +
+  // //   "<div class=\"titleDate\">Date</div>")
+  //
+  // $(".adpage_card-wrapper").prepend(prependToTitle)
+  //
+  //
+  //
+  // //Wrappo il contenuto della card prezzo per essere mostrata solo da desktop
+  // $('.adpage_card-wrapper').children().wrapAll("<div class='desktop_price'></div>");
+  //
+  // //Add text showed on mobile
+  // $('.adpage_card-wrapper').append("<div class='mobile_footer_price'>" +
+  //   "<h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>" +
+  //   "<a id=\"prenotaButton\" class=\"button-prenota w-button\">Prenota</a>" +
+  //   "</div>");
+  //
+  //
+  // $("#prenotaButton").click(()=>{
+  //   console.log("Prenota Button clicked");
+  //   $(".desktop_price").css("display","block")
+  //   $("body").css("overflow","hidden")
+  //   $(".mobile_footer_price").css("display","none")
+  //   $("#closeDialog").css("display","block");
+  //   $(".ad-content-wrapper").addClass("removeOnMobile")
+  // })
+  //
+  //
+  // $("#closeDialog").click(()=>{
+  //   console.log("Prenota Button clicked");
+  //   $(".desktop_price").css("display","none")
+  //   $("body").css("overflow","auto")
+  //   $(".mobile_footer_price").css("display","flex")
+  //   $("#closeDialog").css("display","none")
+  //   $(".ad-content-wrapper").removeClass("removeOnMobile")
+  // })
 
   $(".listing-details-container").css("visibility","visible");
   $("aside").css("visibility","visible");
