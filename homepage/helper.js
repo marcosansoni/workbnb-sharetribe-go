@@ -83,7 +83,7 @@ const applyGridView = (numberColumn = 3) => {
   addVisibility("article");
   $(".home-fluid-thumbnail-grid-narrow").css("display", "block");
   console.log("-------")
-  console.log($(".wrapper .row .visible-tablet"))
+  console.log($(".visible-tablet"))
   // To avoid buffering
   $("article").css("visibility", "visible")
 };
