@@ -32,6 +32,10 @@
     flex-direction: column;
 }
 
+.visible-tablet{
+    display: none;
+}
+
 .hiddenOver767, .hiddenOverMobile{
     display: none !important;
 }

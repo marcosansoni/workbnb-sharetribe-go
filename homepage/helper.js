@@ -81,9 +81,13 @@ const applyGridView = (numberColumn = 3) => {
   // Upper scope
   addDisplay(".home-fluid-thumbnail-grid-narrow");
   addVisibility("article");
-  $(".home-fluid-thumbnail-grid-narrow").css("display", "block");
+
+  const contentGridSelector = ".home-fluid-thumbnail-grid-narrow";
+  $(contentGridSelector).css("display", "block");
   console.log("-------")
-  console.log($(".visible-tablet"))
+
+  console.log($(contentGridSelector).parent());
+  // console.log($(".visible-tablet"))
   // To avoid buffering
   $("article").css("visibility", "visible")
 };
@@ -96,5 +100,6 @@ const resetOriginalCssForNotHomePage = () => {
   // $("[class*='SearchBar__form']").css("visibility","hidden")
   // $("[class*='SearchBar__root']").css("visibility","hidden")
   addVisibility("article");
+  addDisplay(".visible-tablet");
   // $("article").css("visibility","visible")
 };
