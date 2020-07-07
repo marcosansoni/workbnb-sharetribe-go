@@ -3,7 +3,7 @@ const generateFilterWithDropDown = (currentType, items, key, defaultText, hasRem
     generateDropDownButton(currentType, defaultText, items, key) +
     '<div class="dropDown" workbnb-key="D' + key + '" tabindex="-1">' +
     generatedDropDownItem(items, currentType, key) +
-    generateRemoveItem(currentType, key, hasRemove)  +
+    generateRemoveItem(currentType, key, hasRemove) +
     '</div></div>'
 };
 
@@ -26,7 +26,7 @@ const generateDropDownButton = (selectedId, defaultText, items, key) => {
 };
 
 const generateRemoveItem = (selectedId, key, hasRemove) => {
-  if(!hasRemove){
+  if (!hasRemove) {
     return '';
   }
   return selectedId !== null ? '<div class="separator"></div>' +
@@ -82,6 +82,8 @@ const applyGridView = (numberColumn = 3) => {
   addDisplay(".home-fluid-thumbnail-grid-narrow");
   addVisibility("article");
   $(".home-fluid-thumbnail-grid-narrow").css("display", "block");
+  console.log("-------")
+  console.log($(".visible-tablet .row .wrapper"))
   // To avoid buffering
   $("article").css("visibility", "visible")
 };
