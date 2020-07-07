@@ -122,6 +122,7 @@ $(document).ready(() => {
 
   if(CHECK_PAGES[PAGES.LISTING_DETAILS]){
 
+    console.log("page listing")
     parsePageListingDetails();
 
   }

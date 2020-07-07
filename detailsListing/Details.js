@@ -19,6 +19,8 @@ const parsePageListingDetails = (category, reser) => {
   // const imageProfile = $(".listing-author-avatar img").attr("src");
   // const nameHost = $(".listing-author-name-link").html();
 
+  console.log(title)
+
   //Set the title and the image of the host
   if(isLogged){
     $(".wrapper").prepend("<div class=\"titolo-annuncio-wrapper\" style='margin-bottom: 24px'>\n" +
