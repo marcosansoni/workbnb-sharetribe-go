@@ -39,7 +39,7 @@ $(document).ready(() => {
     createDialogFilterHomePage();
     // createDialogWithMoreFilterIntoHomePage();
 
-    applyGridView();
+    applyGridView(4);
 
     // Replace Griglia and Mappa button
     const referenceForGrid = $("[title='Griglia']").attr("href");
