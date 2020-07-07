@@ -82,12 +82,12 @@
     padding: 24px;
 }
 
-.footerDialog {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px 12px 16px;
-}
+/*.footerDialog {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    padding: 12px 16px 12px 16px;*/
+/*}*/
 
 .cancelButton {
     border-radius: 6px;
