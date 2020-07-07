@@ -84,6 +84,7 @@
     color: white !important;
     cursor: pointer;
     padding: 12px !important;
+    max-width: min-content !important;
 }
 
 .applyButton {
@@ -93,6 +94,7 @@
     background-color: #3354ff !important;
     color: white !important;
     cursor: pointer;
+    max-width: min-content !important;
 }
 
 .soft {
