@@ -37,6 +37,7 @@
 
 .enabled-book-button, .enabled-book-button:hover {
     background-color: transparent;
+    outline: 0 !important;
 }
 
 #prenotaButtonCard, #prenotaButtonCard:hover {
