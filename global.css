@@ -31,6 +31,10 @@
     display: none;
 }
 
+.row-with-divider{
+    border: 0 !important;
+}
+
 .enabled-book-button, .enabled-book-button:hover {
     background-color: transparent;
 }
