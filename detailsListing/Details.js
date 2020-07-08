@@ -408,7 +408,7 @@ const parsePageListingDetails = (category, reser) => {
   const priceAppartamento = $(".listing-price-amount") && $(".listing-price-amount").length > 0 && $(".listing-price-amount")[0].innerText && $(".listing-price-amount")[0].innerText.trim();
   //
   //Cambio lo stile dentro il button
-  $("#booking-dates button").html("<a class=\"button-prenota w-button\" style='width: 100% !important;'>Prenota</a>")
+  $("#booking-dates button").html("<a class=\"button-prenota w-button\" id=\"prenotaButtonCard\" style='width: 100% !important;'>Prenota</a>")
   //
   //
   // //Text input style
