@@ -31,7 +31,7 @@
     display: none;
 }
 
-.enabled-book-button{
+.enabled-book-button, .enabled-book-button:hover{
     background-color: transparent;
 }
 
