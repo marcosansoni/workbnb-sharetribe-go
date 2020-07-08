@@ -3,34 +3,25 @@ const parsePageListingDetails = (category, reser) => {
   console.log("dettaglio annuncio")
 
   // Click on the map
-  $("#static-map").click();
+  $("#googlemap").click();
 
   let leftSideContent = "<div class=\"ad-content-wrapper\">\n" +
     "    <div data-animation=\"slide\" data-duration=\"500\" data-infinite=\"1\" class=\"adpage_slider w-slider\">\n" +
     "      <div class=\"w-slider-mask\">";
 
-  // const title = $(".listing-title");
-  //
-  // const description = $(".listing-description-content");
-  // const containerListings = $(".listing-details-container");
-  //
-  // //Dati host
-  // const linkProfile = $(".listing-author-avatar a").attr("href");
-  // const imageProfile = $(".listing-author-avatar img").attr("src");
-  // const nameHost = $(".listing-author-name-link").html();
 
   const title = $(".listing-title");
 
   const description = $(".listing-description-content");
   const containerListings = $(".listing-details-container");
 
-//Dati host
+  //Dati host
   const linkProfile = $(".listing-author-avatar a").attr("href");
   const imageProfile = $(".listing-author-avatar img").attr("src");
   const nameHost = $(".listing-author-name-link").html();
 
-//
-//Images
+
+  //Images
   const images = $("img.listing-image");
 
   //Set the title and the image of the host
@@ -43,9 +34,6 @@ const parsePageListingDetails = (category, reser) => {
       "        <h1 class=\"titolo-annuncio\">"+title[0].innerHTML+"</h1><a href='"+linkProfile+"' class=\"host-pic-wrapper w-inline-block\"><img src='"+imageProfile+"' alt=\"\" class=\"host-pic\"><div class=\"host-name\">"+nameHost+"</div></a></div>")
 
   }
-
-  // console.log("")
-
 
   $.each(images,(index,value)=> {
     const linkImages = $(value).attr("src");
@@ -396,26 +384,26 @@ const parsePageListingDetails = (category, reser) => {
   }
 
   //Informazioni sulla struttura
-  if(checkInTime || checkOutTime){
-    leftSideContent+="<h4 class=\"h4-ad\">Informazioni</h4><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb12fbbb4659e0af4f87c79_clock.svg\" alt=\"\" class=\"servizio-icon\">\n";
-    if(checkInTime){
-      leftSideContent+="<div><span class=\"medium\">Check–in</span> dalle "+checkInTime+"  </div>\n";
-    }
-
-    if(checkInTime){
-      leftSideContent+="<div><span class=\"medium\">Check–out</span> entro le "+checkOutTime+" </div>\n";
-    }
-  }
-
-
-  if(minStay){
-    leftSideContent+="    <div class=\"spacing_24\"></div><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb12fcec8c08ba1f23cc74e_calendar-date-2.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "    <div><span class=\"medium\">Soggiorno minimo</span> "+(Number(minStay)===1? "1 giorno":Number(minStay)+" giorni")+" </div>";
-  }
+  // if(checkInTime || checkOutTime){
+  //   leftSideContent+="<h4 class=\"h4-ad\">Informazioni</h4><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb12fbbb4659e0af4f87c79_clock.svg\" alt=\"\" class=\"servizio-icon\">\n";
+  //   if(checkInTime){
+  //     leftSideContent+="<div><span class=\"medium\">Check–in</span> dalle "+checkInTime+"  </div>\n";
+  //   }
+  //
+  //   if(checkInTime){
+  //     leftSideContent+="<div><span class=\"medium\">Check–out</span> entro le "+checkOutTime+" </div>\n";
+  //   }
+  // }
+  //
+  //
+  // if(minStay){
+  //   leftSideContent+="    <div class=\"spacing_24\"></div><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb12fcec8c08ba1f23cc74e_calendar-date-2.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "    <div><span class=\"medium\">Soggiorno minimo</span> "+(Number(minStay)===1? "1 giorno":Number(minStay)+" giorni")+" </div>";
+  // }
 
 
   //Add the map
-  const map = $("#dynamic-map-canvas");
+  const map = $("#googlemap");
 
   leftSideContent+="<div style='margin-top: 64px'>";
 
