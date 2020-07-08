@@ -402,7 +402,7 @@ const parsePageListingDetails = (category, reser) => {
   $("#listing-message-links .ad-page-wrapper").css("display","none")
 
   // clean unused div into price
-  const ad_page = $(".adpage_card-wrapper .ad-page-wrapper").css("display","none");
+  // const ad_page = $(".adpage_card-wrapper .ad-page-wrapper").css("display","none");
 
 
   const priceAppartamento = $(".listing-price-amount") && $(".listing-price-amount").length > 0 && $(".listing-price-amount")[0].innerText && $(".listing-price-amount")[0].innerText.trim();
