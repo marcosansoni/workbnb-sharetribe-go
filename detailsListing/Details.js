@@ -418,15 +418,15 @@ const parsePageListingDetails = (category, reser) => {
   // //Rimuovo il da e il per sopra il box delle date
   // $("#booking-dates label").css("display","none")
   //
-  // let prependToTitle = "<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>";
+  let prependToTitle = "<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>";
   //
-  // if($(".input-daterange").length > 0){
-  //   prependToTitle += "<div class=\"titleDate\">Date</div>";
-  // }
-  //
-  //
-  // $(".adpage_card-wrapper").prepend("<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>" +
-  //   "<div class=\"titleDate\">Date</div>")
+  if($(".input-daterange").length > 0){
+    prependToTitle += "<div class=\"titleDate\">Date</div>";
+  }
+
+
+  $(".adpage_card-wrapper").prepend("<span id='closeDialog' class='backToAnnuncioMobile'>Torna all'annuncio</span><h3 class=\"price\">"+priceAppartamento+" <span class=\"day-note\">per notte</span></h3>" +
+    "<div class=\"titleDate\">Date</div>")
 
   $(".adpage_card-wrapper").prepend(prependToTitle)
 
