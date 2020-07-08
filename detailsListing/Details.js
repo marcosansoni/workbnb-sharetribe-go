@@ -126,17 +126,17 @@ const parsePageListingDetails = (category, reser) => {
 
   //Prezzi extra
   //Pernottamento
-  const pernottamentoElement = currentRow.filter(i=>currentRow[i].innerHTML === 'Pernottamento:');
-  console.log(pernottamentoElement)
-  let pernottamentoPrice = null;
-  if(pernottamentoElement && pernottamentoElement.length > 0){
-    console.log(pernottamentoElement)
-    if(pernottamentoElement[1] &&
-      pernottamentoElement[1].nextSibling &&
-      pernottamentoElement[1].nextSibling.data){
-      pernottamentoPrice = pernottamentoElement[1].nextSibling.data.trim();
-    }
-  }
+  // const pernottamentoElement = currentRow.filter(i=>currentRow[i].innerHTML === 'Pernottamento:');
+  // console.log(pernottamentoElement)
+  // let pernottamentoPrice = null;
+  // if(pernottamentoElement && pernottamentoElement.length > 0){
+  //   console.log(pernottamentoElement)
+  //   if(pernottamentoElement[1] &&
+  //     pernottamentoElement[1].nextSibling &&
+  //     pernottamentoElement[1].nextSibling.data){
+  //     pernottamentoPrice = pernottamentoElement[1].nextSibling.data.trim();
+  //   }
+  // }
   // console.log(pernottamentoPrice)
 
   //Cucina
@@ -164,7 +164,7 @@ const parsePageListingDetails = (category, reser) => {
   console.log("Internet down",internetDownloadSpeed)
   console.log("Internet up",internetUploadSpeed)
   console.log("Min stay ",minStay)
-  console.log("Pernottamento ",pernottamentoPrice)
+  // console.log("Pernottamento ",pernottamentoPrice)
   console.log("Cucina ",cucinaPrice)
   console.log("Colazione ",colazionePrice)
   console.log("Parcheggio ",parcheggioPrice)
@@ -216,84 +216,146 @@ const parsePageListingDetails = (category, reser) => {
   const DEPOSITO_BICI = "Deposito Bici";
   const SPAZIO_ESTERNO = "Spazio Esterno";
   const CUCINA = "Cucina";
-  const PERNOTTAMENTO = 'Incluso nel prezzo'; // se il pernottamento è disponibile nel prezzo ha settato incluso nel prezzo
-
+  // const PERNOTTAMENTO = 'Incluso nel prezzo'; // se il pernottamento è disponibile nel prezzo ha settato incluso nel prezzo
+  const DOCCE = "Docce";
+  const ARIA_CONDIZIONATA = "Aria Condizionata";
+  const RISCALDAMENTO = "Riscaldamento";
+  const PISCINA = "Piscina";
+  const IMPIANTO = "Impianto Audio";
+  const LAVAGNA = "Lavagna interattiva";
+  const MICROFONO = "Microfono";
+  const PROIETTORE = "Proiettore";
+  const SALA_ALLATTAMENTO = "Sala allattamento";
+  const BAR = "Bar";
+  const CENTRO_FITNESS = "Centro Fitness";
+  const HONESTLY = "Honestly Bar";
+  const SALA_RISTORAZIONE = "Sala Ristorazione";
+  const RICARICA = "Colonnine di ricarica per veicoli elettrici";
+  const DEPOSITO = "Deposito";
+  const FINESTRATA = "Postazione Finestrata";
 
   //Add servizi inclusi
   leftSideContent+="<h4 class=\"h4-ad\">Servizi Inclusi</h4>\n" +
     "    <div class=\"w-layout-grid servizi-grid\">";
 
-  if(selected.includes(PERNOTTAMENTO)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb072a9a315e244c26ab845_bed-09.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Pernottamento</div>\n" +
-      "      </div>"
-  }
+  // if(selected.includes(PERNOTTAMENTO)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb072a9a315e244c26ab845_bed-09.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Pernottamento</div>\n" +
+  //     "      </div>"
+  // }
 
-  if(selected.includes(CANCELLERIA)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03d368cf9c42ced82eb32_attach.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Cancelleria</div>\n" +
-      "      </div>"
-  }
 
-  if(selected.includes(PET_FRIENDLY)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02672be784a15015410bd_dog.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Pet Friendly</div>\n" +
-      "      </div>"
-  }
+  const addIncludedAmenities = (text, urlImage) => {
+    if(selected.includes(text)){
+      return "<div class=\"servizio-wrapper\"><img src='"+urlImage+"' alt=\"\" class=\"servizio-icon\">\n" +
+        "        <div class=\"servizio-text\">"+text+"</div>\n" +
+        "      </div>"
+    }
+    return "";
+  };
 
   if(selected.includes(PARCHEGGIO) && (parcheggioPrice === null || parcheggioPrice === undefined || Number(parcheggioPrice) === 0)){
     leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02811be784a5f39541fe5_car-parking.svg\" alt=\"\" class=\"servizio-icon\">\n" +
       "        <div class=\"servizio-text\">Parcheggio</div>\n" +
       "      </div>";
   }
-
-  if(selected.includes(MONITOR)){
-    leftSideContent+=" <div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0284190c3340d5d766889_pc-monitor.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Monitor</div>\n" +
-      "      </div>";
-  }
-
-  if(selected.includes(STAMPANTE)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0286dbe784a19755422d9_printer.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Stampante</div>\n" +
-      "      </div>";
-  }
-
-  if(selected.includes(SELF_CHECK)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028916c4e21085c38eea0_lock-orientation.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Self Check-in</div>\n" +
-      "      </div>";
-  }
-
-  if(selected.includes(ZONA_RELAX)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028c03485d1184acb1d1b_armchair.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Zona Relax</div>\n" +
-      "      </div>";
-  }
-
-  if(selected.includes(SEDIA)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028f53d071410f534ea19_chair.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Sedia Ergonomica</div>\n" +
-      "      </div>";
-  }
-
-  if(selected.includes(IGIENIZZAZIONE)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0291095c521e0c94e6741_spray-2.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Igienizzazione Professionale</div>\n" +
-      "      </div>";
-  }
-
-  if(selected.includes(BEVANDE)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029c41030ea7701d72846_tea.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Bevande Calde</div>\n" +
-      "      </div>";
-  }
-
   if(selected.includes(COLAZIONE) && (colazionePrice === null || colazionePrice === undefined || Number(colazionePrice) === 0) ){
     leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029ec0a8b57fe90df8402_croissant.svg\" alt=\"\" class=\"servizio-icon\">\n" +
       "        <div class=\"servizio-text\">Colazione</div>\n" +
       "      </div>";
   }
+  if(selected.includes(CUCINA) && (cucinaPrice === null || cucinaPrice === undefined || Number(cucinaPrice) === 0) ){
+    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03ec690c33422d17753dc_pan.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+      "        <div class=\"servizio-text\">Cucina</div>\n" +
+      "      </div>";
+  }
+  leftSideContent+= addIncludedAmenities(CANCELLERIA, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03d368cf9c42ced82eb32_attach.svg")
+  leftSideContent+= addIncludedAmenities(PET_FRIENDLY, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02672be784a15015410bd_dog.svg")
+  leftSideContent+= addIncludedAmenities(MONITOR, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0284190c3340d5d766889_pc-monitor.svg")
+  leftSideContent+= addIncludedAmenities(STAMPANTE, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0286dbe784a19755422d9_printer.svg")
+  leftSideContent+= addIncludedAmenities(SELF_CHECK, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028916c4e21085c38eea0_lock-orientation.svg")
+  leftSideContent+= addIncludedAmenities(ZONA_RELAX, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028c03485d1184acb1d1b_armchair.svg")
+  leftSideContent+= addIncludedAmenities(SEDIA, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028f53d071410f534ea19_chair.svg")
+  leftSideContent+= addIncludedAmenities(IGIENIZZAZIONE, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0291095c521e0c94e6741_spray-2.svg")
+  leftSideContent+= addIncludedAmenities(BEVANDE, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029c41030ea7701d72846_tea.svg")
+  leftSideContent+= addIncludedAmenities(DEPOSITO_BICI, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03df23485d193adcbcf17_bike.svg")
+  leftSideContent+= addIncludedAmenities(SPAZIO_ESTERNO, "https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03e4dbe784a9b0354ba5e_park.svg")
+  leftSideContent+= addIncludedAmenities(DOCCE, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/doccia.svg")
+  leftSideContent+= addIncludedAmenities(ARIA_CONDIZIONATA, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/aria_condizionata.svg")
+  leftSideContent+= addIncludedAmenities(RISCALDAMENTO, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/riscaldamento.svg")
+  leftSideContent+= addIncludedAmenities(PISCINA, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/piscina.svg")
+  leftSideContent+= addIncludedAmenities(IMPIANTO, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/impianto_audio.svg")
+  leftSideContent+= addIncludedAmenities(LAVAGNA, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/lavagna.svg")
+  leftSideContent+= addIncludedAmenities(MICROFONO, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/microfono.svg")
+  leftSideContent+= addIncludedAmenities(PROIETTORE, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/proiettore.svg")
+  leftSideContent+= addIncludedAmenities(SALA_ALLATTAMENTO, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/sala_allattamento.svg")
+  leftSideContent+= addIncludedAmenities(BAR, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/bar.svg")
+  leftSideContent+= addIncludedAmenities(CENTRO_FITNESS, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/centro_fitness.svg")
+  leftSideContent+= addIncludedAmenities(HONESTLY, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/honesty_bar.svg")
+  leftSideContent+= addIncludedAmenities(SALA_RISTORAZIONE, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/sala_ristorazione.svg")
+  leftSideContent+= addIncludedAmenities(RICARICA, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/ricarica_auto_elettriche.svg")
+  leftSideContent+= addIncludedAmenities(DEPOSITO, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/deposito.svg")
+  leftSideContent+= addIncludedAmenities(FINESTRATA, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/Finestra.svg")
+
+
+  
+  // if(selected.includes(CANCELLERIA)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03d368cf9c42ced82eb32_attach.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Cancelleria</div>\n" +
+  //     "      </div>"
+  // }
+  //
+  // if(selected.includes(PET_FRIENDLY)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02672be784a15015410bd_dog.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Pet Friendly</div>\n" +
+  //     "      </div>"
+  // }
+
+
+
+  // if(selected.includes(MONITOR)){
+  //   leftSideContent+=" <div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0284190c3340d5d766889_pc-monitor.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Monitor</div>\n" +
+  //     "      </div>";
+  // }
+
+  // if(selected.includes(STAMPANTE)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0286dbe784a19755422d9_printer.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Stampante</div>\n" +
+  //     "      </div>";
+  // }
+
+  // if(selected.includes(SELF_CHECK)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028916c4e21085c38eea0_lock-orientation.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Self Check-in</div>\n" +
+  //     "      </div>";
+  // }
+
+  // if(selected.includes(ZONA_RELAX)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028c03485d1184acb1d1b_armchair.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Zona Relax</div>\n" +
+  //     "      </div>";
+  // }
+  //
+  // if(selected.includes(SEDIA)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028f53d071410f534ea19_chair.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Sedia Ergonomica</div>\n" +
+  //     "      </div>";
+  // }
+
+  // if(selected.includes(IGIENIZZAZIONE)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0291095c521e0c94e6741_spray-2.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Igienizzazione Professionale</div>\n" +
+  //     "      </div>";
+  // }
+  //
+  // if(selected.includes(BEVANDE)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029c41030ea7701d72846_tea.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Bevande Calde</div>\n" +
+  //     "      </div>";
+  // }
+
+
 
   // if(selected.includes(MINIBAR)){
   //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02a5690c334389a7679a5_bottle.svg\" alt=\"\" class=\"servizio-icon\">\n" +
@@ -301,48 +363,44 @@ const parsePageListingDetails = (category, reser) => {
   //     "      </div>";
   // }
 
-  if(selected.includes(DEPOSITO_BICI)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03df23485d193adcbcf17_bike.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Deposito Bici</div>\n" +
-      "      </div>";
-  }
+  // if(selected.includes(DEPOSITO_BICI)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03df23485d193adcbcf17_bike.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Deposito Bici</div>\n" +
+  //     "      </div>";
+  // }
+  //
+  // if(selected.includes(SPAZIO_ESTERNO)){
+  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03e4dbe784a9b0354ba5e_park.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+  //     "        <div class=\"servizio-text\">Spazio Esterno</div>\n" +
+  //     "      </div>";
+  // }
 
-  if(selected.includes(SPAZIO_ESTERNO)){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03e4dbe784a9b0354ba5e_park.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Spazio Esterno</div>\n" +
-      "      </div>";
-  }
 
-  if(selected.includes(CUCINA) && (cucinaPrice === null || cucinaPrice === undefined || Number(cucinaPrice) === 0) ){
-    leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03ec690c33422d17753dc_pan.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-      "        <div class=\"servizio-text\">Cucina</div>\n" +
-      "      </div>";
-  }
 
 
   leftSideContent+="</div>";
 
 
   //Servizi extra
-  const pernottamentoExtra = selected.includes("Non incluso nel prezzo") && pernottamentoPrice && Number(pernottamentoPrice)!==0;
+  // const pernottamentoExtra = selected.includes("Non incluso nel prezzo") && pernottamentoPrice && Number(pernottamentoPrice)!==0;
   const colazioneExtra = selected.includes(COLAZIONE) && colazionePrice && Number(colazionePrice)!==0;
   const parcheggioExtra = selected.includes(PARCHEGGIO) && parcheggioPrice && Number(parcheggioPrice)!==0;
   const cucinaExtra = selected.includes(CUCINA) && cucinaPrice && Number(cucinaPrice)!==0;
   const minibarExtra = selected.includes(MINIBAR);
 
-  if(pernottamentoExtra || colazioneExtra || parcheggioExtra || cucinaExtra || minibarExtra){
+  if(colazioneExtra || parcheggioExtra || cucinaExtra || minibarExtra){
     leftSideContent+="<h4>Servizi Extra</h4>\n" +
       "    <p class=\"caption\">Per questi servizi serve accordarsi direttamente con l&#x27;host. </p>\n" +
       "    <div class=\"w-layout-grid servizi-extra-grid\">";
 
-    if(pernottamentoExtra){
-      leftSideContent+="<div class=\"servizio-extra-wrapper\">\n" +
-        "        <div><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb072a9a315e244c26ab845_bed-09.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-        "          <div class=\"servizio-text\">Pernottamento</div>\n" +
-        "        </div>\n" +
-        "        <div class=\"servizio-price\">€"+Number(pernottamentoPrice)+"</div>\n" +
-        "      </div>";
-    }
+    // if(pernottamentoExtra){
+    //   leftSideContent+="<div class=\"servizio-extra-wrapper\">\n" +
+    //     "        <div><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb072a9a315e244c26ab845_bed-09.svg\" alt=\"\" class=\"servizio-icon\">\n" +
+    //     "          <div class=\"servizio-text\">Pernottamento</div>\n" +
+    //     "        </div>\n" +
+    //     "        <div class=\"servizio-price\">€"+Number(pernottamentoPrice)+"</div>\n" +
+    //     "      </div>";
+    // }
 
     if(cucinaExtra){
       leftSideContent+="<div class=\"servizio-extra-wrapper\">\n" +
