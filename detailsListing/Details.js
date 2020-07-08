@@ -298,85 +298,6 @@ const parsePageListingDetails = (category, reser) => {
   leftSideContent+= addIncludedAmenities(FINESTRATA, "https://marcosansoni.github.io/workbnb-sharetribe-go/assets/Finestra.svg")
 
 
-  
-  // if(selected.includes(CANCELLERIA)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03d368cf9c42ced82eb32_attach.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Cancelleria</div>\n" +
-  //     "      </div>"
-  // }
-  //
-  // if(selected.includes(PET_FRIENDLY)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02672be784a15015410bd_dog.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Pet Friendly</div>\n" +
-  //     "      </div>"
-  // }
-
-
-
-  // if(selected.includes(MONITOR)){
-  //   leftSideContent+=" <div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0284190c3340d5d766889_pc-monitor.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Monitor</div>\n" +
-  //     "      </div>";
-  // }
-
-  // if(selected.includes(STAMPANTE)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0286dbe784a19755422d9_printer.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Stampante</div>\n" +
-  //     "      </div>";
-  // }
-
-  // if(selected.includes(SELF_CHECK)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028916c4e21085c38eea0_lock-orientation.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Self Check-in</div>\n" +
-  //     "      </div>";
-  // }
-
-  // if(selected.includes(ZONA_RELAX)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028c03485d1184acb1d1b_armchair.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Zona Relax</div>\n" +
-  //     "      </div>";
-  // }
-  //
-  // if(selected.includes(SEDIA)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb028f53d071410f534ea19_chair.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Sedia Ergonomica</div>\n" +
-  //     "      </div>";
-  // }
-
-  // if(selected.includes(IGIENIZZAZIONE)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb0291095c521e0c94e6741_spray-2.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Igienizzazione Professionale</div>\n" +
-  //     "      </div>";
-  // }
-  //
-  // if(selected.includes(BEVANDE)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb029c41030ea7701d72846_tea.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Bevande Calde</div>\n" +
-  //     "      </div>";
-  // }
-
-
-
-  // if(selected.includes(MINIBAR)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb02a5690c334389a7679a5_bottle.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Minibar</div>\n" +
-  //     "      </div>";
-  // }
-
-  // if(selected.includes(DEPOSITO_BICI)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03df23485d193adcbcf17_bike.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Deposito Bici</div>\n" +
-  //     "      </div>";
-  // }
-  //
-  // if(selected.includes(SPAZIO_ESTERNO)){
-  //   leftSideContent+="<div class=\"servizio-wrapper\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb03e4dbe784a9b0354ba5e_park.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-  //     "        <div class=\"servizio-text\">Spazio Esterno</div>\n" +
-  //     "      </div>";
-  // }
-
-
-
 
   leftSideContent+="</div>";
 
@@ -392,15 +313,6 @@ const parsePageListingDetails = (category, reser) => {
     leftSideContent+="<h4>Servizi Extra</h4>\n" +
       "    <p class=\"caption\">Per questi servizi serve accordarsi direttamente con l&#x27;host. </p>\n" +
       "    <div class=\"w-layout-grid servizi-extra-grid\">";
-
-    // if(pernottamentoExtra){
-    //   leftSideContent+="<div class=\"servizio-extra-wrapper\">\n" +
-    //     "        <div><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5eb072a9a315e244c26ab845_bed-09.svg\" alt=\"\" class=\"servizio-icon\">\n" +
-    //     "          <div class=\"servizio-text\">Pernottamento</div>\n" +
-    //     "        </div>\n" +
-    //     "        <div class=\"servizio-price\">€"+Number(pernottamentoPrice)+"</div>\n" +
-    //     "      </div>";
-    // }
 
     if(cucinaExtra){
       leftSideContent+="<div class=\"servizio-extra-wrapper\">\n" +
@@ -473,30 +385,30 @@ const parsePageListingDetails = (category, reser) => {
 
   // Fix proper class name
 
-  // $(".wrapper .row").addClass("ad-page-wrapper")
-  // $(".col-8").addClass("ad-content-wrapper");
-  // $(".col-8").removeClass("col-8");
+  $(".wrapper .row").addClass("ad-page-wrapper")
+  $(".col-8").addClass("ad-content-wrapper");
+  $(".col-8").removeClass("col-8");
+
+  $(".col-4").addClass("adpage_card-wrapper");
+  $(".col-4").removeClass("col-4");
   //
-  // $(".col-4").addClass("adpage_card-wrapper");
-  // $(".col-4").removeClass("col-4");
+  //Remove second divider
+  const divider_price = $(".row-with-divider");
+  if(divider_price && divider_price.length === 2){
+    $(divider_price[1]).css("display","none")
+  }
   //
-  // //Remove second divider
-  // const divider_price = $(".row-with-divider");
-  // if(divider_price && divider_price.length === 2){
-  //   $(divider_price[1]).css("display","none")
-  // }
-  //
-  // //Removed stripe payment card
-  // $("#listing-message-links .ad-page-wrapper").css("display","none")
-  //
-  // //clean unused div into price
+  //Removed stripe payment card
+  $("#listing-message-links .ad-page-wrapper").css("display","none")
+
+  //clean unused div into price
   // const ad_page = $(".adpage_card-wrapper .ad-page-wrapper").css("display","none");
   //
   //
   // const priceAppartamento = $(".listing-price-amount") && $(".listing-price-amount").length > 0 && $(".listing-price-amount")[0].innerText && $(".listing-price-amount")[0].innerText.trim();
   //
-  // //Cambio lo stile dentro il button
-  // $("#booking-dates button").html("<a class=\"button-prenota w-button\" style='width: 100% !important;'>Prenota</a>")
+  //Cambio lo stile dentro il button
+  $("#booking-dates button").html("<a class=\"button-prenota w-button\" style='width: 100% !important;'>Prenota</a>")
   //
   //
   // //Text input style
