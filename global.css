@@ -37,6 +37,7 @@
 
 #prenotaButtonCard, #prenotaButtonCard:hover {
     color: white !important;
+    outline: 0 !important;
 }
 
 #sidewinder-wrapper {
