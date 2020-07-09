@@ -27,11 +27,15 @@
     position: relative;
 }
 
+.info-text-container {
+    display: none;
+}
+
 .map-link {
     display: none;
 }
 
-.row-with-divider{
+.row-with-divider {
     border: 0 !important;
 }
 

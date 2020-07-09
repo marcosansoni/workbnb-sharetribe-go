@@ -77,7 +77,7 @@ const descriptionText = (text) => {
 };
 
 
-const addTooltip = () => {
+const addTooltip = (reservation) => {
   const titleSelector = $('label:contains("Titolo")');
   titleSelector.append(descriptionText("Titolo dell'annuncio, sarà quello visualizzato"));
 
@@ -86,10 +86,30 @@ const addTooltip = () => {
   console.log($(".price-container small"));
   removeDisplay(".price-container small");
 
-  const descriptionSelector = $('label:contains("Descrizione Dettagliata")');
+  const descriptionSelector = $('label:contains("Descrizione dettagliata")');
   descriptionSelector.append(descriptionText("La descrizione può essere formattata utilizzando il linguaggio a markdown"))
 
   const internetSelector = $('label:contains("Internet Download")');
   internetSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
+
+  const filterSelector = $('label:contains("Filtri")');
+  filterSelector.append(descriptionText("Selezionare tutti i servizi disponibili all'interno della propria struttura, eventualmente anche a pagamento. Sarà possibile successivamente inserire il prezzo extra."))
+
+  const minHourSelector = $('label:contains("Min")');
+  console.log("!!!!Reservation", reservation)
+  if (reservation === LISTING_SHAPE[TRANSACTION_TYPE.HOURLY]){
+    minHourSelector.append(descriptionText("Numero di ore minime della prenotazione"))
+  }else{
+    minHourSelector.append(descriptionText("Soggiorno minimo"))
+  }
+
+  const festiviSelector = $('label:contains("Festivi")');
+  festiviSelector.append(descriptionText("Spuntare il giorno selezionato se aperto anche nel giorno festivo"))
+
+  const selectorCucina = $('label:contains("Cucina")')[1];
+  selectorCucina.prepend(descriptionText("Inserire il costo eventuale dei servizi, se a pagamento. Se disponibili vanno selezionati anche all'interno della sezione servizi"));
+
+  const immagineSelector = $('label:contains("Immagine")');
+  immagineSelector.append(descriptionText("Caricare come prima immagine quella dello speedTest. Per un miglior risultato usa formati JPG, GIF, PNG che siano di larghezza 660 e altezza 440 pixel."));
 
 };

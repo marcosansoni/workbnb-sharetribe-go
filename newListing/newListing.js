@@ -133,7 +133,7 @@ const onFormCompletedLoading = (category, reservation) => {
   removeFilterForCategory(category);
 
   // add tooltip
-  addTooltip();
+  addTooltip(reservation);
 
 
   const replaceTextIntoTabThree = () => {
