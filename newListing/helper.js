@@ -107,7 +107,8 @@ const addTooltip = (reservation) => {
   festiviSelector.append(descriptionText("Spuntare il giorno selezionato se aperto anche nel giorno festivo"))
 
   const selectorCucina = $('label:contains("Cucina")')[1];
-  selectorCucina.prepend(descriptionText("Inserire il costo eventuale dei servizi, se a pagamento. Se disponibili vanno selezionati anche all'interno della sezione servizi"));
+  // console.log(selectorCucina);
+  $(selectorCucina).prepend(descriptionText("Inserire il costo eventuale dei servizi, se a pagamento. Se disponibili vanno selezionati anche all'interno della sezione servizi"));
 
   const immagineSelector = $('label:contains("Immagine")');
   immagineSelector.append(descriptionText("Caricare come prima immagine quella dello speedTest. Per un miglior risultato usa formati JPG, GIF, PNG che siano di larghezza 660 e altezza 440 pixel."));
