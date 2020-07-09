@@ -86,10 +86,10 @@ const addTooltip = () => {
   console.log($(".price-container small"));
   removeDisplay(".price-container small");
 
-  const description = $('label:contains("Descrizione Dettagliata")');
-  priceSelector.append(descriptionText("La descrizione può essere formattata utilizzando il linguaggio a markdown"))
+  const descriptionSelector = $('label:contains("Descrizione Dettagliata")');
+  descriptionSelector.append(descriptionText("La descrizione può essere formattata utilizzando il linguaggio a markdown"))
 
-  const internet = $('label:contains("Internet Download")');
-  priceSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
+  const internetSelector = $('label:contains("Internet Download")');
+  internetSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
 
 };
