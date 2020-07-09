@@ -95,7 +95,7 @@ const addTooltip = (reservation) => {
   const filterSelector = $('label:contains("Filtri")');
   filterSelector.append(descriptionText("Selezionare tutti i servizi disponibili all'interno della propria struttura, eventualmente anche a pagamento. Sarà possibile successivamente inserire il prezzo extra."))
 
-  const minHourSelector = $('label:contains("Min")');
+  const minHourSelector = $('label:contains("Min ")');
   console.log("!!!!Reservation", reservation)
   if (reservation === LISTING_SHAPE[TRANSACTION_TYPE.HOURLY]){
     minHourSelector.append(descriptionText("Numero di ore minime della prenotazione"))

@@ -28,7 +28,7 @@
 }
 
 .info-text-container {
-    display: none;
+    display: none !important;
 }
 
 .map-link {
