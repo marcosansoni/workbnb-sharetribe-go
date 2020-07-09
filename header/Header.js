@@ -5,6 +5,7 @@ const addHeader = () => {
 
   $("[class*='ProfileDropdown__box']").addClass("avatarDropdown");
 
+  console.log("Header caricato")
 
 // Wrappo header con un container
   $("#topbar-container").wrap("<div class='wrapperHeader'></div>");
