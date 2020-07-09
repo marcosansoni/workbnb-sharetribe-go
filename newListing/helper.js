@@ -85,4 +85,11 @@ const addTooltip = () => {
   priceSelector.append(descriptionText("Prezzo si intende bla bla bla. All'host, al momento della prenotazione, verrà scalata la commissione di workbnb"))
   console.log($(".price-container small"));
   removeDisplay(".price-container small");
+
+  const description = $('label:contains("Descrizione Dettagliata")');
+  priceSelector.append(descriptionText("La descrizione può essere formattata utilizzando il linguaggio a markdown"))
+
+  const internet = $('label:contains("Internet Download")');
+  priceSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
+
 };
