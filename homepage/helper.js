@@ -106,3 +106,7 @@ const resetOriginalCssForNotHomePage = () => {
   addVisibility("#homepage-filters");
   // $("article").css("visibility","visible")
 };
+
+const replaceMessageWithNoResult = () => {
+  $(".home-no-listings").html("Nessun risultato con i filtri selezionati. Prova un'altra ricerca")
+};
