@@ -11,18 +11,18 @@ $(document).ready(() => {
 
   if (CHECK_PAGES[PAGES.NEW_LISTING]) {
 
-    // console.log("New listing");
-    //
-    // const currentCategorySelected = urlParams.get(URL_PARAMS.CATEGORY);
-    // const currentKindReservation = urlParams.get(URL_PARAMS.LISTING_SHAPE);
-    // // No category and no kind of reservation selected
-    // if (!currentCategorySelected && !currentKindReservation) {
-    //   showCategorySelection();
-    // } else if (currentCategorySelected && !currentKindReservation) {
-    //   showReservationTypeSelection(currentCategorySelected);
-    // } else {
-    //   showDetailsNewListing(currentCategorySelected, currentKindReservation);
-    // }
+    console.log("New listing");
+
+    const currentCategorySelected = urlParams.get(URL_PARAMS.CATEGORY);
+    const currentKindReservation = urlParams.get(URL_PARAMS.LISTING_SHAPE);
+    // No category and no kind of reservation selected
+    if (!currentCategorySelected && !currentKindReservation) {
+      showCategorySelection();
+    } else if (currentCategorySelected && !currentKindReservation) {
+      showReservationTypeSelection(currentCategorySelected);
+    } else {
+      showDetailsNewListing(currentCategorySelected, currentKindReservation);
+    }
 
   } else {
     addDisplay(".new-listing-form");
