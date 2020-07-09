@@ -73,8 +73,8 @@ const replaceTextIntoLabel = (title, newText) => {
 };
 
 const descriptionText = (text) => {
-  return "<div class='caption' style='padding-top: 8px; padding-bottom: 8px'>" + text + "</div>";
-}
+  return "<div class='caption' style='padding-top: 8px; padding-bottom: 8px; font-weight: 400'>" + text + "</div>";
+};
 
 
 const addTooltip = () => {
@@ -83,5 +83,6 @@ const addTooltip = () => {
 
   const priceSelector = $('label:contains("Prezzo")');
   priceSelector.append(descriptionText("Prezzo si intende bla bla bla. All'host, al momento della prenotazione, verrà scalata la commissione di workbnb"))
-  removeDisplay("small .price-container");
+  console.log($("small .price-container"));
+  // removeDisplay("small .price-container");
 };
