@@ -8,7 +8,7 @@ const CHECK_PAGES = {
 
 $(document).ready(() => {
 
-  removeVisibility("body");
+  // removeVisibility("body");
 
   addHeader();
 
