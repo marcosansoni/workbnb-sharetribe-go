@@ -52,6 +52,17 @@
     visibility: hidden;
 }
 
+body{
+    padding-top: 96px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    body{
+        padding-top: 64px !important;
+    }
+}
+
 #prenotaButtonCard, #prenotaButtonCard:hover {
     color: white !important;
     outline: 0 !important;
