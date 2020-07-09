@@ -8,6 +8,8 @@ const CHECK_PAGES = {
 
 $(document).ready(() => {
 
+  removeVisibility("body");
+
   addHeader();
 
   if (CHECK_PAGES[PAGES.NEW_LISTING]) {
@@ -158,5 +160,7 @@ $(document).ready(() => {
     "      </div>\n" +
     "    </div>\n" +
     "  </footer>");
+
+  addVisibility("body");
 
 });
