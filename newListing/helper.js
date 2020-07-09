@@ -83,6 +83,6 @@ const addTooltip = () => {
 
   const priceSelector = $('label:contains("Prezzo")');
   priceSelector.append(descriptionText("Prezzo si intende bla bla bla. All'host, al momento della prenotazione, verrà scalata la commissione di workbnb"))
-  console.log($("small .price-container"));
-  // removeDisplay("small .price-container");
+  console.log($(".price-container small"));
+  removeDisplay(".price-container small");
 };
