@@ -48,6 +48,10 @@
     visibility: hidden;
 }
 
+.page-content{
+    visibility: hidden;
+}
+
 #prenotaButtonCard, #prenotaButtonCard:hover {
     color: white !important;
     outline: 0 !important;

@@ -114,18 +114,21 @@ $(document).ready(() => {
     $(".moreFilter").click((e) => {
       console.log("temp")
       addVisibility('.overlay');
-      $("body").css("overflow","hidden");
+      $("body").css("overflow", "hidden");
     });
     addVisibility("#homepage-filters");
   } else {
     resetOriginalCssForNotHomePage();
   }
 
-  if(CHECK_PAGES[PAGES.LISTING_DETAILS]){
+  if (CHECK_PAGES[PAGES.LISTING_DETAILS]) {
 
     console.log("page listing")
     parsePageListingDetails();
+    addVisibility(".page-content");
 
+  } else {
+    addVisibility(".page-content");
   }
 
   //Everywhere footer
