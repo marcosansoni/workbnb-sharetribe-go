@@ -75,5 +75,6 @@ const replaceTextIntoLabel = (title, newText) => {
 
 const addTooltip = () => {
   const titleSelector = $('label:contains("Titolo")');
-  console.log("Titolo ", titleSelector)
+  titleSelector.append("<div>Bella gente</div>");
+  console.log("---------------");
 };
