@@ -19,8 +19,7 @@ const addHeader = () => {
   $("a.Logo").replaceWith("<a href=\"https://workbnb.io/\" aria-current=\"page\" class=\"home-logo w-nav-brand w--current\"><img src=\"https://uploads-ssl.webflow.com/5e9ac4e89ba5994a3ffa4d3e/5e9c61a738205a3d51d4f365_H_Logotype_Black.svg\" alt=\"\"></a>")
   $(".MenuPriority").replaceWith("<span></span>")
 
-  console.log(isLogged)
-  console.log($(".AvatarDropdown").length > 0)
+  const isLogged = $(".AvatarDropdown").length > 0
 
   if (isLogged) {
     $("a.AddNewListingButton").replaceWith("<nav role=\"navigation\" class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"https://spazi.workbnb.io/it/listings/new\" class=\"button secondary_black small w-button\">Candida struttura</a></nav>")

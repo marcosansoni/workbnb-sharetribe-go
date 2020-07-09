@@ -34,7 +34,7 @@ const checkNewListing = () => {
   return splitPath && splitPath.length >= 3 && splitPath[2] === 'listings' && splitPath[3] === 'new';
 };
 
-const isLogged = $(".AvatarDropdown").length > 0;
+
 
 const checkListingDetails = () => {
   return splitPath[splitPath.length - 1].length > 0

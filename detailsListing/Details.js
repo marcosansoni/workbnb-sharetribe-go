@@ -24,6 +24,8 @@ const parsePageListingDetails = (category, reser) => {
   //Images
   const images = $("img.listing-image");
 
+  const isLogged = $(".AvatarDropdown").length > 0;
+
   //Set the title and the image of the host
   if(isLogged){
     $(".wrapper").prepend("<div class=\"titolo-annuncio-wrapper\" style='margin-bottom: 24px'>\n" +
