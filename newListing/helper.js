@@ -72,9 +72,13 @@ const replaceTextIntoLabel = (title, newText) => {
   textSelector.html(newText);
 };
 
+const descriptionText = (text) => {
+  return "<div class='caption'>" + text + "</div>";
+}
+
 
 const addTooltip = () => {
   const titleSelector = $('label:contains("Titolo")');
-  titleSelector.append("<div>Bella gente</div>");
+  titleSelector.append(descriptionText("Titolo dell'annuncio, sarà quello visualizzato"));
   console.log("---------------");
 };
