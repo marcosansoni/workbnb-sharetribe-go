@@ -132,6 +132,10 @@ const onFormCompletedLoading = (category, reservation) => {
   // removed unused filter
   removeFilterForCategory(category);
 
+  // add tooltip
+  addTooltip();
+
+
   const replaceTextIntoTabThree = () => {
     if (Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]) {
       replaceTextIntoLabel('Min stay', "Min hour*");
