@@ -24,13 +24,13 @@ const addHeader = () => {
   console.log(ROOT)
 
   if (isLogged) {
-    $("a.AddNewListingButton").replaceWith("<nav role=\"navigation\" class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"" + ROOT + "/it/listings/new\" class=\"button secondary_black small w-button\">Candida struttura</a></nav>")
+    $("a.AddNewListingButton").replaceWith("<nav role=\"navigation\" class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"" + ROOT + "it/listings/new\" class=\"button secondary_black small w-button\">Candida struttura</a></nav>")
     $("a.MenuItem_link:first").attr("href", "" + ROOT + "");
     $("a.home-logo").attr("href", "" + ROOT + "");
-    $(".MenuItem:first").append("<a class=\"MenuItem_link MenuItem__menuitemLink__2Eedg MenuMobile__menuSectionMenuItemLink__GfyW6\" href=\"" + ROOT + "/it/listings/new\" style=\"color:#222222;\" data-reactid=\"20\">Candida struttura</a>")
+    $(".MenuItem:first").append("<a class=\"MenuItem_link MenuItem__menuitemLink__2Eedg MenuMobile__menuSectionMenuItemLink__GfyW6\" href=\"" + ROOT + "it/listings/new\" style=\"color:#222222;\" data-reactid=\"20\">Candida struttura</a>")
   } else {
-    $("a.AddNewListingButton").replaceWith("<nav role=\"navigation\" class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"" + ROOT + "/it/login\" class=\"nav-link w-nav-link\">Accedi</a><a href=\"" + ROOT + "/it/signup\"  class=\"button secondary_black small w-button\">Registrati</a></nav>")
-    $(".OffScreenMenu_main").append("<div class=\"MenuSection MenuMobile__menuSection__gD-As\" data-reactid=\"13\"><div class=\"MenuSection_title MenuMobile__menuSectionTitle__2HlQg\" data-reactid=\"14\">User</div><div class=\"MenuItem MenuItem__menuitem__3_-l_  MenuMobile__menuSectionMenuItem__2yMLC\" data-reactid=\"15\"><a class=\"MenuItem_link MenuItem__menuitemLink__2Eedg MenuMobile__menuSectionMenuItemLink__GfyW6\" href=\"" + ROOT + "/it/login\" style=\"color:#222222;\" data-reactid=\"16\">Login</a><a class=\"MenuItem_link MenuItem__menuitemLink__2Eedg MenuMobile__menuSectionMenuItemLink__GfyW6\"  href=\"" + ROOT + "/it/signup\" style=\"color:#222222;\" data-reactid=\"20\">Registrati</a></div></div>")
+    $("a.AddNewListingButton").replaceWith("<nav role=\"navigation\" class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"" + ROOT + "it/login\" class=\"nav-link w-nav-link\">Accedi</a><a href=\"" + ROOT + "it/signup\"  class=\"button secondary_black small w-button\">Registrati</a></nav>")
+    $(".OffScreenMenu_main").append("<div class=\"MenuSection MenuMobile__menuSection__gD-As\" data-reactid=\"13\"><div class=\"MenuSection_title MenuMobile__menuSectionTitle__2HlQg\" data-reactid=\"14\">User</div><div class=\"MenuItem MenuItem__menuitem__3_-l_  MenuMobile__menuSectionMenuItem__2yMLC\" data-reactid=\"15\"><a class=\"MenuItem_link MenuItem__menuitemLink__2Eedg MenuMobile__menuSectionMenuItemLink__GfyW6\" href=\"" + ROOT + "it/login\" style=\"color:#222222;\" data-reactid=\"16\">Login</a><a class=\"MenuItem_link MenuItem__menuitemLink__2Eedg MenuMobile__menuSectionMenuItemLink__GfyW6\"  href=\"" + ROOT + "it/signup\" style=\"color:#222222;\" data-reactid=\"20\">Registrati</a></div></div>")
   }
 
   $("<nav role=\"navigation\" style='margin-right:0' class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"https://workbnb.io/lungo-termine\" target=\"_blank\" class=\"nav-link w-nav-link\">Lungo termine</a><a href=\"https://workbnb.io/host\" target=\"_blank\" class=\"nav-link w-nav-link\">Diventa un host</a>").insertAfter($('#topbar-container').find("[class*='Topbar__topbarMenuSpacer']"))
