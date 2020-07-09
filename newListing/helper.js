@@ -73,7 +73,7 @@ const replaceTextIntoLabel = (title, newText) => {
 };
 
 const descriptionText = (text) => {
-  return "<div class='caption'>" + text + "</div>";
+  return "<div class='caption' style='padding-top: 8px; padding-bottom: 8px'>" + text + "</div>";
 }
 
 
