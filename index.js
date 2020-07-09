@@ -8,6 +8,7 @@ const CHECK_PAGES = {
 
 $(document).ready(() => {
 
+  addHeader();
 
   if (CHECK_PAGES[PAGES.NEW_LISTING]) {
 
@@ -34,6 +35,9 @@ $(document).ready(() => {
 
   if (CHECK_PAGES[PAGES.LISTING_LIST] || CHECK_PAGES[PAGES.HOME]) {
     console.log("TUTTE LE INSERZIONI");
+
+    openCardInATab();
+
 
     replaceMessageWithNoResult();
 

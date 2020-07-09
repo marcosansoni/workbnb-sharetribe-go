@@ -1,0 +1,56 @@
+.OnboardingTopBar__topbarContainer__sUy7z{
+    display: none;
+}
+
+#topbar-container{
+    min-height: 79px;
+    visibility: hidden;
+    flex-grow: 1;
+    max-width: 1320px;
+    border-bottom: none;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.Topbar{
+    border-bottom: none;
+}
+
+#topbar-container .Topbar{
+    /*max-width: 1320px;*/
+}
+
+@media screen and (max-width: 991px) {
+    #topbar-container{
+        min-height: 60px;
+    }
+}
+
+.Topbar__topbarMenuSpacer__3hqBi{
+    display: block;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .Topbar__topbarMenuSpacer__3hqBi{
+        display: none;
+    }
+}
+
+
+.wrapperHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0,0,50,0.1);
+    position: fixed;
+    top:0;
+    z-index: 10;
+    background-color: white;
+}
+
+.OffScreenMenu_header{
+    display: none;
+}

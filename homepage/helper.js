@@ -110,3 +110,11 @@ const resetOriginalCssForNotHomePage = () => {
 const replaceMessageWithNoResult = () => {
   $(".home-no-listings").html("Nessun risultato con i filtri selezionati. Prova un'altra ricerca")
 };
+
+const openCardInATab = () => {
+  $(".fluid-thumbnail-grid-image-item-link").click(function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    window.open(this.href, '_blank');
+  });
+}
