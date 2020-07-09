@@ -44,6 +44,10 @@
     outline: 0 !important;
 }
 
+#homepage-filters {
+    visibility: hidden;
+}
+
 #prenotaButtonCard, #prenotaButtonCard:hover {
     color: white !important;
     outline: 0 !important;

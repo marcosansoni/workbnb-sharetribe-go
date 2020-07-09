@@ -116,6 +116,7 @@ $(document).ready(() => {
       addVisibility('.overlay');
       $("body").css("overflow","hidden");
     });
+    addVisibility("#homepage-filters");
   } else {
     resetOriginalCssForNotHomePage();
   }

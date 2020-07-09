@@ -103,5 +103,6 @@ const resetOriginalCssForNotHomePage = () => {
   // $("[class*='SearchBar__root']").css("visibility","hidden")
   addVisibility("article");
   addDisplay(".visible-tablet");
+  addVisibility("#homepage-filters");
   // $("article").css("visibility","visible")
 };
