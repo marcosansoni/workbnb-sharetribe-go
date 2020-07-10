@@ -5,6 +5,7 @@ const PAGES = {
   LISTING_LIST: 'ListingList',
   LISTING_DETAILS: 'ListingDetails',
   NEW_LISTING: 'NewListing',
+  EDIT_LISTING: 'EditListing',
 };
 
 // Search key used into all listings

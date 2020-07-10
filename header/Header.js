@@ -21,7 +21,6 @@ const addHeader = () => {
 
   const isLogged = $(".AvatarDropdown").length > 0;
 
-  console.log(ROOT)
 
   if (isLogged) {
     $("a.AddNewListingButton").replaceWith("<nav role=\"navigation\" class=\"nav-menu w-nav-menu hiddenOnMobile\"><a href=\"" + ROOT + "it/listings/new\" class=\"button secondary_black small w-button\">Candida struttura</a></nav>")

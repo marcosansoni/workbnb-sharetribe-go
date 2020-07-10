@@ -35,11 +35,14 @@ const checkNewListing = () => {
 };
 
 
-
 const checkListingDetails = () => {
   return splitPath[splitPath.length - 1].length > 0
     && isNumber(splitPath[splitPath.length - 1].charAt(0))
     && splitPath[splitPath.length - 2] === 'listings'
+};
+
+const checkEditListing = () => {
+  return splitPath && splitPath.length >= 5 && splitPath[2] === 'listings' && splitPath[4] === 'edit';
 };
 
 

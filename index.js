@@ -3,6 +3,7 @@ const CHECK_PAGES = {
   [PAGES.LISTING_LIST]: checkListingsList(),
   [PAGES.NEW_LISTING]: checkNewListing(),
   [PAGES.LISTING_DETAILS]: checkListingDetails(),
+  [PAGES.EDIT_LISTING]: checkEditListing(),
 };
 
 
@@ -137,6 +138,14 @@ $(document).ready(() => {
 
   } else {
     addVisibility(".page-content");
+  }
+
+  if (CHECK_PAGES[PAGES.EDIT_LISTING]) {
+
+    console.log("sono in edit");
+
+    editListing();
+
   }
 
   //Everywhere footer
