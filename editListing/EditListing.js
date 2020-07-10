@@ -1,4 +1,4 @@
 const editListing = () => {
-  const selectorCategory = $(".selected-groups .selected-group .select");
+  const selectorCategory = $(".selected-group");
   console.log(selectorCategory);
 };
