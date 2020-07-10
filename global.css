@@ -48,18 +48,18 @@
     visibility: hidden;
 }
 
-.page-content{
+.page-content {
     visibility: hidden;
 }
 
-body{
+body {
     padding-top: 96px;
     visibility: hidden;
 }
 
 @media screen and (max-width: 1200px) {
 
-    body{
+    body {
         padding-top: 64px !important;
     }
 }
@@ -72,6 +72,7 @@ body{
 #sidewinder-wrapper {
     display: flex;
     flex-direction: column;
+    top: unset;
 }
 
 .visible-tablet {
