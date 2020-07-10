@@ -140,6 +140,8 @@ $(document).ready(() => {
     addVisibility(".page-content");
   }
 
+  console.log(CHECK_PAGES[PAGES.EDIT_LISTING])
+
   if (CHECK_PAGES[PAGES.EDIT_LISTING]) {
 
     console.log("sono in edit");
