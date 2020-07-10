@@ -21,11 +21,6 @@
     /*max-width: 1320px;*/
 }
 
-@media screen and (max-width: 991px) {
-    #topbar-container{
-        min-height: 60px;
-    }
-}
 
 .Topbar__topbarMenuSpacer__3hqBi{
     display: block;
@@ -53,4 +48,25 @@
 
 .OffScreenMenu_header{
     display: none;
+}
+
+.AvatarDropdown{
+    position: relative;
+}
+
+.avatarDropdown{
+    right: inherit;
+    left: -220px;
+}
+
+@media screen and (max-width: 1200px) {
+    .avatarDropdown{
+        right: -16px;
+        left: inherit;
+    }
+
+    #topbar-container{
+        min-height: 60px;
+    }
+
 }
