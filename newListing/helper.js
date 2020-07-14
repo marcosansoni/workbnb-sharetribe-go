@@ -79,32 +79,33 @@ const descriptionText = (text) => {
 
 const addTooltip = (reservation) => {
   const titleSelector = $('label:contains("Titolo")');
-  titleSelector.append(descriptionText("Titolo dell'annuncio, sarà quello visualizzato"));
+  titleSelector.append(descriptionText("Ad esempio \"Studio con finestra sul lago\""));
 
   const priceSelector = $('label:contains("Prezzo")');
-  priceSelector.append(descriptionText("Prezzo si intende bla bla bla. All'host, al momento della prenotazione, verrà scalata la commissione di workbnb"))
+  priceSelector.append(descriptionText("Al momento della prenotazione verrà scalato l'8% della commissione di workbnb"))
   console.log($(".price-container small"));
   removeDisplay(".price-container small");
 
   const descriptionSelector = $('label:contains("Descrizione dettagliata")');
-  descriptionSelector.append(descriptionText("La descrizione può essere formattata utilizzando il linguaggio a markdown"))
+  descriptionSelector.append(descriptionText("Indica principalmente cosa può risultare utile per il lavoratore"))
 
   const internetSelector = $('label:contains("Internet Download")');
-  internetSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
+  // internetSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
+  internetSelector.prepend("<div class='caption' style='padding-top: 8px; padding-bottom: 8px; font-weight: 400'>Se non conosci la velocità della tua linea, visita il sito <a target=\"_blank\" href=\"speedtest.net\" style=\"color:#222222\">Speedtest</a> per un test gratuito</div>");
 
   const filterSelector = $('label:contains("Servizi inclusi")');
-  filterSelector.append(descriptionText("Selezionare tutti i servizi disponibili all'interno della propria struttura, eventualmente anche a pagamento. Sarà possibile successivamente inserire il prezzo extra."))
+  filterSelector.append(descriptionText("Seleziona tutti i servizi inclusi nel prezzo indicato nell'annuncio"))
 
   const minHourSelector = $('label:contains("Min ")');
   console.log("!!!!Reservation", reservation)
-  if (reservation === LISTING_SHAPE[TRANSACTION_TYPE.HOURLY]){
-    minHourSelector.append(descriptionText("Numero di ore minime della prenotazione"))
-  }else{
+  if (reservation !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]){
     minHourSelector.append(descriptionText("Soggiorno minimo"))
+  }else{
+    minHourSelector.append(descriptionText("Numero di ore prenotabili"))
   }
 
   const festiviSelector = $('label:contains("Festivi")');
-  festiviSelector.append(descriptionText("Spuntare il giorno selezionato se aperto anche nel giorno festivo"))
+  festiviSelector.append(descriptionText("Indica se il tuo spazio è disponibile anche durante il weekend"))
 
   const selectorCucina = $('label:contains("Cucina")')[1];
   // console.log(selectorCucina);
@@ -112,6 +113,6 @@ const addTooltip = (reservation) => {
 
 
   const immagineSelector = $('label:contains("Immagine")');
-  immagineSelector.append(descriptionText("Caricare come prima immagine quella dello speedTest. Per un miglior risultato usa formati JPG, GIF, PNG che siano di larghezza 660 e altezza 440 pixel."));
+  immagineSelector.append(descriptionText("Assicurati che la prima immagine mostri la postazione di lavoro. <br />Carica inoltre uno screen dello speedtest effettuato. <br />Per un miglior risultato usa formati JPG, GIF, PNG che siano di larghezza 660 e altezza 440 pixel."));
 
 };
