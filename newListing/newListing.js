@@ -256,13 +256,13 @@ const onFormCompletedLoading = (category, reservation) => {
   addTooltip(reservation);
 
 
-  const replaceTextIntoTabThree = () => {
-    if (Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]) {
-      replaceTextIntoLabel('Min stay', "Min hour*");
-      replaceTextIntoLabel('Orario check-in', "Orario apertura*");
-      replaceTextIntoLabel('Orario check-out', "Orario chiusura*");
-    }
-  };
+  // const replaceTextIntoTabThree = () => {
+  //   if (Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]) {
+  //     replaceTextIntoLabel('Min stay', "Min hour*");
+  //     replaceTextIntoLabel('Orario check-in', "Orario apertura*");
+  //     replaceTextIntoLabel('Orario check-out', "Orario chiusura*");
+  //   }
+  // };
 
 
   // Show first tab details
