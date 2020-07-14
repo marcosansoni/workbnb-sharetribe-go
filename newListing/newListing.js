@@ -5,14 +5,14 @@ const showCategorySelection = () => {
   let container = '<div class="col-12">';
 
   container += '<div class="col-12">' +
-    '<h1 class="titolo-annuncio">Inserisci una struttura</h1>' +
-    '<h4 style="padding-top: 32px">Seleziona la categoria dello spazio da pubblicare</h4>' +
+    '<h1 class="titolo-annuncio">Inserisci la tua struttura</h1>' +
+    '<h4 style="padding-top: 32px">Che tipologia di struttura vuoi pubblicare?<span class="caption" style="cursor: pointer" id="helperCategoriaPrenotazione">&nbsp; Che cosa significa?</span></h4>' +
     '<div class="containerBox w-layout-grid grid-3-column">' +
     '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.PRIVATE_ROOM] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item">Stanza Privata</div></a>' +
     '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.ALL_HOUSE] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item">Tutta la casa</div></a>' +
     '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.SHARED_STUDY] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item ">Studio condiviso</div></a>' +
-    '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.OFFICE] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item ">Ufficio</div></a>' +
-    '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.SHARED_OFFICE] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item ">Ufficio condiviso</div></a>' +
+    '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.OFFICE] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item ">Ufficio privato</div></a>' +
+    '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.SHARED_OFFICE] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item ">Coworking</div></a>' +
     '<a href=' + currentUrl + '?' + URL_PARAMS.CATEGORY + '=' + CATEGORY_LISTING[CATEGORY.MEETING_ROOM] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item ">Sala Meeting</div></a>' +
     '</div>' +
     '</div>';
@@ -21,6 +21,82 @@ const showCategorySelection = () => {
   container += '</div>';
 
   $(".wrapper").append(container);
+
+  $("body").append('' +
+    '<div class="overlay">' +
+    '    <div class="dialog">' +
+    '       <div id="closeDialog">\n' +
+    '            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 630" width="730" height="630"\n' +
+    '                 preserveAspectRatio="xMidYMid meet"\n' +
+    '                 style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);">\n' +
+    '                <defs>\n' +
+    '                    <clipPath id="__lottie_element_2">\n' +
+    '                        <rect width="730" height="630" x="0" y="0"></rect>\n' +
+    '                    </clipPath>\n' +
+    '                </defs>\n' +
+    '                <g clip-path="url(#__lottie_element_2)">\n' +
+    '                    <g transform="matrix(-0.7071067690849304,-0.7071067690849304,0.7071067690849304,-0.7071067690849304,489.8043518066406,189.69564819335938)"\n' +
+    '                       opacity="1" style="display: none;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,-176.5 C-327,-176.5 327,-176.5 327,-176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                    <g transform="matrix(-0.7071067690849304,0.7071067690849304,-0.7071067690849304,-0.7071067690849304,489.8043518066406,438.3043518066406)"\n' +
+    '                       opacity="1" style="display: none;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,176.5 C-327,176.5 327,176.5 327,176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                    <g transform="matrix(-0.7071067690849304,-0.7071067690849304,0.7071067690849304,-0.7071067690849304,489.8043518066406,189.69564819335938)"\n' +
+    '                       opacity="1" style="display: block;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,-176.5 C-327,-176.5 327,-176.5 327,-176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                    <g transform="matrix(-0.7071067690849304,0.7071067690849304,-0.7071067690849304,-0.7071067690849304,489.8043518066406,438.3043518066406)"\n' +
+    '                       opacity="1" style="display: block;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,176.5 C-327,176.5 327,176.5 327,176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                </g>\n' +
+    '            </svg>\n' +
+    '        </div>' +
+    '        <div class="headerDialog">' +
+    '            <h4 style="margin: 0">Tipo di struttura</h4>' +
+    '        </div>' +
+    '         <div class="content">' +
+    '             <h4>Tutta la casa:</h4>' +
+    '             <span>Lorem ipsum</span>' +
+    '             <h4 style="padding-top: 32px">Stanza privata:</h4>' +
+    '             <span>Lorem ipsum</span>' +
+    '             <h4 style="padding-top: 32px">Studio condiviso:</h4>' +
+    '             <span>Lorem ipsum</span>' +
+    '             <h4>Ufficio privato:</h4>\' +\n' +
+    '    \'       <span>Lorem ipsum</span>\' +' +
+    '             <h4>Coworking:</h4>\' +\n' +
+    '    \'       <span>Lorem ipsum</span>\' +' +
+    '             <h4>Sala meeting:</h4>\' +\n' +
+    '    \'       <span>Lorem ipsum</span>\' +' +
+    '         </div>' +
+    '     </div>' +
+    '</div>');
+
+  $("#helperCategoriaPrenotazione").click(() => {
+    addVisibility('.overlay');
+  });
+
+  $("#closeDialog").click(() => {
+    removeVisibility('.overlay');
+  });
 };
 
 
@@ -31,11 +107,11 @@ const showReservationTypeSelection = (category) => {
   let container = '<div class="col-12">';
 
   container += '<div class="col-12" style="display: flex; flex-direction: column">' +
-    '<h1 class="titolo-annuncio">Inserisci una struttura</h1>' +
-    '<h4 style="padding-top: 32px">Categoria selezionata</h4>' +
+    '<h1 class="titolo-annuncio">Inserisci la tua struttura</h1>' +
+    '<h4 style="padding-top: 32px">Tipologia di struttura selezionata</h4>' +
     '<span class="medium">' + VISUALIZED_CATEGORY[getKeyByValue(CATEGORY_LISTING, Number(category))] + '</span>' +
     '<span class="caption" style="padding-top: 24px">Sarà possibile modificare la categoria una volta inserita la struttura</span>' +
-    '<h4 style="padding-top: 32px">Seleziona il tipo di prenotazione che desideri offrire<span class="caption" style="cursor: pointer" id="helperTipoPrenotazione">&nbsp; Che cosa significa?</span></h4>' +
+    '<h4 style="padding-top: 32px">Come vuoi proporre il tuo spazio?<span class="caption" style="cursor: pointer" id="helperTipoPrenotazione">&nbsp; Che cosa significa?</span></h4>' +
     '<div class="containerBox w-layout-grid grid-3-column">' +
     '<a href=' + currentUrl + '&' + URL_PARAMS.LISTING_SHAPE + '=' + LISTING_SHAPE[TRANSACTION_TYPE.HOURLY] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item">Per ora</div></a>' +
     '<a href=' + currentUrl + '&' + URL_PARAMS.LISTING_SHAPE + '=' + LISTING_SHAPE[TRANSACTION_TYPE.DAILY] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item">Per giorno</div></a>' +
@@ -53,7 +129,51 @@ const showReservationTypeSelection = (category) => {
   $("body").append('' +
     '<div class="overlay">' +
     '    <div class="dialog">' +
-    '        <div id="closeDialog">X</div>\n' +
+    '        <div id="closeDialog">\n' +
+    '            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 630" width="730" height="630"\n' +
+    '                 preserveAspectRatio="xMidYMid meet"\n' +
+    '                 style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);">\n' +
+    '                <defs>\n' +
+    '                    <clipPath id="__lottie_element_2">\n' +
+    '                        <rect width="730" height="630" x="0" y="0"></rect>\n' +
+    '                    </clipPath>\n' +
+    '                </defs>\n' +
+    '                <g clip-path="url(#__lottie_element_2)">\n' +
+    '                    <g transform="matrix(-0.7071067690849304,-0.7071067690849304,0.7071067690849304,-0.7071067690849304,489.8043518066406,189.69564819335938)"\n' +
+    '                       opacity="1" style="display: none;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,-176.5 C-327,-176.5 327,-176.5 327,-176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                    <g transform="matrix(-0.7071067690849304,0.7071067690849304,-0.7071067690849304,-0.7071067690849304,489.8043518066406,438.3043518066406)"\n' +
+    '                       opacity="1" style="display: none;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,176.5 C-327,176.5 327,176.5 327,176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                    <g transform="matrix(-0.7071067690849304,-0.7071067690849304,0.7071067690849304,-0.7071067690849304,489.8043518066406,189.69564819335938)"\n' +
+    '                       opacity="1" style="display: block;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,-176.5 C-327,-176.5 327,-176.5 327,-176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                    <g transform="matrix(-0.7071067690849304,0.7071067690849304,-0.7071067690849304,-0.7071067690849304,489.8043518066406,438.3043518066406)"\n' +
+    '                       opacity="1" style="display: block;">\n' +
+    '                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">\n' +
+    '                            <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(33,33,33)"\n' +
+    '                                  stroke-opacity="1" stroke-width="55"\n' +
+    '                                  d=" M-327,176.5 C-327,176.5 327,176.5 327,176.5"></path>\n' +
+    '                        </g>\n' +
+    '                    </g>\n' +
+    '                </g>\n' +
+    '            </svg>\n' +
+    '        </div>\n' +
     '        <div class="headerDialog">' +
     '            <h4 style="margin: 0">Tipi di prenotazione</h4>' +
     '        </div>' +
@@ -215,7 +335,7 @@ const onFormCompletedLoading = (category, reservation) => {
   const containerAll = $(".new-listing-form");
 
   const previousOptionSelected =
-    '<h1 class="titolo-annuncio">Inserisci una struttura</h1>' +
+    '<h1 class="titolo-annuncio">Inserisci la tua struttura</h1>' +
     '<h4 style="padding-top: 32px">Categoria selezionata</h4>' +
     '<span class="medium">' + VISUALIZED_CATEGORY[getKeyByValue(CATEGORY_LISTING, Number(category))] + '</span>' +
     '<h4 style="padding-top: 32px">Prenotazione selezionata</h4>' +

@@ -45,7 +45,7 @@ const VISUALIZED_CATEGORY = {
   [CATEGORY.PRIVATE_ROOM]: 'Stanza privata',
   [CATEGORY.ALL_HOUSE]: 'Tutta la casa',
   [CATEGORY.SHARED_STUDY]: 'Studio Condiviso',
-  [CATEGORY.OFFICE]: 'Ufficio',
+  [CATEGORY.OFFICE]: 'Ufficio privato',
   [CATEGORY.MEETING_ROOM]: 'Sala riunioni',
   [CATEGORY.SHARED_OFFICE]: 'Coworking',
 };
