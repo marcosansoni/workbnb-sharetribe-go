@@ -64,6 +64,10 @@ body {
     }
 }
 
+#listing_map_canvas {
+    height: 450px;
+}
+
 #prenotaButtonCard, #prenotaButtonCard:hover {
     color: white !important;
     outline: 0 !important;
