@@ -294,7 +294,7 @@ const onFormCompletedLoading = (category, reservation) => {
     tabNumber: 3,
     title: "Orari",
     labelForTitleSelector: "Orario check-in",
-    extraAction: replaceTextIntoTabThree,
+    // extraAction: replaceTextIntoTabThree,
   });
   //
   //
