@@ -29,8 +29,8 @@ const openNewListing = (tab = 1) => {
       return;
     case 3:
       // addDisplay(".checkbox-group-container label", 'inline-block');
-      displayText('Min stay');
-      displayText('Min hour');
+      displayText('Soggiorno minimo');
+      displayText('Minimo di ore prenotabili');
       displayText('Orario check-in');
       displayText('Orario apertura');
       displayText('Orario check-out');
@@ -74,12 +74,12 @@ const resetErrorNewListing = (tab) => {
       return;
     case 3:
       //Reset error previously hidden
-      resetError('Orario check-in');
-      resetError('Orario check-out');
-      resetError('Min stay');
-      resetError('Orario apertura');
-      resetError('Orario chiusura');
-      resetError('Min hour');
+      // resetError('Orario check-in');
+      // resetError('Orario check-out');
+      // resetError('Min stay');
+      // resetError('Orario apertura');
+      // resetError('Orario chiusura');
+      // resetError('Min hour');
       return;
     // No errors into this tab
     case 4:
@@ -124,8 +124,8 @@ const closeNewListing = (tab = 1) => {
     case 3:
       // removeDisplay(".checkbox-group-container label");
 
-      removeDisplayText('Min stay');
-      removeDisplayText('Min hour');
+      removeDisplayText('Soggiorno minimo');
+      removeDisplayText('Minimo di ore prenotabili');
 
       // Check-In
       removeDisplayText('Orario check-in');
@@ -137,12 +137,12 @@ const closeNewListing = (tab = 1) => {
 
       removeDisplayText('Festivi');
       // Error
-      hideError('Orario check-out');
-      hideError('Orario chiusura');
-      hideError('Orario check-in');
-      hideError('Orario apertura');
-      hideError('Min stay');
-      hideError('Min hour');
+      // hideError('Orario check-out');
+      // hideError('Orario chiusura');
+      // hideError('Orario check-in');
+      // hideError('Orario apertura');
+      // hideError('Min stay');
+      // hideError('Min hour');
       return;
     case 4:
       // const selectorCucina = $('label:contains("Cucina")')[1];
