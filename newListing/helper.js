@@ -113,7 +113,6 @@ const addTooltip = (reservation) => {
 
 
   const immagineSelector = $('label:contains("Immagine")');
-  immagineSelector.replaceWith(descriptionText("Assicurati che la prima immagine mostri la postazione di lavoro. <br />Carica inoltre uno screen dello speedtest effettuato. <br />Per un miglior risultato usa formati JPG, GIF, PNG che siano di larghezza 660 e altezza 440 pixel."));
-
+  immagineSelector.append(descriptionText("Assicurati che la prima immagine mostri la postazione di lavoro. <br />Carica inoltre uno screen dello speedtest effettuato. <br />Per un miglior risultato usa formati JPG, GIF, PNG che siano di larghezza 660 e altezza 440 pixel."));
 
 };
