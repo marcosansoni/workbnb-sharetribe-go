@@ -256,15 +256,17 @@ const onFormCompletedLoading = (category, reservation) => {
   addTooltip(reservation);
 
   const hiddenFilterAccordingWithReservation = () => {
-    if(Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]){
-      removeDisplayText("Orario check-in",0);
-      removeDisplayText("Orario check-out",0);
-      removeDisplayText("Soggiorno minimo",0);
-    }else{
-      removeDisplayText("Orario apertura",0);
-      removeDisplayText("Orario chiusura",0);
-      removeDisplayText("Minimo di ore prenotabili",0);
-      removeDisplayText("Festivi",1);
+    if (Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]) {
+      console.log("Non per notte")
+      removeDisplayText("Orario check-in");
+      removeDisplayText("Orario check-out");
+      removeDisplayText("Soggiorno minimo");
+    } else {
+      console.log("Per notte")
+      removeDisplayText("Orario apertura");
+      removeDisplayText("Orario chiusura");
+      removeDisplayText("Minimo di ore prenotabili");
+      removeDisplayText("Festivi");
     }
   };
 
