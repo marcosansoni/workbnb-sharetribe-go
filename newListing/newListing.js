@@ -255,6 +255,19 @@ const onFormCompletedLoading = (category, reservation) => {
   // add tooltip
   addTooltip(reservation);
 
+  const hiddenFilterAccordingWithReservation = () => {
+    if(Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]){
+      removeDisplayText("Orario check-in",0);
+      removeDisplayText("Orario check-out",0);
+      removeDisplayText("Soggiorno minimo",0);
+    }else{
+      removeDisplayText("Orario apertura",0);
+      removeDisplayText("Orario chiusura",0);
+      removeDisplayText("Minimo di ore prenotabili",0);
+      removeDisplayText("Festivi",1);
+    }
+  };
+
 
   // const replaceTextIntoTabThree = () => {
   //   if (Number(reservation) !== LISTING_SHAPE[TRANSACTION_TYPE.NIGHTLY]) {
@@ -294,7 +307,7 @@ const onFormCompletedLoading = (category, reservation) => {
     tabNumber: 3,
     title: "Orari",
     labelForTitleSelector: "Orario check-in",
-    // extraAction: replaceTextIntoTabThree,
+    extraAction: hiddenFilterAccordingWithReservation,
   });
   //
   //
