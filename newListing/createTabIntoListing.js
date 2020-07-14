@@ -14,9 +14,18 @@ const openNewListing = (tab = 1) => {
     case 2:
       displayText('Internet Download');
       displayText('Internet Upload');
-      displayText('Filtri');
+      displayText('Servizi inclusi');
       displayText('Capienza');
       // addDisplay(".checkbox-group-container label", 'inline-block');
+      const selectorCucina = $('label:contains("Cucina")')[1];
+      addDisplay(selectorCucina);
+      addDisplay($(selectorCucina).next());
+      const selectorParcehggio = $('label:contains("Parcheggio")')[1];
+      addDisplay(selectorParcehggio);
+      addDisplay($(selectorParcehggio).next());
+      const selectorColazione = $('label:contains("Colazione")')[1];
+      addDisplay(selectorColazione);
+      addDisplay($(selectorColazione).next());
       return;
     case 3:
       // addDisplay(".checkbox-group-container label", 'inline-block');
@@ -29,15 +38,15 @@ const openNewListing = (tab = 1) => {
       displayText('Festivi');
       return;
     case 4:
-      const selectorCucina = $('label:contains("Cucina")')[1];
-      addDisplay(selectorCucina);
-      addDisplay($(selectorCucina).next());
-      const selectorParcehggio = $('label:contains("Parcheggio")')[1];
-      addDisplay(selectorParcehggio);
-      addDisplay($(selectorParcehggio).next());
-      const selectorColazione = $('label:contains("Colazione")')[1];
-      addDisplay(selectorColazione);
-      addDisplay($(selectorColazione).next());
+      // const selectorCucina = $('label:contains("Cucina")')[1];
+      // addDisplay(selectorCucina);
+      // addDisplay($(selectorCucina).next());
+      // const selectorParcehggio = $('label:contains("Parcheggio")')[1];
+      // addDisplay(selectorParcehggio);
+      // addDisplay($(selectorParcehggio).next());
+      // const selectorColazione = $('label:contains("Colazione")')[1];
+      // addDisplay(selectorColazione);
+      // addDisplay($(selectorColazione).next());
       return;
     case 5:
       displayText('Località', 2);
@@ -95,12 +104,22 @@ const closeNewListing = (tab = 1) => {
     case 2:
       removeDisplayText('Internet Download');
       removeDisplayText('Internet Upload');
-      removeDisplayText('Filtri');
+      removeDisplayText('Servizi inclusi');
       removeDisplayText('Capienza');
       // removeDisplay(".checkbox-group-container label");
       // Error
       hideError('Internet Download');
       hideError('Internet Upload');
+
+      const selectorCucina = $('label:contains("Cucina")')[1];
+      removeDisplay(selectorCucina);
+      removeDisplay($(selectorCucina).next());
+      const selectorParcehggio = $('label:contains("Parcheggio")')[1];
+      removeDisplay(selectorParcehggio);
+      removeDisplay($(selectorParcehggio).next());
+      const selectorColazione = $('label:contains("Colazione")')[1];
+      removeDisplay(selectorColazione);
+      removeDisplay($(selectorColazione).next());
       return;
     case 3:
       // removeDisplay(".checkbox-group-container label");
@@ -126,15 +145,15 @@ const closeNewListing = (tab = 1) => {
       hideError('Min hour');
       return;
     case 4:
-      const selectorCucina = $('label:contains("Cucina")')[1];
-      removeDisplay(selectorCucina);
-      removeDisplay($(selectorCucina).next());
-      const selectorParcehggio = $('label:contains("Parcheggio")')[1];
-      removeDisplay(selectorParcehggio);
-      removeDisplay($(selectorParcehggio).next());
-      const selectorColazione = $('label:contains("Colazione")')[1];
-      removeDisplay(selectorColazione);
-      removeDisplay($(selectorColazione).next());
+      // const selectorCucina = $('label:contains("Cucina")')[1];
+      // removeDisplay(selectorCucina);
+      // removeDisplay($(selectorCucina).next());
+      // const selectorParcehggio = $('label:contains("Parcheggio")')[1];
+      // removeDisplay(selectorParcehggio);
+      // removeDisplay($(selectorParcehggio).next());
+      // const selectorColazione = $('label:contains("Colazione")')[1];
+      // removeDisplay(selectorColazione);
+      // removeDisplay($(selectorColazione).next());
       return;
     case 5:
       removeDisplayText('Località', 2);

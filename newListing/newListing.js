@@ -80,12 +80,12 @@ const showCategorySelection = () => {
     '             <span>Lorem ipsum</span>' +
     '             <h4 style="padding-top: 32px">Studio condiviso:</h4>' +
     '             <span>Lorem ipsum</span>' +
-    '             <h4>Ufficio privato:</h4>\' +\n' +
-    '    \'       <span>Lorem ipsum</span>\' +' +
-    '             <h4>Coworking:</h4>\' +\n' +
-    '    \'       <span>Lorem ipsum</span>\' +' +
-    '             <h4>Sala meeting:</h4>\' +\n' +
-    '    \'       <span>Lorem ipsum</span>\' +' +
+    '             <h4 style="padding-top: 32px">Ufficio privato:</h4>' +
+    '             <span>Lorem ipsum</span>' +
+    '             <h4 style="padding-top: 32px">Coworking:</h4>' +
+    '             <span>Lorem ipsum</span>' +
+    '             <h4 style="padding-top: 32px">Sala meeting:</h4>' +
+    '             <span>Lorem ipsum</span>' +
     '         </div>' +
     '     </div>' +
     '</div>');
@@ -110,7 +110,7 @@ const showReservationTypeSelection = (category) => {
     '<h1 class="titolo-annuncio">Inserisci la tua struttura</h1>' +
     '<h4 style="padding-top: 32px">Tipologia di struttura selezionata</h4>' +
     '<span class="medium">' + VISUALIZED_CATEGORY[getKeyByValue(CATEGORY_LISTING, Number(category))] + '</span>' +
-    '<span class="caption" style="padding-top: 24px">Sarà possibile modificare la categoria una volta inserita la struttura</span>' +
+    '<span class="caption" style="padding-top: 24px">Sarà possibile modificare la tipologia una volta inserita la struttura</span>' +
     '<h4 style="padding-top: 32px">Come vuoi proporre il tuo spazio?<span class="caption" style="cursor: pointer" id="helperTipoPrenotazione">&nbsp; Che cosa significa?</span></h4>' +
     '<div class="containerBox w-layout-grid grid-3-column">' +
     '<a href=' + currentUrl + '&' + URL_PARAMS.LISTING_SHAPE + '=' + LISTING_SHAPE[TRANSACTION_TYPE.HOURLY] + '><div style="padding:64px !important" class="home-fluid-thumbnail-grid-item button secondary_black grid-item">Per ora</div></a>' +
@@ -175,7 +175,7 @@ const showReservationTypeSelection = (category) => {
     '            </svg>\n' +
     '        </div>\n' +
     '        <div class="headerDialog">' +
-    '            <h4 style="margin: 0">Tipi di prenotazione</h4>' +
+    '            <h4 style="margin: 0">Tipo di prenotazione</h4>' +
     '        </div>' +
     '         <div class="content">' +
     '             <h4>Per ora:</h4>' +
@@ -264,7 +264,6 @@ const onFormCompletedLoading = (category, reservation) => {
     }
   };
 
-  console.log("addd")
 
   // Show first tab details
   // firstTabIntoNewListing(category, reservation);
@@ -299,16 +298,16 @@ const onFormCompletedLoading = (category, reservation) => {
   });
   //
   //
-  const selectorCucina = $('label:contains("Cucina")')[1];
+  // const selectorCucina = $('label:contains("Cucina")')[1];
 
-  tabIntoNewListing({
-    category,
-    reservation,
-    tabNumber: 4,
-    title: "Servizi a pagamento",
-    labelForTitleSelector: "Cucina",
-    customTitleSelector: $(selectorCucina),
-  });
+  // tabIntoNewListing({
+  //   category,
+  //   reservation,
+  //   tabNumber: 4,
+  //   title: "Servizi a pagamento",
+  //   labelForTitleSelector: "Cucina",
+  //   customTitleSelector: $(selectorCucina),
+  // });
 
 
   // //Five Tab hide
@@ -336,12 +335,11 @@ const onFormCompletedLoading = (category, reservation) => {
 
   const previousOptionSelected =
     '<h1 class="titolo-annuncio">Inserisci la tua struttura</h1>' +
-    '<h4 style="padding-top: 32px">Categoria selezionata</h4>' +
+    '<h4 style="padding-top: 32px">Tipologia di struttura selezionata</h4>' +
     '<span class="medium">' + VISUALIZED_CATEGORY[getKeyByValue(CATEGORY_LISTING, Number(category))] + '</span>' +
-    '<h4 style="padding-top: 32px">Prenotazione selezionata</h4>' +
+    '<h4 style="padding-top: 32px">Tipologia di prenotazione selezionata</h4>' +
     '<span class="medium">' + VISUALIZED_TRANSACTION_TYPE[getKeyByValue(LISTING_SHAPE, Number(reservation))] + '</span>' +
-    '<div class="caption" style="padding-top: 24px">Sarà possibile modificare la categoria e la prenotazione una volta inserita la struttura.</div>' +
-    '<h4 style="padding-top: 32px">Seleziona i dettagli del tuo annuncio</h4>';
+    '<div class="caption" style="padding-top: 24px">Sarà possibile modificare le tipologie una volta inserita la struttura.</div>';
 
   formListSelector.wrap('<div class="col-12" style="padding: 0 24px"></div>');
 
