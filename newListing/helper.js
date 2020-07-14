@@ -91,7 +91,7 @@ const addTooltip = (reservation) => {
 
   const internetSelector = $('label:contains("Internet Download")');
   // internetSelector.prepend(descriptionText("Velocità di internet può essere calcolata mediante speedtest"))
-  internetSelector.prepend("<div class='caption' style='padding-top: 8px; padding-bottom: 8px; font-weight: 400'>Se non conosci la velocità della tua linea, visita il sito <a target=\"_blank\" href=\"speedtest.net\" style=\"color:#222222\">Speedtest</a> per un test gratuito</div>");
+  internetSelector.prepend("<div class='caption' style='padding-top: 8px; padding-bottom: 8px; font-weight: 400'>Se non conosci la velocità della tua linea, visita il sito <a target=\"_blank\" href=\"https://speedtest.net\" style=\"color:#222222 !important;\">Speedtest</a> per un test gratuito</div>");
 
   const filterSelector = $('label:contains("Servizi inclusi")');
   filterSelector.append(descriptionText("Seleziona tutti i servizi inclusi nel prezzo indicato nell'annuncio"))
